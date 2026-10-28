@@ -1,0 +1,2205 @@
+{
+  "meta": {
+    "study": "s29_true_analog_jmax",
+    "generated": "2026-10-20T15:06:03+0200",
+    "python": "3.14.8",
+    "platform": "Linux-6.18.56_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "addendum": {
+    "path": "docs/superpowers/plans/2026-10-19-p2b-g3-true-analog-jmax.md",
+    "commit": "ddbc26c",
+    "status": "Judgment, owner's decision of 19 Oct 2026; a deviation, reported beside the pre-registered result (J_max None for every family), never in its place"
+  },
+  "e2_run2": {
+    "label": "analog_sd sets the simulation; the rest is reported, not deciding",
+    "run_id": "6214cf52489f",
+    "run_dir": "/srv/gnss/results/E2/6214cf52489f",
+    "git_describe": "7bc707e5a4e3",
+    "summary_sha256": "4419fd70188279102a2ab862fda3ef17acdbb81018b8793918d165b11e962c99",
+    "analog_sd": {
+      "A": 1.5042083675561735,
+      "B": 1.527153638647298
+    },
+    "n0_per_hz": {
+      "A": 1.7734847546080346e-07,
+      "B": 1.7882350533682256e-07
+    },
+    "j_max_db_hz_pre_registered": {
+      "segments": {
+        "A": {
+          "chirp": null,
+          "noise": null,
+          "swept_cw": 70.0
+        },
+        "B": {
+          "chirp": null,
+          "noise": null,
+          "swept_cw": null
+        }
+      },
+      "combined": {
+        "chirp": null,
+        "noise": null,
+        "swept_cw": null
+      }
+    },
+    "tau_cap_db_hz": {
+      "A": {
+        "noise": null,
+        "swept_cw": null
+      },
+      "B": {}
+    },
+    "tau_side": {
+      "A": {
+        "noise": {
+          "0.001": {
+            "ratio": 0.9726896272101091,
+            "ratio_se": 0.008144397612119006,
+            "verdict": "pass"
+          },
+          "0.1": {
+            "ratio": 0.9726597415448397,
+            "ratio_se": 0.008143638767533913,
+            "verdict": "pass"
+          }
+        },
+        "swept_cw": {
+          "0.001": {
+            "ratio": 0.9683729694906673,
+            "ratio_se": 0.007981781569293843,
+            "verdict": "pass"
+          },
+          "0.1": {
+            "ratio": 0.9700371878091688,
+            "ratio_se": 0.007884969719123724,
+            "verdict": "pass"
+          }
+        }
+      },
+      "B": {}
+    }
+  },
+  "design": {
+    "construction": "s28's E2 structure (review.s28_twin_pair_quantisation.e2s_chains, e2s_windows, e2s_stats, make_cell, analog_noise, recording_floor), at each segment's analog SD",
+    "fs_hz": 30690000.0,
+    "window_samples": 30690,
+    "quant": {
+      "max_level": 4,
+      "zero_level": false
+    },
+    "band_hz": 20000000.0,
+    "fir_taps": 129,
+    "root_seed": 28,
+    "ghost": {
+      "prn": 32,
+      "doppler_hz": 1510.0,
+      "cn0_db_hz": 45.0,
+      "seed": 15863571846242751693
+    },
+    "families": {
+      "noise": {
+        "bw_hz": 2000000.0
+      },
+      "swept_cw": {
+        "span_hz": 1000000.0,
+        "period_s": 0.01
+      },
+      "chirp": {
+        "span_hz": 10000000.0,
+        "period_s": 1e-05
+      }
+    },
+    "levels_db_hz": [
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0
+    ],
+    "mode_b_tau_s": 0.01,
+    "dither_seed": 6746384424311375114,
+    "chunk_samples": 8388608,
+    "checkpoints_s": [
+      20.0,
+      40.0,
+      60.0
+    ],
+    "se_stop": 0.02,
+    "bootstrap": {
+      "block_windows": 1000,
+      "n_boot": 400,
+      "seed": 7
+    },
+    "verdict": {
+      "tol": 0.1,
+      "slope_tol": 0.1,
+      "se_max": 0.05
+    },
+    "deciding_families": [
+      "noise",
+      "swept_cw"
+    ]
+  },
+  "segments": {
+    "A": {
+      "analog_sd_run2": 1.5042083675561735,
+      "floor": {
+        "n0_per_hz": 2.5107874535024166e-07,
+        "n0_spread_db": 0.011989797006811088,
+        "analog_sd": 1.504060346336506,
+        "n0_analog_per_hz": 2.2626428130260083e-07,
+        "recording_power": 5.1553709506988525
+      },
+      "self_check": {
+        "noise": {
+          "samples_equal_first_chunk": 8388608,
+          "n_windows": 820,
+          "z_equal_clean": true,
+          "excess_A": 0.0,
+          "excess_truth": 0.0,
+          "excess_B": 0.0
+        },
+        "swept_cw": {
+          "samples_equal_first_chunk": 8388608,
+          "n_windows": 820,
+          "z_equal_clean": true,
+          "excess_A": 0.0,
+          "excess_truth": 0.0,
+          "excess_B": 0.0
+        },
+        "chirp": {
+          "samples_equal_first_chunk": 8388608,
+          "n_windows": 820,
+          "z_equal_clean": true,
+          "excess_A": 0.0,
+          "excess_truth": 0.0,
+          "excess_B": 0.0
+        }
+      }
+    },
+    "B": {
+      "analog_sd_run2": 1.527153638647298,
+      "floor": {
+        "n0_per_hz": 2.5723844032654597e-07,
+        "n0_spread_db": 0.01152250743995746,
+        "analog_sd": 1.5269668158418728,
+        "n0_analog_per_hz": 2.3321982360336818e-07,
+        "recording_power": 5.277175545692444
+      },
+      "self_check": {
+        "noise": {
+          "samples_equal_first_chunk": 8388608,
+          "n_windows": 820,
+          "z_equal_clean": true,
+          "excess_A": 0.0,
+          "excess_truth": 0.0,
+          "excess_B": 0.0
+        },
+        "swept_cw": {
+          "samples_equal_first_chunk": 8388608,
+          "n_windows": 820,
+          "z_equal_clean": true,
+          "excess_A": 0.0,
+          "excess_truth": 0.0,
+          "excess_B": 0.0
+        },
+        "chirp": {
+          "samples_equal_first_chunk": 8388608,
+          "n_windows": 820,
+          "z_equal_clean": true,
+          "excess_A": 0.0,
+          "excess_truth": 0.0,
+          "excess_B": 0.0
+        }
+      }
+    }
+  },
+  "cells": {
+    "A": {
+      "noise": {
+        "50.0": {
+          "segment": "A",
+          "family": "noise",
+          "level_db_hz": 50.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9972421340519001,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001076252679701,
+            "A": 1.0002801521465137,
+            "truth_clean": 1.02166969632628,
+            "truth": 1.0191165344624855,
+            "B_clean": 1.0209717818250468,
+            "B": 1.0183209357010023
+          },
+          "var_dphi_A": 0.0007139834035297682,
+          "cov2_A": -1.1953104941305766e-05,
+          "excess_A": 0.0007020302985884624,
+          "var_dphi_truth": 0.0012072216478521973,
+          "cov2_truth": -0.000522465782612114,
+          "excess_truth": 0.0006847558652400834,
+          "var_dphi_B": 0.0012094438150170171,
+          "cov2_B": -0.0006113553317935524,
+          "excess_B": 0.0005980884832234647,
+          "var_ratio_truth": 1.690825923801553,
+          "cancel_truth": {
+            "cancel": 0.0005105126776708082,
+            "extra_var": 0.0004932382443224292,
+            "share": 1.0350224937892019,
+            "holds": true
+          },
+          "slope_truth": 0.9994200463843231,
+          "ratio_truth": 0.9753936071091064,
+          "ratio_truth_se": 0.03105018646039409,
+          "var_ratio_B": 1.6939382750884793,
+          "cancel_B": {
+            "cancel": 0.0005994022268522467,
+            "extra_var": 0.000495460411487249,
+            "share": 1.2097883361719863,
+            "holds": true
+          },
+          "slope_B": 0.9981718943553166,
+          "ratio_B": 0.8519411262249103,
+          "ratio_B_se": 0.03115256462846463,
+          "b_over_truth": 0.8734331658682002,
+          "b_over_truth_se": 0.04066291768422283,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9542718181180448,
+              "ratio_truth_se": 0.05035313624032581
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.9596802351905649,
+              "ratio_truth_se": 0.03680776615136024
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 0.9753936071091064,
+              "ratio_truth_se": 0.03105018646039409
+            }
+          ],
+          "wall_s": 1379.3316037654877,
+          "cpu_s": 1381.236337724,
+          "verdict": "pass"
+        },
+        "55.0": {
+          "segment": "A",
+          "family": "noise",
+          "level_db_hz": 55.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9913560344432076,
+          "n_windows": 40000,
+          "length_s": 40.0,
+          "gains": {
+            "A_clean": 0.9997831754002192,
+            "A": 0.9995589120431112,
+            "truth_clean": 1.0212849308930896,
+            "truth": 1.0124282292327493,
+            "B_clean": 1.0206813322226542,
+            "B": 1.0115061362248177
+          },
+          "var_dphi_A": 0.002271487687948688,
+          "cov2_A": 1.2039790014619845e-05,
+          "excess_A": 0.002283527477963308,
+          "var_dphi_truth": 0.0030953090908728037,
+          "cov2_truth": -0.0008307788021519418,
+          "excess_truth": 0.002264530288720862,
+          "var_dphi_B": 0.0030592084349984356,
+          "cov2_B": -0.0010184731380914705,
+          "excess_B": 0.0020407352969069653,
+          "var_ratio_truth": 1.362679228813291,
+          "cancel_truth": {
+            "cancel": 0.0008428185921665616,
+            "extra_var": 0.0008238214029241157,
+            "share": 1.0230598393960344,
+            "holds": true
+          },
+          "slope_truth": 1.0030626667888065,
+          "ratio_truth": 0.9916807704633406,
+          "ratio_truth_se": 0.017373009773777957,
+          "var_ratio_B": 1.3467862719348984,
+          "cancel_B": {
+            "cancel": 0.0010305129281060904,
+            "extra_var": 0.0007877207470497476,
+            "share": 1.308221132889635,
+            "holds": true
+          },
+          "slope_B": 0.9948193690989093,
+          "ratio_B": 0.8936766982664511,
+          "ratio_B_se": 0.01537025870402796,
+          "b_over_truth": 0.9011737697090776,
+          "b_over_truth_se": 0.024338017625494264,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0006112311354576,
+              "ratio_truth_se": 0.021911560222708674
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.9916807704633406,
+              "ratio_truth_se": 0.017373009773777957
+            }
+          ],
+          "wall_s": 855.0423288345337,
+          "cpu_s": 859.0710544660001,
+          "verdict": "pass"
+        },
+        "60.0": {
+          "segment": "A",
+          "family": "noise",
+          "level_db_hz": 60.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9734065550706518,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.0002420195257011,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.994407021655836,
+            "B_clean": 1.0214904388758508,
+            "B": 0.9933958169521233
+          },
+          "var_dphi_A": 0.007136949430570019,
+          "cov2_A": -0.00016229164457309,
+          "excess_A": 0.0069746577859969286,
+          "var_dphi_truth": 0.008464070215957416,
+          "cov2_truth": -0.0013930485488716049,
+          "excess_truth": 0.0070710216670858105,
+          "var_dphi_B": 0.008374950546326006,
+          "cov2_B": -0.0018614841707052256,
+          "excess_B": 0.00651346637562078,
+          "var_ratio_truth": 1.1859507060121346,
+          "cancel_truth": {
+            "cancel": 0.001230756904298515,
+            "extra_var": 0.0013271207853873968,
+            "share": 0.9273887635926428,
+            "holds": true
+          },
+          "slope_truth": 1.0059014122747005,
+          "ratio_truth": 1.0138162880596597,
+          "ratio_truth_se": 0.011681340454043992,
+          "var_ratio_B": 1.1734636244518142,
+          "cancel_B": {
+            "cancel": 0.0016991925261321357,
+            "extra_var": 0.0012380011157559871,
+            "share": 1.3725290748987098,
+            "holds": true
+          },
+          "slope_B": 0.9991035061173027,
+          "ratio_B": 0.9338761234562525,
+          "ratio_B_se": 0.010185936281792962,
+          "b_over_truth": 0.9211492599350475,
+          "b_over_truth_se": 0.013285602968863034,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0138162880596597,
+              "ratio_truth_se": 0.011681340454043992
+            }
+          ],
+          "wall_s": 440.8413517475128,
+          "cpu_s": 443.0725029219998,
+          "verdict": "pass"
+        },
+        "65.0": {
+          "segment": "A",
+          "family": "noise",
+          "level_db_hz": 65.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9224735172169835,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.0000280132695751,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.9422655690605523,
+            "B_clean": 1.0214904388758508,
+            "B": 0.9411809502452751
+          },
+          "var_dphi_A": 0.02241155787834141,
+          "cov2_A": 0.0003951527254381627,
+          "excess_A": 0.022806710603779572,
+          "var_dphi_truth": 0.024021717741681367,
+          "cov2_truth": -0.0011790527658405918,
+          "excess_truth": 0.022842664975840775,
+          "var_dphi_B": 0.02397831981485125,
+          "cov2_B": -0.0016393061608497355,
+          "excess_B": 0.022339013654001514,
+          "var_ratio_truth": 1.0718450663751502,
+          "cancel_truth": {
+            "cancel": 0.0015742054912787544,
+            "extra_var": 0.0016101598633399584,
+            "share": 0.9776703090917793,
+            "holds": true
+          },
+          "slope_truth": 0.9986668653368926,
+          "ratio_truth": 1.0015764821453579,
+          "ratio_truth_se": 0.0034196892250862145,
+          "var_ratio_B": 1.0699086580689674,
+          "cancel_B": {
+            "cancel": 0.0020344588862878984,
+            "extra_var": 0.0015667619365098417,
+            "share": 1.2985118152792952,
+            "holds": true
+          },
+          "slope_B": 0.9974076352161865,
+          "ratio_B": 0.979493011600693,
+          "ratio_B_se": 0.004271530952595174,
+          "b_over_truth": 0.9779512888547838,
+          "b_over_truth_se": 0.005201388819236587,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0015764821453579,
+              "ratio_truth_se": 0.0034196892250862145
+            }
+          ],
+          "wall_s": 439.69229888916016,
+          "cpu_s": 441.6186849129999,
+          "verdict": "pass"
+        },
+        "70.0": {
+          "segment": "A",
+          "family": "noise",
+          "level_db_hz": 70.0,
+          "role": "decides",
+          "agc_gain_truth": 0.8022201890156149,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 0.9978998942001485,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.8175415193820013,
+            "B_clean": 1.0214904388758508,
+            "B": 0.8169494492638318
+          },
+          "var_dphi_A": 0.07246200939517912,
+          "cov2_A": 0.0001384810405216407,
+          "excess_A": 0.07260049043570076,
+          "var_dphi_truth": 0.07455246105629397,
+          "cov2_truth": -0.0015651978919434893,
+          "excess_truth": 0.07298726316435047,
+          "var_dphi_B": 0.07453401587894046,
+          "cov2_B": -0.002259740321248771,
+          "excess_B": 0.07227427555769168,
+          "var_ratio_truth": 1.028848933096988,
+          "cancel_truth": {
+            "cancel": 0.00170367893246513,
+            "extra_var": 0.0020904516611148505,
+            "share": 0.8149812617798337,
+            "holds": true
+          },
+          "slope_truth": 0.9995200655007168,
+          "ratio_truth": 1.0053274120646922,
+          "ratio_truth_se": 0.0025826286850723352,
+          "var_ratio_B": 1.0285943834715021,
+          "cancel_B": {
+            "cancel": 0.002398221361770412,
+            "extra_var": 0.0020720064837613378,
+            "share": 1.157439120275769,
+            "holds": true
+          },
+          "slope_B": 0.9990065657573104,
+          "ratio_B": 0.9955067124746494,
+          "ratio_B_se": 0.0031104491833820885,
+          "b_over_truth": 0.9902313420760372,
+          "b_over_truth_se": 0.0033740948315610867,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0053274120646922,
+              "ratio_truth_se": 0.0025826286850723352
+            }
+          ],
+          "wall_s": 420.590274810791,
+          "cpu_s": 423.037891426,
+          "verdict": "pass"
+        }
+      },
+      "swept_cw": {
+        "50.0": {
+          "segment": "A",
+          "family": "swept_cw",
+          "level_db_hz": 50.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9972421340519001,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001076252679701,
+            "A": 1.0001813141111882,
+            "truth_clean": 1.02166969632628,
+            "truth": 1.019006497016752,
+            "B_clean": 1.0209717818250468,
+            "B": 1.018197304813837
+          },
+          "var_dphi_A": 0.0011128082820809875,
+          "cov2_A": -4.3875395255466746e-05,
+          "excess_A": 0.0010689328868255209,
+          "var_dphi_truth": 0.001678251639910404,
+          "cov2_truth": -0.0006152618795846761,
+          "excess_truth": 0.0010629897603257278,
+          "var_dphi_B": 0.0016810091475373814,
+          "cov2_B": -0.0007364706907847835,
+          "excess_B": 0.000944538456752598,
+          "var_ratio_truth": 1.5081228877736415,
+          "cancel_truth": {
+            "cancel": 0.0005713864843292093,
+            "extra_var": 0.0005654433578294164,
+            "share": 1.0105105602842468,
+            "holds": true
+          },
+          "slope_truth": 0.9977935148836369,
+          "ratio_truth": 0.9944401313000644,
+          "ratio_truth_se": 0.02296800816803318,
+          "var_ratio_B": 1.5106008596501814,
+          "cancel_B": {
+            "cancel": 0.0006925952955293167,
+            "extra_var": 0.0005682008654563939,
+            "share": 1.2189268577987926,
+            "holds": true
+          },
+          "slope_B": 1.001003063462816,
+          "ratio_B": 0.8836274647304143,
+          "ratio_B_se": 0.022365929109282486,
+          "b_over_truth": 0.8885677849457051,
+          "b_over_truth_se": 0.03356235585675229,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9564427952516864,
+              "ratio_truth_se": 0.032709377336153915
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.966829204542258,
+              "ratio_truth_se": 0.023452602904687005
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 0.9944401313000644,
+              "ratio_truth_se": 0.02296800816803318
+            }
+          ],
+          "wall_s": 1339.4068350791931,
+          "cpu_s": 1341.085512899,
+          "verdict": "pass"
+        },
+        "55.0": {
+          "segment": "A",
+          "family": "swept_cw",
+          "level_db_hz": 55.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9913560344432076,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.000863623217529,
+            "truth_clean": 1.0222711184725766,
+            "truth": 1.0135761817388957,
+            "B_clean": 1.0214904388758508,
+            "B": 1.0126106759826754
+          },
+          "var_dphi_A": 0.004955142362564105,
+          "cov2_A": 4.320074840516747e-05,
+          "excess_A": 0.0049983431109692725,
+          "var_dphi_truth": 0.005925608210280409,
+          "cov2_truth": -0.0008451404192366749,
+          "excess_truth": 0.005080467791043734,
+          "var_dphi_B": 0.0059028401961385285,
+          "cov2_B": -0.0012034680431228383,
+          "excess_B": 0.004699372153015691,
+          "var_ratio_truth": 1.1958502454032671,
+          "cancel_truth": {
+            "cancel": 0.0008883411676418423,
+            "extra_var": 0.0009704658477163045,
+            "share": 0.9153760224868113,
+            "holds": true
+          },
+          "slope_truth": 1.0034583631668579,
+          "ratio_truth": 1.0164303806783956,
+          "ratio_truth_se": 0.011303680689798923,
+          "var_ratio_B": 1.1912554199722376,
+          "cancel_B": {
+            "cancel": 0.0012466687915280057,
+            "extra_var": 0.0009476978335744238,
+            "share": 1.3154707622639124,
+            "holds": true
+          },
+          "slope_B": 1.0001384221908383,
+          "ratio_B": 0.9401859873730025,
+          "ratio_B_se": 0.012152568096139203,
+          "b_over_truth": 0.9249880810779137,
+          "b_over_truth_se": 0.013052198389066792,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0164303806783956,
+              "ratio_truth_se": 0.011303680689798923
+            }
+          ],
+          "wall_s": 419.1095464229584,
+          "cpu_s": 420.660318255,
+          "verdict": "pass"
+        },
+        "60.0": {
+          "segment": "A",
+          "family": "swept_cw",
+          "level_db_hz": 60.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9734065550706518,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.002495248879262,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.9968985503672291,
+            "B_clean": 1.0214904388758508,
+            "B": 0.9957166028707332
+          },
+          "var_dphi_A": 0.011296797028119494,
+          "cov2_A": 0.00023720930518062868,
+          "excess_A": 0.011534006333300123,
+          "var_dphi_truth": 0.012714655864540906,
+          "cov2_truth": -0.0012441748565035383,
+          "excess_truth": 0.011470481008037367,
+          "var_dphi_B": 0.012752466050657064,
+          "cov2_B": -0.0016748841121017428,
+          "excess_B": 0.011077581938555322,
+          "var_ratio_truth": 1.1255098089212492,
+          "cancel_truth": {
+            "cancel": 0.001481384161684167,
+            "extra_var": 0.0014178588364214123,
+            "share": 1.0448037023368903,
+            "holds": true
+          },
+          "slope_truth": 0.9978992506399044,
+          "ratio_truth": 0.9944923452071159,
+          "ratio_truth_se": 0.007490711324808598,
+          "var_ratio_B": 1.1288567917892287,
+          "cancel_B": {
+            "cancel": 0.0019120934172823715,
+            "extra_var": 0.0014556690225375705,
+            "share": 1.313549569083463,
+            "holds": true
+          },
+          "slope_B": 0.9992526455672246,
+          "ratio_B": 0.9604279396459974,
+          "ratio_B_se": 0.0077475096311751404,
+          "b_over_truth": 0.9657469404110655,
+          "b_over_truth_se": 0.011068212424878225,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9944923452071159,
+              "ratio_truth_se": 0.007490711324808598
+            }
+          ],
+          "wall_s": 429.0347399711609,
+          "cpu_s": 430.600825904,
+          "verdict": "pass"
+        },
+        "65.0": {
+          "segment": "A",
+          "family": "swept_cw",
+          "level_db_hz": 65.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9224735172169835,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.0007862905557645,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.9428099175415964,
+            "B_clean": 1.0214904388758508,
+            "B": 0.9415994615817952
+          },
+          "var_dphi_A": 0.025166578160121227,
+          "cov2_A": -0.0006635483127393226,
+          "excess_A": 0.024503029847381903,
+          "var_dphi_truth": 0.027595713625569552,
+          "cov2_truth": -0.0025114589138431867,
+          "excess_truth": 0.025084254711726366,
+          "var_dphi_B": 0.027548416018083777,
+          "cov2_B": -0.0031599792205148853,
+          "excess_B": 0.024388436797568892,
+          "var_ratio_truth": 1.0965222784755662,
+          "cancel_truth": {
+            "cancel": 0.001847910601103864,
+            "extra_var": 0.0024291354654483246,
+            "share": 0.7607276857912126,
+            "holds": true
+          },
+          "slope_truth": 1.00822659799768,
+          "ratio_truth": 1.0237205303982668,
+          "ratio_truth_se": 0.004153201691910475,
+          "var_ratio_B": 1.0946428967342408,
+          "cancel_B": {
+            "cancel": 0.0024964309077755626,
+            "extra_var": 0.0023818378579625495,
+            "share": 1.0481111883539533,
+            "holds": true
+          },
+          "slope_B": 1.0072919300073693,
+          "ratio_B": 0.995323311013913,
+          "ratio_B_se": 0.004047288444437958,
+          "b_over_truth": 0.972260769867235,
+          "b_over_truth_se": 0.005056740548277905,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0237205303982668,
+              "ratio_truth_se": 0.004153201691910475
+            }
+          ],
+          "wall_s": 418.9566776752472,
+          "cpu_s": 420.62509882899985,
+          "verdict": "pass"
+        },
+        "70.0": {
+          "segment": "A",
+          "family": "swept_cw",
+          "level_db_hz": 70.0,
+          "role": "decides",
+          "agc_gain_truth": 0.8022201890156149,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.0066971648574488,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.8217764210703478,
+            "B_clean": 1.0214904388758508,
+            "B": 0.8210144640010858
+          },
+          "var_dphi_A": 0.16082960468093413,
+          "cov2_A": -0.00016154281783644598,
+          "excess_A": 0.16066806186309768,
+          "var_dphi_truth": 0.1682948476812429,
+          "cov2_truth": -0.002101142901538266,
+          "excess_truth": 0.16619370477970463,
+          "var_dphi_B": 0.168275949100503,
+          "cov2_B": -0.0024523179831931904,
+          "excess_B": 0.1658236311173098,
+          "var_ratio_truth": 1.0464170947576403,
+          "cancel_truth": {
+            "cancel": 0.0019396000837018203,
+            "extra_var": 0.007465243000308763,
+            "share": 0.25981740763450006,
+            "holds": false
+          },
+          "slope_truth": 1.0162278827281261,
+          "ratio_truth": 1.0343916697104074,
+          "ratio_truth_se": 0.0017942367747882289,
+          "var_ratio_B": 1.0462995879044874,
+          "cancel_B": {
+            "cancel": 0.0022907751653567445,
+            "extra_var": 0.007446344419568873,
+            "share": 0.3076375515664605,
+            "holds": false
+          },
+          "slope_B": 1.0162196834988237,
+          "ratio_B": 1.0320883266682155,
+          "ratio_B_se": 0.0010859455703435082,
+          "b_over_truth": 0.9977732389870881,
+          "b_over_truth_se": 0.0018975111015810476,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0343916697104074,
+              "ratio_truth_se": 0.0017942367747882289
+            }
+          ],
+          "wall_s": 406.4564805030823,
+          "cpu_s": 408.89097803600043,
+          "verdict": "pass"
+        }
+      },
+      "chirp": {
+        "50.0": {
+          "segment": "A",
+          "family": "chirp",
+          "level_db_hz": 50.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.9972421340519001,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001076252679701,
+            "A": 1.0001138719890863,
+            "truth_clean": 1.02166969632628,
+            "truth": 1.0190143994749057,
+            "B_clean": 1.0209717818250468,
+            "B": 1.0182675695575378
+          },
+          "var_dphi_A": 0.00014894670021892793,
+          "cov2_A": -2.1380162719934215e-05,
+          "excess_A": 0.0001275665374989937,
+          "var_dphi_truth": 0.0007157767402582887,
+          "cov2_truth": -0.0005956080652815738,
+          "excess_truth": 0.00012016867497671485,
+          "var_dphi_B": 0.000723070480657257,
+          "cov2_B": -0.0007428401007901739,
+          "excess_B": -1.9769620132916907e-05,
+          "var_ratio_truth": 4.805589779472864,
+          "cancel_truth": {
+            "cancel": 0.0005742279025616396,
+            "extra_var": 0.0005668300400393608,
+            "share": 1.0130512887456797,
+            "holds": true
+          },
+          "slope_truth": 0.9966355275335388,
+          "ratio_truth": 0.9420078128064171,
+          "ratio_truth_se": 0.19684694793018154,
+          "var_ratio_B": 4.854558574271592,
+          "cancel_B": {
+            "cancel": 0.0007214599380702397,
+            "extra_var": 0.000574123780438329,
+            "share": 1.2566278608411294,
+            "holds": true
+          },
+          "slope_B": 1.0023911533966756,
+          "ratio_B": -0.15497496851847106,
+          "ratio_B_se": 0.21500292642372332,
+          "b_over_truth": -0.16451558725056822,
+          "b_over_truth_se": 0.2760694962371664,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0813234223489459,
+              "ratio_truth_se": 0.31750882452193596
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.770637086902586,
+              "ratio_truth_se": 0.23602635712621173
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 0.9420078128064171,
+              "ratio_truth_se": 0.19684694793018154
+            }
+          ],
+          "wall_s": 1353.4963490962982,
+          "cpu_s": 1354.439058856,
+          "verdict": "unresolved"
+        },
+        "55.0": {
+          "segment": "A",
+          "family": "chirp",
+          "level_db_hz": 55.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.9913560344432076,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001076252679701,
+            "A": 1.0000943028265321,
+            "truth_clean": 1.02166969632628,
+            "truth": 1.0128963155772905,
+            "B_clean": 1.0209717818250468,
+            "B": 1.012196159272004
+          },
+          "var_dphi_A": 0.00043955413324183547,
+          "cov2_A": -2.6192384227726583e-05,
+          "excess_A": 0.0004133617490141089,
+          "var_dphi_truth": 0.0013720127344143914,
+          "cov2_truth": -0.0009451980194355695,
+          "excess_truth": 0.0004268147149788219,
+          "var_dphi_B": 0.0013819465399966626,
+          "cov2_B": -0.0012620162400061247,
+          "excess_B": 0.00011993029999053792,
+          "var_ratio_truth": 3.1213737527512513,
+          "cancel_truth": {
+            "cancel": 0.000919005635207843,
+            "extra_var": 0.0009324586011725559,
+            "share": 0.9855725863348829,
+            "holds": true
+          },
+          "slope_truth": 0.995984879093456,
+          "ratio_truth": 1.0325452608926662,
+          "ratio_truth_se": 0.07165844022656771,
+          "var_ratio_B": 3.1439734846864433,
+          "cancel_B": {
+            "cancel": 0.001235823855778398,
+            "extra_var": 0.0009423924067548271,
+            "share": 1.311368647413041,
+            "holds": true
+          },
+          "slope_B": 0.9975941732296066,
+          "ratio_B": 0.2901340055691618,
+          "ratio_B_se": 0.09854316897529822,
+          "b_over_truth": 0.2809891406777968,
+          "b_over_truth_se": 0.10165333236758282,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9791177789224057,
+              "ratio_truth_se": 0.10437641993742079
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 1.0003368694736154,
+              "ratio_truth_se": 0.08199736240865431
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 1.0325452608926662,
+              "ratio_truth_se": 0.07165844022656771
+            }
+          ],
+          "wall_s": 1264.2016072273254,
+          "cpu_s": 1270.023679037,
+          "verdict": "unresolved"
+        },
+        "60.0": {
+          "segment": "A",
+          "family": "chirp",
+          "level_db_hz": 60.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.9734065550706518,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001076252679701,
+            "A": 1.0000828066318754,
+            "truth_clean": 1.02166969632628,
+            "truth": 0.9943357607141613,
+            "B_clean": 1.0209717818250468,
+            "B": 0.9935076282229202
+          },
+          "var_dphi_A": 0.001479387577550606,
+          "cov2_A": 7.271398456092664e-06,
+          "excess_A": 0.0014866589760066987,
+          "var_dphi_truth": 0.0029509503126226976,
+          "cov2_truth": -0.0014613559256243989,
+          "excess_truth": 0.0014895943869982988,
+          "var_dphi_B": 0.0029705124998083117,
+          "cov2_B": -0.0019712320619352896,
+          "excess_B": 0.000999280437873022,
+          "var_ratio_truth": 1.9947107555874777,
+          "cancel_truth": {
+            "cancel": 0.0014686273240804915,
+            "extra_var": 0.0014715627350720916,
+            "share": 0.9980052423715009,
+            "holds": true
+          },
+          "slope_truth": 1.0015567684584379,
+          "ratio_truth": 1.0019745019126611,
+          "ratio_truth_se": 0.026756830511262954,
+          "var_ratio_B": 2.0079339213639558,
+          "cancel_B": {
+            "cancel": 0.0019785034603913825,
+            "extra_var": 0.0014911249222577057,
+            "share": 1.3268529221520482,
+            "holds": true
+          },
+          "slope_B": 1.0062249118821378,
+          "ratio_B": 0.672165206681885,
+          "ratio_B_se": 0.04425630513776988,
+          "b_over_truth": 0.6708406305737263,
+          "b_over_truth_se": 0.04858351987195296,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.017835571955058,
+              "ratio_truth_se": 0.0419690796583772
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 1.0018264091830495,
+              "ratio_truth_se": 0.030411923656686046
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 1.0019745019126611,
+              "ratio_truth_se": 0.026756830511262954
+            }
+          ],
+          "wall_s": 1213.2728667259216,
+          "cpu_s": 1218.447137912,
+          "verdict": "pass"
+        },
+        "65.0": {
+          "segment": "A",
+          "family": "chirp",
+          "level_db_hz": 65.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.9224735172169835,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.0006995026258316,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.9425608051267748,
+            "B_clean": 1.0214904388758508,
+            "B": 0.9413352379445099
+          },
+          "var_dphi_A": 0.005093011210388728,
+          "cov2_A": -1.1103995635048492e-06,
+          "excess_A": 0.005091900810825223,
+          "var_dphi_truth": 0.007128413364179181,
+          "cov2_truth": -0.0019239437928755137,
+          "excess_truth": 0.005204469571303667,
+          "var_dphi_B": 0.007191551060085513,
+          "cov2_B": -0.0025206170337015556,
+          "excess_B": 0.004670934026383957,
+          "var_ratio_truth": 1.399646116945244,
+          "cancel_truth": {
+            "cancel": 0.001922833393312009,
+            "extra_var": 0.002035402153790453,
+            "share": 0.9446945851615557,
+            "holds": true
+          },
+          "slope_truth": 1.0028156347267374,
+          "ratio_truth": 1.0221074142369637,
+          "ratio_truth_se": 0.013940037579045899,
+          "var_ratio_B": 1.4120430454612356,
+          "cancel_B": {
+            "cancel": 0.0025195066341380506,
+            "extra_var": 0.002098539849696785,
+            "share": 1.200599852560384,
+            "holds": true
+          },
+          "slope_B": 1.0089546342484499,
+          "ratio_B": 0.9173262009451749,
+          "ratio_B_se": 0.02686395093489717,
+          "b_over_truth": 0.8974851255041415,
+          "b_over_truth_se": 0.028054313984781563,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0221074142369637,
+              "ratio_truth_se": 0.013940037579045899
+            }
+          ],
+          "wall_s": 407.90091276168823,
+          "cpu_s": 410.292790856,
+          "verdict": "pass"
+        },
+        "70.0": {
+          "segment": "A",
+          "family": "chirp",
+          "level_db_hz": 70.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.8022201890156149,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.000728021325856,
+            "A": 1.0006042014796956,
+            "truth_clean": 1.0222711184725766,
+            "truth": 0.8168775104996748,
+            "B_clean": 1.0214904388758508,
+            "B": 0.8159357066355615
+          },
+          "var_dphi_A": 0.015170275496835126,
+          "cov2_A": 0.00028027090330074025,
+          "excess_A": 0.015450546400135866,
+          "var_dphi_truth": 0.01792073635633752,
+          "cov2_truth": -0.0016016996537749591,
+          "excess_truth": 0.016319036702562562,
+          "var_dphi_B": 0.01793595324401297,
+          "cov2_B": -0.002080597931097176,
+          "excess_B": 0.015855355312915796,
+          "var_ratio_truth": 1.1813059268486064,
+          "cancel_truth": {
+            "cancel": 0.0018819705570756993,
+            "extra_var": 0.002750460859502396,
+            "share": 0.6842382615894338,
+            "holds": true
+          },
+          "slope_truth": 1.0163473938940841,
+          "ratio_truth": 1.0562109766175687,
+          "ratio_truth_se": 0.00828055577833596,
+          "var_ratio_B": 1.1823089994479554,
+          "cancel_B": {
+            "cancel": 0.002360868834397916,
+            "extra_var": 0.002765677747177845,
+            "share": 0.8536312073259423,
+            "holds": true
+          },
+          "slope_B": 1.0179956522140803,
+          "ratio_B": 1.026200297536168,
+          "ratio_B_se": 0.0075752194438940025,
+          "b_over_truth": 0.9715864730193323,
+          "b_over_truth_se": 0.009954273466959953,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0562109766175687,
+              "ratio_truth_se": 0.00828055577833596
+            }
+          ],
+          "wall_s": 332.9003884792328,
+          "cpu_s": 336.1161177139993,
+          "verdict": "pass"
+        }
+      }
+    },
+    "B": {
+      "noise": {
+        "50.0": {
+          "segment": "B",
+          "family": "noise",
+          "level_db_hz": 50.0,
+          "role": "decides",
+          "agc_gain_truth": 0.997258646881431,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001021533082728,
+            "A": 1.0002746801868163,
+            "truth_clean": 1.0195204746815256,
+            "truth": 1.017058359537431,
+            "B_clean": 1.0188428682666526,
+            "B": 1.016236216100104
+          },
+          "var_dphi_A": 0.000713990828698925,
+          "cov2_A": -9.71116234018198e-06,
+          "excess_A": 0.000704279666358743,
+          "var_dphi_truth": 0.0011988392364745133,
+          "cov2_truth": -0.000509701096992708,
+          "excess_truth": 0.0006891381394818053,
+          "var_dphi_B": 0.0012017335555696447,
+          "cov2_B": -0.000603278065507783,
+          "excess_B": 0.0005984554900618618,
+          "var_ratio_truth": 1.6790681172461372,
+          "cancel_truth": {
+            "cancel": 0.000499989934652526,
+            "extra_var": 0.0004848484077755883,
+            "share": 1.031229404147999,
+            "holds": true
+          },
+          "slope_truth": 0.9996614555503581,
+          "ratio_truth": 0.9785006899954641,
+          "ratio_truth_se": 0.030937315019428396,
+          "var_ratio_B": 1.683121837516474,
+          "cancel_B": {
+            "cancel": 0.0005935669031676009,
+            "extra_var": 0.00048774272687071975,
+            "share": 1.2169672051817817,
+            "holds": true
+          },
+          "slope_B": 0.9985423807436064,
+          "ratio_B": 0.8497412585485935,
+          "ratio_B_se": 0.03127708725869871,
+          "b_over_truth": 0.8684115067435798,
+          "b_over_truth_se": 0.03962791087222736,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9367553673126066,
+              "ratio_truth_se": 0.04853877130921492
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.9505208817687965,
+              "ratio_truth_se": 0.036084079661399045
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 0.9785006899954641,
+              "ratio_truth_se": 0.030937315019428396
+            }
+          ],
+          "wall_s": 1394.7663106918335,
+          "cpu_s": 1396.163717765,
+          "verdict": "pass"
+        },
+        "55.0": {
+          "segment": "B",
+          "family": "noise",
+          "level_db_hz": 55.0,
+          "role": "decides",
+          "agc_gain_truth": 0.99140733611601,
+          "n_windows": 40000,
+          "length_s": 40.0,
+          "gains": {
+            "A_clean": 0.9997825626859957,
+            "A": 0.9995582993288877,
+            "truth_clean": 1.0191689660281686,
+            "truth": 1.010321182686616,
+            "B_clean": 1.0185447015462201,
+            "B": 1.0094264466689566
+          },
+          "var_dphi_A": 0.0022714905933124614,
+          "cov2_A": 1.2576885943093325e-05,
+          "excess_A": 0.002284067479255555,
+          "var_dphi_truth": 0.0030906344981865824,
+          "cov2_truth": -0.0008136270548376892,
+          "excess_truth": 0.0022770074433488934,
+          "var_dphi_B": 0.0030444830019493805,
+          "cov2_B": -0.000993689622548931,
+          "excess_B": 0.0020507933794004494,
+          "var_ratio_truth": 1.3606195452826342,
+          "cancel_truth": {
+            "cancel": 0.0008262039407807826,
+            "extra_var": 0.000819143904874121,
+            "share": 1.008618798070342,
+            "holds": true
+          },
+          "slope_truth": 1.004041263148287,
+          "ratio_truth": 0.9969090072991352,
+          "ratio_truth_se": 0.01761024848155583,
+          "var_ratio_B": 1.340301831278853,
+          "cancel_B": {
+            "cancel": 0.0010062665084920243,
+            "extra_var": 0.0007729924086369191,
+            "share": 1.3017805831579337,
+            "holds": true
+          },
+          "slope_B": 0.9946643818114637,
+          "ratio_B": 0.8978689981912722,
+          "ratio_B_se": 0.014996967564642019,
+          "b_over_truth": 0.9006529097613571,
+          "b_over_truth_se": 0.024674093566744357,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0058898899684883,
+              "ratio_truth_se": 0.022214267035161918
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.9969090072991352,
+              "ratio_truth_se": 0.01761024848155583
+            }
+          ],
+          "wall_s": 867.616274356842,
+          "cpu_s": 871.326282752,
+          "verdict": "pass"
+        },
+        "60.0": {
+          "segment": "B",
+          "family": "noise",
+          "level_db_hz": 60.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9735601562104843,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.00024478773117,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.9924771273656119,
+            "B_clean": 1.0193376849924622,
+            "B": 0.9914622945093171
+          },
+          "var_dphi_A": 0.007136910573030586,
+          "cov2_A": -0.00016095838054392244,
+          "excess_A": 0.006975952192486664,
+          "var_dphi_truth": 0.008423489895097372,
+          "cov2_truth": -0.001343799062251254,
+          "excess_truth": 0.007079690832846118,
+          "var_dphi_B": 0.00834400131839633,
+          "cov2_B": -0.0018104666739051551,
+          "excess_B": 0.006533534644491175,
+          "var_ratio_truth": 1.180271184415368,
+          "cancel_truth": {
+            "cancel": 0.0011828406817073315,
+            "extra_var": 0.001286579322066786,
+            "share": 0.9193686400984538,
+            "holds": true
+          },
+          "slope_truth": 1.0053210330735636,
+          "ratio_truth": 1.0148708932482629,
+          "ratio_truth_se": 0.01084706238888238,
+          "var_ratio_B": 1.1691335113441348,
+          "cancel_B": {
+            "cancel": 0.0016495082933612327,
+            "extra_var": 0.001207090745365744,
+            "share": 1.3665155662024713,
+            "holds": true
+          },
+          "slope_B": 0.9989680436825455,
+          "ratio_B": 0.9365796186975037,
+          "ratio_B_se": 0.009694358192766202,
+          "b_over_truth": 0.9228559267276109,
+          "b_over_truth_se": 0.01231127168937532,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0148708932482629,
+              "ratio_truth_se": 0.01084706238888238
+            }
+          ],
+          "wall_s": 447.52345728874207,
+          "cpu_s": 448.596194835,
+          "verdict": "pass"
+        },
+        "65.0": {
+          "segment": "B",
+          "family": "noise",
+          "level_db_hz": 65.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9228871001088437,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.0000307814750442,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.9406984348978272,
+            "B_clean": 1.0193376849924622,
+            "B": 0.9397155676771396
+          },
+          "var_dphi_A": 0.022411416972438727,
+          "cov2_A": 0.0003711131345117525,
+          "excess_A": 0.02278253010695048,
+          "var_dphi_truth": 0.023986232882234202,
+          "cov2_truth": -0.0011655849910067186,
+          "excess_truth": 0.022820647891227484,
+          "var_dphi_B": 0.023922107170256383,
+          "cov2_B": -0.001613280620279367,
+          "excess_B": 0.022308826549977016,
+          "var_ratio_truth": 1.0702684668145777,
+          "cancel_truth": {
+            "cancel": 0.001536698125518471,
+            "extra_var": 0.0015748159097954753,
+            "share": 0.9757954031071767,
+            "holds": true
+          },
+          "slope_truth": 0.9986629282990812,
+          "ratio_truth": 1.001673114623269,
+          "ratio_truth_se": 0.003323995620449634,
+          "var_ratio_B": 1.0674071701791763,
+          "cancel_B": {
+            "cancel": 0.0019843937547911195,
+            "extra_var": 0.0015106901978176566,
+            "share": 1.3135676379298515,
+            "holds": true
+          },
+          "slope_B": 0.9970975598481934,
+          "ratio_B": 0.9792075965773026,
+          "ratio_B_se": 0.004213960484707184,
+          "b_over_truth": 0.9775720065578323,
+          "b_over_truth_se": 0.00448198691350844,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.001673114623269,
+              "ratio_truth_se": 0.003323995620449634
+            }
+          ],
+          "wall_s": 440.8075442314148,
+          "cpu_s": 442.2025732719999,
+          "verdict": "pass"
+        },
+        "70.0": {
+          "segment": "B",
+          "family": "noise",
+          "level_db_hz": 70.0,
+          "role": "decides",
+          "agc_gain_truth": 0.8030811596268663,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 0.9979026624056172,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.8167015410120549,
+            "B_clean": 1.0193376849924622,
+            "B": 0.8160427838931782
+          },
+          "var_dphi_A": 0.07246162499625977,
+          "cov2_A": 0.0001447202374415948,
+          "excess_A": 0.07260634523370137,
+          "var_dphi_truth": 0.07456968855387736,
+          "cov2_truth": -0.0015390649075721526,
+          "excess_truth": 0.0730306236463052,
+          "var_dphi_B": 0.07455822051455155,
+          "cov2_B": -0.0021853726418499596,
+          "excess_B": 0.0723728478727016,
+          "var_ratio_truth": 1.0290921374965907,
+          "cancel_truth": {
+            "cancel": 0.0016837851450137472,
+            "extra_var": 0.0021080635576175843,
+            "share": 0.7987354740464595,
+            "holds": true
+          },
+          "slope_truth": 1.0000234834371475,
+          "ratio_truth": 1.0058435445447391,
+          "ratio_truth_se": 0.002431272075527565,
+          "var_ratio_B": 1.0289338738732396,
+          "cancel_B": {
+            "cancel": 0.0023300928792915543,
+            "extra_var": 0.0020965955182917773,
+            "share": 1.1113697701643575,
+            "holds": true
+          },
+          "slope_B": 0.9996291312860089,
+          "ratio_B": 0.9967840639788684,
+          "ratio_B_se": 0.0031119101876822238,
+          "b_over_truth": 0.9909931513553919,
+          "b_over_truth_se": 0.003248636629911692,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0058435445447391,
+              "ratio_truth_se": 0.002431272075527565
+            }
+          ],
+          "wall_s": 422.07044792175293,
+          "cpu_s": 424.48057766400007,
+          "verdict": "pass"
+        }
+      },
+      "swept_cw": {
+        "50.0": {
+          "segment": "B",
+          "family": "swept_cw",
+          "level_db_hz": 50.0,
+          "role": "decides",
+          "agc_gain_truth": 0.997258646881431,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001021533082728,
+            "A": 1.0001758421514908,
+            "truth_clean": 1.0195204746815256,
+            "truth": 1.0169092755014244,
+            "B_clean": 1.0188428682666526,
+            "B": 1.016076736470593
+          },
+          "var_dphi_A": 0.0011128202219027954,
+          "cov2_A": -4.06643521291609e-05,
+          "excess_A": 0.0010721558697736346,
+          "var_dphi_truth": 0.0016668234741330995,
+          "cov2_truth": -0.00060723248343969,
+          "excess_truth": 0.0010595909906934097,
+          "var_dphi_B": 0.0016707100012707157,
+          "cov2_B": -0.0007242530482954106,
+          "excess_B": 0.000946456952975305,
+          "var_ratio_truth": 1.4978371540400495,
+          "cancel_truth": {
+            "cancel": 0.000566568131310529,
+            "extra_var": 0.0005540032522303041,
+            "share": 1.0226801540056691,
+            "holds": true
+          },
+          "slope_truth": 0.9960800012394962,
+          "ratio_truth": 0.9882807347005639,
+          "ratio_truth_se": 0.0222026905428504,
+          "var_ratio_B": 1.501329656297935,
+          "cancel_B": {
+            "cancel": 0.0006835886961662497,
+            "extra_var": 0.0005578897793679202,
+            "share": 1.2253113812924556,
+            "holds": true
+          },
+          "slope_B": 1.0006891811833953,
+          "ratio_B": 0.8827605944787967,
+          "ratio_B_se": 0.021483994377590777,
+          "b_over_truth": 0.8932285771474252,
+          "b_over_truth_se": 0.03232609537342409,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9339004623780359,
+              "ratio_truth_se": 0.03120071936824204
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.9627425518511504,
+              "ratio_truth_se": 0.02184494203190616
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 0.9882807347005639,
+              "ratio_truth_se": 0.0222026905428504
+            }
+          ],
+          "wall_s": 1339.876629114151,
+          "cpu_s": 1341.948819034,
+          "verdict": "pass"
+        },
+        "55.0": {
+          "segment": "B",
+          "family": "swept_cw",
+          "level_db_hz": 55.0,
+          "role": "decides",
+          "agc_gain_truth": 0.99140733611601,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.0008663914229978,
+            "truth_clean": 1.0202109088181357,
+            "truth": 1.0114997507272983,
+            "B_clean": 1.0193376849924622,
+            "B": 1.0105951092516208
+          },
+          "var_dphi_A": 0.004955114438489318,
+          "cov2_A": 4.6994556120948185e-05,
+          "excess_A": 0.005002108994610266,
+          "var_dphi_truth": 0.005895169464056761,
+          "cov2_truth": -0.0008143343701936716,
+          "excess_truth": 0.00508083509386309,
+          "var_dphi_B": 0.005880214658747022,
+          "cov2_B": -0.00116967135579509,
+          "excess_B": 0.004710543302951932,
+          "var_ratio_truth": 1.1897140898029475,
+          "cancel_truth": {
+            "cancel": 0.0008613289263146198,
+            "extra_var": 0.0009400550255674435,
+            "share": 0.9162537329074939,
+            "holds": true
+          },
+          "slope_truth": 1.0017734273739762,
+          "ratio_truth": 1.0157385813339235,
+          "ratio_truth_se": 0.010951136743058205,
+          "var_ratio_B": 1.1866960353270353,
+          "cancel_B": {
+            "cancel": 0.0012166659119160381,
+            "extra_var": 0.0009251002202577043,
+            "share": 1.3151720054472722,
+            "holds": true
+          },
+          "slope_B": 0.9995052420445224,
+          "ratio_B": 0.9417114477168543,
+          "ratio_B_se": 0.012120895806883497,
+          "b_over_truth": 0.9271198958300346,
+          "b_over_truth_se": 0.013964077250495931,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0157385813339235,
+              "ratio_truth_se": 0.010951136743058205
+            }
+          ],
+          "wall_s": 420.4060776233673,
+          "cpu_s": 421.659553878,
+          "verdict": "pass"
+        },
+        "60.0": {
+          "segment": "B",
+          "family": "swept_cw",
+          "level_db_hz": 60.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9735601562104843,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.002498017084731,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.9949290930730705,
+            "B_clean": 1.0193376849924622,
+            "B": 0.9938576312549882
+          },
+          "var_dphi_A": 0.011296725535155306,
+          "cov2_A": 0.00024236053894698402,
+          "excess_A": 0.01153908607410229,
+          "var_dphi_truth": 0.012686630038656277,
+          "cov2_truth": -0.0012199703361294948,
+          "excess_truth": 0.011466659702526782,
+          "var_dphi_B": 0.012719303463315365,
+          "cov2_B": -0.0016387692134055964,
+          "excess_B": 0.011080534249909768,
+          "var_ratio_truth": 1.123036051391671,
+          "cancel_truth": {
+            "cancel": 0.001462330875076479,
+            "extra_var": 0.001389904503500971,
+            "share": 1.0521088833031884,
+            "holds": true
+          },
+          "slope_truth": 0.9982718102290533,
+          "ratio_truth": 0.9937233875273659,
+          "ratio_truth_se": 0.007928422380951193,
+          "var_ratio_B": 1.1259283430170104,
+          "cancel_B": {
+            "cancel": 0.0018811297523525805,
+            "extra_var": 0.0014225779281600587,
+            "share": 1.3223386326439113,
+            "holds": true
+          },
+          "slope_B": 0.9989850370966219,
+          "ratio_B": 0.9602609928335943,
+          "ratio_B_se": 0.007547212539421496,
+          "b_over_truth": 0.9663262482157792,
+          "b_over_truth_se": 0.01072838631381492,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9937233875273659,
+              "ratio_truth_se": 0.007928422380951193
+            }
+          ],
+          "wall_s": 415.32071232795715,
+          "cpu_s": 416.99960301500005,
+          "verdict": "pass"
+        },
+        "65.0": {
+          "segment": "B",
+          "family": "swept_cw",
+          "level_db_hz": 65.0,
+          "role": "decides",
+          "agc_gain_truth": 0.9228871001088437,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.0007890587612334,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.9412057095751013,
+            "B_clean": 1.0193376849924622,
+            "B": 0.9401587489332031
+          },
+          "var_dphi_A": 0.025166439853228292,
+          "cov2_A": -0.0006792722067471442,
+          "excess_A": 0.024487167646481147,
+          "var_dphi_truth": 0.027574707018898914,
+          "cov2_truth": -0.0024860538496590703,
+          "excess_truth": 0.025088653169239843,
+          "var_dphi_B": 0.027492561312707352,
+          "cov2_B": -0.0031026501465067527,
+          "excess_B": 0.0243899111662006,
+          "var_ratio_truth": 1.0956935974939537,
+          "cancel_truth": {
+            "cancel": 0.001806781642911926,
+            "extra_var": 0.0024082671656706217,
+            "share": 0.7502413638599761,
+            "holds": true
+          },
+          "slope_truth": 1.008668970155355,
+          "ratio_truth": 1.0245632950058694,
+          "ratio_truth_se": 0.0041641765872014475,
+          "var_ratio_B": 1.0924295002807347,
+          "cancel_B": {
+            "cancel": 0.0024233779397596087,
+            "extra_var": 0.0023261214594790594,
+            "share": 1.0418105769516997,
+            "holds": true
+          },
+          "slope_B": 1.0071291709483883,
+          "ratio_B": 0.9960282674711657,
+          "ratio_B_se": 0.0038761650302243217,
+          "b_over_truth": 0.972149082761607,
+          "b_over_truth_se": 0.00498719940329817,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0245632950058694,
+              "ratio_truth_se": 0.0041641765872014475
+            }
+          ],
+          "wall_s": 415.3488838672638,
+          "cpu_s": 417.80126778600015,
+          "verdict": "pass"
+        },
+        "70.0": {
+          "segment": "B",
+          "family": "swept_cw",
+          "level_db_hz": 70.0,
+          "role": "decides",
+          "agc_gain_truth": 0.8030811596268663,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.0066999330629172,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.8213306632867632,
+            "B_clean": 1.0193376849924622,
+            "B": 0.8204761024453255
+          },
+          "var_dphi_A": 0.16082855739104468,
+          "cov2_A": -0.00013413080548107113,
+          "excess_A": 0.1606944265855636,
+          "var_dphi_truth": 0.16803137710868388,
+          "cov2_truth": -0.0020297933609622672,
+          "excess_truth": 0.16600158374772161,
+          "var_dphi_B": 0.16819669956273725,
+          "cov2_B": -0.0023176835397003778,
+          "excess_B": 0.16587901602303687,
+          "var_ratio_truth": 1.044785701211794,
+          "cancel_truth": {
+            "cancel": 0.0018956625554811962,
+            "extra_var": 0.007202819717639197,
+            "share": 0.2631833961967495,
+            "holds": false
+          },
+          "slope_truth": 1.0156483511527656,
+          "ratio_truth": 1.0330263922335363,
+          "ratio_truth_se": 0.0018063768861043721,
+          "var_ratio_B": 1.0458136433679337,
+          "cancel_B": {
+            "cancel": 0.0021835527342193065,
+            "extra_var": 0.007368142171692571,
+            "share": 0.2963505159561426,
+            "holds": false
+          },
+          "slope_B": 1.0162227896707896,
+          "ratio_B": 1.0322636543633494,
+          "ratio_B_se": 0.0010936949253656113,
+          "b_over_truth": 0.9992616472571068,
+          "b_over_truth_se": 0.001851620698482451,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0330263922335363,
+              "ratio_truth_se": 0.0018063768861043721
+            }
+          ],
+          "wall_s": 403.4500005245209,
+          "cpu_s": 405.82111827800054,
+          "verdict": "pass"
+        }
+      },
+      "chirp": {
+        "50.0": {
+          "segment": "B",
+          "family": "chirp",
+          "level_db_hz": 50.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.997258646881431,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001021533082728,
+            "A": 1.000108400029389,
+            "truth_clean": 1.0195204746815256,
+            "truth": 1.0168718279747664,
+            "B_clean": 1.0188428682666526,
+            "B": 1.0161411653536325
+          },
+          "var_dphi_A": 0.00014894832824448277,
+          "cov2_A": -2.108198039895194e-05,
+          "excess_A": 0.00012786634784553083,
+          "var_dphi_truth": 0.0007067978027169774,
+          "cov2_truth": -0.0005844412355820712,
+          "excess_truth": 0.0001223565671349062,
+          "var_dphi_B": 0.0007137144801028202,
+          "cov2_B": -0.000732503114102375,
+          "excess_B": -1.8788633999554838e-05,
+          "var_ratio_truth": 4.745255022646809,
+          "cancel_truth": {
+            "cancel": 0.0005633592551831192,
+            "extra_var": 0.0005578494744724946,
+            "share": 1.0098768233416993,
+            "holds": true
+          },
+          "slope_truth": 0.9938957131066632,
+          "ratio_truth": 0.9569098452918924,
+          "ratio_truth_se": 0.1825191673164939,
+          "var_ratio_B": 4.791691780060359,
+          "cancel_B": {
+            "cancel": 0.0007114211337034231,
+            "extra_var": 0.0005647661518583374,
+            "share": 1.259673816078609,
+            "holds": true
+          },
+          "slope_B": 1.001968772335169,
+          "ratio_B": -0.1469396312331723,
+          "ratio_B_se": 0.21193597427904018,
+          "b_over_truth": -0.15355640027755213,
+          "b_over_truth_se": 0.26994002241235976,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.8541708580957443,
+              "ratio_truth_se": 0.276855176750968
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 0.8062457725658738,
+              "ratio_truth_se": 0.22329654605646068
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 0.9569098452918924,
+              "ratio_truth_se": 0.1825191673164939
+            }
+          ],
+          "wall_s": 1243.6665904521942,
+          "cpu_s": 1250.174619364,
+          "verdict": "unresolved"
+        },
+        "55.0": {
+          "segment": "B",
+          "family": "chirp",
+          "level_db_hz": 55.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.99140733611601,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001021533082728,
+            "A": 1.0000888308668348,
+            "truth_clean": 1.0195204746815256,
+            "truth": 1.0107959046819173,
+            "B_clean": 1.0188428682666526,
+            "B": 1.0101352860932866
+          },
+          "var_dphi_A": 0.0004395589632637616,
+          "cov2_A": -2.469193755893085e-05,
+          "excess_A": 0.00041486702570483076,
+          "var_dphi_truth": 0.001356004989211901,
+          "cov2_truth": -0.0009234951307810789,
+          "excess_truth": 0.00043250985843082217,
+          "var_dphi_B": 0.0013657717142351563,
+          "cov2_B": -0.0012359756822676678,
+          "excess_B": 0.0001297960319674885,
+          "var_ratio_truth": 3.084921711397834,
+          "cancel_truth": {
+            "cancel": 0.000898803193222148,
+            "extra_var": 0.0009164460259481395,
+            "share": 0.9807486396072933,
+            "holds": true
+          },
+          "slope_truth": 0.9956931892611155,
+          "ratio_truth": 1.0425264762751811,
+          "ratio_truth_se": 0.07292929184324325,
+          "var_ratio_B": 3.1071410854511723,
+          "cancel_B": {
+            "cancel": 0.001211283744708737,
+            "extra_var": 0.0009262127509713947,
+            "share": 1.3077813314903786,
+            "holds": true
+          },
+          "slope_B": 0.9966391167697363,
+          "ratio_B": 0.3128617699779198,
+          "ratio_B_se": 0.09696962188524562,
+          "b_over_truth": 0.30009959180675816,
+          "b_over_truth_se": 0.09915109385688127,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 0.9730069389620484,
+              "ratio_truth_se": 0.10288897238729282
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 1.01610887628764,
+              "ratio_truth_se": 0.08641061065392593
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 1.0425264762751811,
+              "ratio_truth_se": 0.07292929184324325
+            }
+          ],
+          "wall_s": 1249.2696940898895,
+          "cpu_s": 1255.657589981,
+          "verdict": "unresolved"
+        },
+        "60.0": {
+          "segment": "B",
+          "family": "chirp",
+          "level_db_hz": 60.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.9735601562104843,
+          "n_windows": 60000,
+          "length_s": 60.0,
+          "gains": {
+            "A_clean": 1.0001021533082728,
+            "A": 1.000077334672178,
+            "truth_clean": 1.0195204746815256,
+            "truth": 0.9923463927093837,
+            "B_clean": 1.0188428682666526,
+            "B": 0.9915631287750831
+          },
+          "var_dphi_A": 0.0014794038070690795,
+          "cov2_A": 8.900310523973579e-06,
+          "excess_A": 0.001488304117593053,
+          "var_dphi_truth": 0.0029262762387087518,
+          "cov2_truth": -0.0014329870444992276,
+          "excess_truth": 0.0014932891942095242,
+          "var_dphi_B": 0.002940829232510015,
+          "cov2_B": -0.0019260167779665159,
+          "excess_B": 0.0010148124545434991,
+          "var_ratio_truth": 1.9780104828215517,
+          "cancel_truth": {
+            "cancel": 0.0014418873550232011,
+            "extra_var": 0.0014468724316396722,
+            "share": 0.9965545845594544,
+            "holds": true
+          },
+          "slope_truth": 1.000878098525993,
+          "ratio_truth": 1.0033495013267404,
+          "ratio_truth_se": 0.02764993507837765,
+          "var_ratio_B": 1.9878475494369843,
+          "cancel_B": {
+            "cancel": 0.0019349170884904894,
+            "extra_var": 0.0014614254254409354,
+            "share": 1.3239930377608518,
+            "holds": true
+          },
+          "slope_B": 1.00577119819359,
+          "ratio_B": 0.6818582590396214,
+          "ratio_B_se": 0.04266894574850939,
+          "b_over_truth": 0.6795819982349047,
+          "b_over_truth_se": 0.047978187785562315,
+          "se_stop_reached": false,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.003951296093155,
+              "ratio_truth_se": 0.04442371839692153
+            },
+            {
+              "n_windows": 40000,
+              "ratio_truth": 1.003200698717631,
+              "ratio_truth_se": 0.029915976474702483
+            },
+            {
+              "n_windows": 60000,
+              "ratio_truth": 1.0033495013267404,
+              "ratio_truth_se": 0.02764993507837765
+            }
+          ],
+          "wall_s": 1232.0104863643646,
+          "cpu_s": 1238.34515367,
+          "verdict": "pass"
+        },
+        "65.0": {
+          "segment": "B",
+          "family": "chirp",
+          "level_db_hz": 65.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.9228871001088437,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.0007022708313,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.9410316572168776,
+            "B_clean": 1.0193376849924622,
+            "B": 0.9398813039931898
+          },
+          "var_dphi_A": 0.005092983443031827,
+          "cov2_A": 1.3270096214618455e-05,
+          "excess_A": 0.005106253539246446,
+          "var_dphi_truth": 0.007091504838672134,
+          "cov2_truth": -0.0018783204929695174,
+          "excess_truth": 0.005213184345702617,
+          "var_dphi_B": 0.00713945002611369,
+          "cov2_B": -0.0024516971510698793,
+          "excess_B": 0.00468775287504381,
+          "var_ratio_truth": 1.3924068118412334,
+          "cancel_truth": {
+            "cancel": 0.0018915905891841358,
+            "extra_var": 0.0019985213956403066,
+            "share": 0.9464950404386783,
+            "holds": true
+          },
+          "slope_truth": 1.0040926484719654,
+          "ratio_truth": 1.0209411470923457,
+          "ratio_truth_se": 0.013926639445711014,
+          "var_ratio_B": 1.4018207806824543,
+          "cancel_B": {
+            "cancel": 0.0024649672472844978,
+            "extra_var": 0.0020464665830818626,
+            "share": 1.2044991438718715,
+            "holds": true
+          },
+          "slope_B": 1.0093202005763333,
+          "ratio_B": 0.9180415423977564,
+          "ratio_B_se": 0.028212348105725964,
+          "b_over_truth": 0.899211031911439,
+          "b_over_truth_se": 0.027621676434907188,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.0209411470923457,
+              "ratio_truth_se": 0.013926639445711014
+            }
+          ],
+          "wall_s": 409.72275042533875,
+          "cpu_s": 412.316743373,
+          "verdict": "pass"
+        },
+        "70.0": {
+          "segment": "B",
+          "family": "chirp",
+          "level_db_hz": 70.0,
+          "role": "reported, not deciding",
+          "agc_gain_truth": 0.8030811596268663,
+          "n_windows": 20000,
+          "length_s": 20.0,
+          "gains": {
+            "A_clean": 1.0007307895313247,
+            "A": 1.0006069696851645,
+            "truth_clean": 1.0202109088181357,
+            "truth": 0.8164127284542821,
+            "B_clean": 1.0193376849924622,
+            "B": 0.8153975615156596
+          },
+          "var_dphi_A": 0.015170193007985631,
+          "cov2_A": 0.000291980368851412,
+          "excess_A": 0.015462173376837043,
+          "var_dphi_truth": 0.017828775709380098,
+          "cov2_truth": -0.0015267554746059388,
+          "excess_truth": 0.01630202023477416,
+          "var_dphi_B": 0.017874886461355686,
+          "cov2_B": -0.001989245893998023,
+          "excess_B": 0.015885640567357664,
+          "var_ratio_truth": 1.1752504203469911,
+          "cancel_truth": {
+            "cancel": 0.0018187358434573508,
+            "extra_var": 0.0026585827013944664,
+            "share": 0.6840997808732437,
+            "holds": true
+          },
+          "slope_truth": 1.0158765602849371,
+          "ratio_truth": 1.054316223047611,
+          "ratio_truth_se": 0.00814305431747432,
+          "var_ratio_B": 1.1782899829914026,
+          "cancel_B": {
+            "cancel": 0.002281226262849435,
+            "extra_var": 0.0027046934533700544,
+            "share": 0.8434324636705212,
+            "holds": true
+          },
+          "slope_B": 1.0181822063308645,
+          "ratio_B": 1.027387300620687,
+          "ratio_B_se": 0.007912857454880785,
+          "b_over_truth": 0.9744584007736472,
+          "b_over_truth_se": 0.009896742128506589,
+          "se_stop_reached": true,
+          "checkpoints": [
+            {
+              "n_windows": 20000,
+              "ratio_truth": 1.054316223047611,
+              "ratio_truth_se": 0.00814305431747432
+            }
+          ],
+          "wall_s": 310.5767102241516,
+          "cpu_s": 313.8913790229999,
+          "verdict": "pass"
+        }
+      }
+    }
+  },
+  "decisions": {
+    "rule": "J_max_TA(s, f) = front_end_jmax over the five levels (the largest pass with no fail at or below it; unresolved does not block; None if none passes); J_max_TA(f) = combine_segments over A and B (None if either is None, else the minimum). Noise and swept CW decide; the chirp is reported. No tau cap (stationary AGC; run 2's tau side check gave none).",
+    "families": {
+      "noise": {
+        "decides": true,
+        "label": "decides",
+        "j_max_ta_db_hz": {
+          "A": 70.0,
+          "B": 70.0
+        },
+        "combined_db_hz": 70.0
+      },
+      "swept_cw": {
+        "decides": true,
+        "label": "decides",
+        "j_max_ta_db_hz": {
+          "A": 70.0,
+          "B": 70.0
+        },
+        "combined_db_hz": 70.0
+      },
+      "chirp": {
+        "decides": false,
+        "label": "reported, not deciding",
+        "j_max_ta_db_hz": {
+          "A": 70.0,
+          "B": 70.0
+        },
+        "combined_db_hz": 70.0
+      }
+    }
+  },
+  "hypotheses": {
+    "label": "reported, not deciding",
+    "segment": "A",
+    "family": "noise",
+    "level_db_hz": 55.0,
+    "n_windows": 40000,
+    "H_B": {
+      "statement": "mode B's excess / the true front end's <= 0.92: the yardstick reads low at weak jamming",
+      "b_over_truth": 0.9011737697090776,
+      "b_over_truth_se": 0.024338017625494264,
+      "max": 0.92,
+      "holds": true
+    },
+    "H_A": {
+      "statement": "|R_TA - 1| < 0.1",
+      "R_TA": 0.9916807704633406,
+      "R_TA_se": 0.017373009773777957,
+      "tol": 0.1,
+      "holds": true
+    },
+    "mode_b_over_a": {
+      "ratio": 0.8936766982664511,
+      "se": 0.01537025870402796
+    }
+  },
+  "reported_only": {
+    "label": "reported, not deciding",
+    "items": [
+      "per cell: mode B's pair (ratio_B, ratio_B_se, b_over_truth, b_over_truth_se, var_dphi_B, cov2_B, excess_B, var_ratio_B, cancel_B, slope_B) and the variance and cancellation fields of the truth pair",
+      "the chirp: its cells (role) and J_max_TA(chirp) (decisions.families.chirp)",
+      "hypotheses: H-A and H-B",
+      "e2_run2: everything but analog_sd (n0_per_hz, the pre-registered J_max, the tau side check and tau cap)",
+      "segments.*.floor beyond n0_per_hz and analog_sd (which set the levels and mode B's reconstruction)"
+    ]
+  },
+  "model_limits": {
+    "addendum": [
+      "Gaussian analog noise",
+      "a stationary AGC",
+      "one ghost",
+      "no real front-end filter beyond the flat +-10 MHz band"
+    ],
+    "noted_by_the_implementer": [
+      "segments A and B differ only in the analog SD (and so in N0 and every level's power): the white noise, the ghost, the jammer waveforms and the dither are the same draws (s28's seeds), so the two segments are not independent replications",
+      "N0 is the synthetic recording's (estimate_n0 on a flat band), not run 2's measured N0 (reported beside it); every level is set against its own N0"
+    ]
+  },
+  "run_time": {
+    "wall_s": 4706.9689881801605,
+    "cell_cpu_s": 22216.603183439,
+    "workers": 5
+  }
+}

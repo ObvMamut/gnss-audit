@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "study": "s25_e1_coupling",
+    "generated": "2026-10-09T23:06:13+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "measured": {
+    "beat_2hz": {
+      "interference_over_A2": 0.003920041611929732,
+      "ratio_to_design": 0.39293496223737123,
+      "amplitude_ratio": 0.9958877392650386
+    },
+    "beat_5hz": {
+      "interference_over_A2": 0.00337507640634049,
+      "ratio_to_design": 0.33830904147489327,
+      "amplitude_ratio": 0.9956197387849532
+    }
+  },
+  "alignment_sensitivity": {
+    "0.5MHz": {
+      "max_over_min": 2.0518400280828692
+    },
+    "0.86MHz": {
+      "max_over_min": 1.5326572569815495
+    },
+    "1.023MHz": {
+      "max_over_min": 169.98725753009415
+    },
+    "2.046MHz": {
+      "max_over_min": 217.95648344817747
+    }
+  },
+  "alignment_average": {
+    "beat_2hz": {
+      "phase0": 5.629957054795441e-06,
+      "mean": 1.7980270560349383e-06,
+      "mean_over_phase0": 0.31936781018665655
+    },
+    "beat_5hz": {
+      "phase0": 7.832740033464815e-06,
+      "mean": 2.184484479656963e-06,
+      "mean_over_phase0": 0.2788914824600218
+    }
+  }
+}

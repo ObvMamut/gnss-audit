@@ -1,0 +1,24 @@
+# GNSS-SDR v0.0.22 with the gnssaudit patches (docs/9 section 1):
+#   0001 (D-08) the tracking dump writes the accumulated carrier phase as float64, and save_matfile() reads it back;
+#   0002 (D-27) narrow tracking dumps every loop update, not only data-symbol boundaries;
+#   0003 (D-40) the GPS L5 I5/Q5 codes read XB on its 8191-chip period, not wrapped at 10230 (IS-GPS-705J 3.3.2.2).
+# Image p1 = 0001 + 0002; image p2 = 0001 + 0002 + 0003 (containers/digests.md).
+# Rebuilt on top of the pinned stock image, so both builds link exactly the same libraries. The CMake options are the
+# stock image's (from `docker history`), without ENABLE_INSTALL_TESTS. This file and the patches are GPL-3.0, like
+# GNSS-SDR (docs/7 section 7). MAKE_JOBS sets make's parallelism (default: every CPU, as before).
+FROM carlesfernandez/docker-gnsssdr:v0.0.22@sha256:befe06ed81163068e9eaf918024e18cedf1fc374925431320d57055650b48b79
+ARG GNSS_SDR_COMMIT=3fcb502aeb618968cd24492010fb8186f122efda
+ARG MAKE_JOBS=
+COPY patches/0001-acc-phase-float64.patch patches/0002-log-every-integration.patch patches/0003-l5-xb-period.patch \
+     /tmp/patches/
+RUN git clone --depth 1 --branch v0.0.22 https://github.com/gnss-sdr/gnss-sdr.git /home/gnss-sdr \
+ && cd /home/gnss-sdr && test "$(git rev-parse HEAD)" = "${GNSS_SDR_COMMIT}" \
+ && git apply /tmp/patches/0001-acc-phase-float64.patch /tmp/patches/0002-log-every-integration.patch \
+              /tmp/patches/0003-l5-xb-period.patch \
+ && mkdir build && cd build \
+ && cmake -DENABLE_OSMOSDR=ON -DENABLE_FMCOMMS2=ON -DENABLE_PLUTOSDR=ON -DENABLE_RAW_UDP=ON -DENABLE_ZMQ=ON \
+          -DENABLE_ION=ON -DENABLE_PACKAGING=ON .. \
+ && make -j"${MAKE_JOBS:-$(nproc)}" && make install \
+ && cd / && rm -rf /home/gnss-sdr /tmp/patches
+LABEL org.gnssaudit.patches="0001-acc-phase-float64 0002-log-every-integration 0003-l5-xb-period" \
+      org.gnssaudit.gnss-sdr-commit="3fcb502aeb618968cd24492010fb8186f122efda"

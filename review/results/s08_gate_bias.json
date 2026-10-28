@@ -1,0 +1,519 @@
+{
+  "meta": {
+    "study": "s08_gate_bias",
+    "generated": "2026-10-09T21:04:38+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "rows": [
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.9970198809095332,
+      "frac_windows_under_0.8": 0.29163879598662207,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.9970198809095332
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 4.91905221403598,
+      "frac_windows_under_0.8": 0.009364548494983277,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 4.91905221403598
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 2.9321391661172242,
+      "frac_windows_under_0.8": 0.004013377926421404,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 2.9321391661172242
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 1.5992053580106167,
+      "frac_windows_under_0.8": 0.025418060200668897,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.5992053580106167
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 1.1756057727316525,
+      "frac_windows_under_0.8": 0.1290969899665552,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.1756057727316525
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 1.0590435100226718,
+      "frac_windows_under_0.8": 0.22073578595317725,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.0590435100226718
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 1.0001161579890048,
+      "frac_windows_under_0.8": 0.2782608695652174,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.0001161579890048
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.507581787927705,
+      "frac_windows_under_0.8": 0.9137123745819398,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.507581787927705
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 2.5134200423831268,
+      "frac_windows_under_0.8": 0.09632107023411371,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 2.5134200423831268
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 1.451259722383904,
+      "frac_windows_under_0.8": 0.09765886287625418,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.451259722383904
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 0.8008420568776063,
+      "frac_windows_under_0.8": 0.5010033444816053,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.8008420568776063
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 0.5912869005661702,
+      "frac_windows_under_0.8": 0.8401337792642141,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.5912869005661702
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 0.5142626145332277,
+      "frac_windows_under_0.8": 0.9010033444816054,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.5142626145332277
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 0.5035565123686697,
+      "frac_windows_under_0.8": 0.9170568561872909,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.5035565123686697
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.24900114058501785,
+      "frac_windows_under_0.8": 1.0,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.24900114058501785
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 1.2511413847712678,
+      "frac_windows_under_0.8": 0.38996655518394646,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.2511413847712678
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 0.735553245579551,
+      "frac_windows_under_0.8": 0.6180602006688963,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.735553245579551
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 0.40225794063859127,
+      "frac_windows_under_0.8": 0.979933110367893,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.40225794063859127
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 0.29256351725323354,
+      "frac_windows_under_0.8": 0.9993311036789297,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.29256351725323354
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 0.2615359299693272,
+      "frac_windows_under_0.8": 0.9993311036789297,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.2615359299693272
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 0.2512011412624806,
+      "frac_windows_under_0.8": 0.9993311036789297,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.2512011412624806
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.8443741192283107,
+      "frac_windows_under_0.8": 0.2394648829431438,
+      "gate_fire_rate": 0.7719063545150502,
+      "noise_term_ratio": 0.04675094112383891
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 0.9203111658668129,
+      "frac_windows_under_0.8": 0.328428093645485,
+      "gate_fire_rate": 0.651505016722408,
+      "noise_term_ratio": 0.2339232134703512
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 0.5151030309015255,
+      "frac_windows_under_0.8": 0.6675585284280936,
+      "gate_fire_rate": 0.3331103678929766,
+      "noise_term_ratio": 0.1390542023659395
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 0.23440090187823912,
+      "frac_windows_under_0.8": 0.8715719063545151,
+      "gate_fire_rate": 0.12976588628762542,
+      "noise_term_ratio": 0.07590697492631218
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 0.19131443251352417,
+      "frac_windows_under_0.8": 0.894314381270903,
+      "gate_fire_rate": 0.1076923076923077,
+      "noise_term_ratio": 0.0564118530862781
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 0.594140950742434,
+      "frac_windows_under_0.8": 0.5103678929765886,
+      "gate_fire_rate": 0.49698996655518396,
+      "noise_term_ratio": 0.0497238557864212
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 0.828157998433887,
+      "frac_windows_under_0.8": 0.25953177257525084,
+      "gate_fire_rate": 0.7511705685618729,
+      "noise_term_ratio": 0.04789139011116619
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.9964924326070425,
+      "frac_windows_under_0.8": 0.06622073578595318,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.9964924326070425
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 1.3868448617262328,
+      "frac_windows_under_0.8": 0.004013377926421404,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.3868448617262328
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 1.5376468612864749,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.5376468612864749
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 1.4688218720344144,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.4688218720344144
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 1.3463218253681948,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.3463218253681948
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 1.1854292317103554,
+      "frac_windows_under_0.8": 0.002006688963210702,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.1854292317103554
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 1.0372432480278655,
+      "frac_windows_under_0.8": 0.030100334448160536,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 1.0372432480278655
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.5118581375138117,
+      "frac_windows_under_0.8": 0.9879598662207358,
+      "gate_fire_rate": 0.012040133779264214,
+      "noise_term_ratio": 0.4998322312570801
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 0.7039349845311323,
+      "frac_windows_under_0.8": 0.7605351170568562,
+      "gate_fire_rate": 0.009364548494983277,
+      "noise_term_ratio": 0.6944821807110277
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 0.7764286172771323,
+      "frac_windows_under_0.8": 0.622742474916388,
+      "gate_fire_rate": 0.009364548494983277,
+      "noise_term_ratio": 0.7673677123082809
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 0.7339318249378493,
+      "frac_windows_under_0.8": 0.7311036789297659,
+      "gate_fire_rate": 0.004013377926421404,
+      "noise_term_ratio": 0.7299167391371539
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 0.6737430543020551,
+      "frac_windows_under_0.8": 0.894314381270903,
+      "gate_fire_rate": 0.0013377926421404682,
+      "noise_term_ratio": 0.6723802299653208
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 0.5905212049979228,
+      "frac_windows_under_0.8": 0.9899665551839465,
+      "gate_fire_rate": 0.0006688963210702341,
+      "noise_term_ratio": 0.589883932840758
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 0.5126950219657039,
+      "frac_windows_under_0.8": 1.0,
+      "gate_fire_rate": 0.0,
+      "noise_term_ratio": 0.5126950219657039
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.9505649301647577,
+      "frac_windows_under_0.8": 0.0822742474916388,
+      "gate_fire_rate": 0.9311036789297659,
+      "noise_term_ratio": 0.2497221154777311
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 1.0498823727377309,
+      "frac_windows_under_0.8": 0.08093645484949832,
+      "gate_fire_rate": 0.919732441471572,
+      "noise_term_ratio": 0.3484478925342557
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 1.0884210041900173,
+      "frac_windows_under_0.8": 0.06956521739130435,
+      "gate_fire_rate": 0.9304347826086956,
+      "noise_term_ratio": 0.3839920339057332
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 1.0520968024899617,
+      "frac_windows_under_0.8": 0.08896321070234113,
+      "gate_fire_rate": 0.9110367892976589,
+      "noise_term_ratio": 0.36732299211675346
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 0.9640263246748485,
+      "frac_windows_under_0.8": 0.15384615384615385,
+      "gate_fire_rate": 0.8488294314381271,
+      "noise_term_ratio": 0.3362034267501693
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 0.8470507041062294,
+      "frac_windows_under_0.8": 0.24013377926421406,
+      "gate_fire_rate": 0.7645484949832776,
+      "noise_term_ratio": 0.29514732423070067
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 0.7253442731809179,
+      "frac_windows_under_0.8": 0.35719063545150503,
+      "gate_fire_rate": 0.6575250836120401,
+      "noise_term_ratio": 0.25826833875006433
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": "none",
+      "mean_ratio": 0.9890770370669424,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 1.0,
+      "noise_term_ratio": 0.04770314722941959
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 0.5,
+      "mean_ratio": 1.0087679670707668,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 1.0,
+      "noise_term_ratio": 0.06585235937503098
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 2.0,
+      "mean_ratio": 1.0171602883895376,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 1.0,
+      "noise_term_ratio": 0.07306358361573899
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 5.0,
+      "mean_ratio": 1.008193234265172,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 1.0,
+      "noise_term_ratio": 0.07012356266394153
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 10.0,
+      "mean_ratio": 0.9979935644117548,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 1.0,
+      "noise_term_ratio": 0.06394999468445889
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 20.0,
+      "mean_ratio": 0.983929106909929,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 1.0,
+      "noise_term_ratio": 0.05638739178107306
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 60.0,
+      "mean_ratio": 0.9732839054665755,
+      "frac_windows_under_0.8": 0.0,
+      "gate_fire_rate": 1.0,
+      "noise_term_ratio": 0.04912507707965294
+    }
+  ]
+}

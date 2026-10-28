@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "study": "s09_oracle_and_slope",
+    "generated": "2026-10-09T21:04:51+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "W_s": 2.0,
+  "rows": [
+    {
+      "period_s": 1.0,
+      "marginal": {
+        "bias_mean_log_ratio": -0.05111241399164454,
+        "deconvolved_spread": 0.2347935488969321,
+        "slope_ols_docs5": 0.012240441159603852,
+        "slope_errors_in_variables": 0.060814325611148495
+      },
+      "conditional": {
+        "bias_mean_log_ratio": -0.04923627495607959,
+        "deconvolved_spread": 0.2386071759882301,
+        "slope_ols_docs5": 0.005017335004667298,
+        "slope_errors_in_variables": 0.024927683626390255
+      }
+    },
+    {
+      "period_s": 4.0,
+      "marginal": {
+        "bias_mean_log_ratio": -0.1433912678958422,
+        "deconvolved_spread": 0.507281257316173,
+        "slope_ols_docs5": -0.061592307693406304,
+        "slope_errors_in_variables": -0.08705443108029082
+      },
+      "conditional": {
+        "bias_mean_log_ratio": -0.04375094364126341,
+        "deconvolved_spread": 0.21141736713364181,
+        "slope_ols_docs5": 0.7242898891804856,
+        "slope_errors_in_variables": 1.0237097228711904
+      }
+    },
+    {
+      "period_s": 16.0,
+      "marginal": {
+        "bias_mean_log_ratio": -0.34472010300574996,
+        "deconvolved_spread": 0.908890048377356,
+        "slope_ols_docs5": -0.01303518480460409,
+        "slope_errors_in_variables": -0.014339563298670123
+      },
+      "conditional": {
+        "bias_mean_log_ratio": -0.038630671357725736,
+        "deconvolved_spread": 0.20362820269606463,
+        "slope_ols_docs5": 0.8991265719775181,
+        "slope_errors_in_variables": 0.9890985502433384
+      }
+    },
+    {
+      "period_s": 64.0,
+      "marginal": {
+        "bias_mean_log_ratio": -0.37635483134269887,
+        "deconvolved_spread": 0.9539411240211093,
+        "slope_ols_docs5": -0.014961017143266711,
+        "slope_errors_in_variables": -0.016318675597597403
+      },
+      "conditional": {
+        "bias_mean_log_ratio": -0.03839505587590583,
+        "deconvolved_spread": 0.19301864405831956,
+        "slope_ols_docs5": 0.940000355584313,
+        "slope_errors_in_variables": 1.0253020043700884
+      }
+    }
+  ]
+}

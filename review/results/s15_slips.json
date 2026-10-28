@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "study": "s15_slips",
+    "generated": "2026-10-09T21:25:12+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "rows": [
+    {
+      "bn_cfg_hz": 5.0,
+      "cn0_dbhz": 24.0,
+      "runs": 32,
+      "events": 32,
+      "exposure_s": 403.5250000000001,
+      "mtbs_sim_s": 12.610156250000003,
+      "mtbs_sim_95ci": [
+        8.932593123444406,
+        18.435920902927823
+      ],
+      "mtbs_tikhonov_s": 3564.919774733813,
+      "rho_costas": 4.9080586325879585
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "cn0_dbhz": 26.0,
+      "runs": 32,
+      "events": 0,
+      "exposure_s": 9440.0,
+      "mtbs_sim_s": "inf",
+      "mtbs_sim_95ci": [
+        2559.042689636351,
+        "inf"
+      ],
+      "mtbs_tikhonov_s": 170429711.07274693,
+      "rho_costas": 10.311707652650037
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "cn0_dbhz": 28.0,
+      "runs": 32,
+      "events": 0,
+      "exposure_s": 9440.0,
+      "mtbs_sim_s": "inf",
+      "mtbs_sim_95ci": [
+        2559.042689636351,
+        "inf"
+      ],
+      "mtbs_tikhonov_s": 1.3652187772092886e+17,
+      "rho_costas": 20.56896932088493
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "cn0_dbhz": 30.0,
+      "runs": 32,
+      "events": 0,
+      "exposure_s": 9440.0,
+      "mtbs_sim_s": "inf",
+      "mtbs_sim_95ci": [
+        2559.042689636351,
+        "inf"
+      ],
+      "mtbs_tikhonov_s": 1.2672131931237148e+33,
+      "rho_costas": 38.955384617497266
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "cn0_dbhz": 32.0,
+      "runs": 32,
+      "events": 0,
+      "exposure_s": 9440.0,
+      "mtbs_sim_s": "inf",
+      "mtbs_sim_95ci": [
+        2559.042689636351,
+        "inf"
+      ],
+      "mtbs_tikhonov_s": 2.5962516916305973e+60,
+      "rho_costas": 70.40037044254018
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "cn0_dbhz": 28.0,
+      "runs": 32,
+      "events": 32,
+      "exposure_s": 27.362000000000002,
+      "mtbs_sim_s": 0.8550625000000001,
+      "mtbs_sim_95ci": [
+        0.6056963336687585,
+        1.250092727206272
+      ],
+      "mtbs_tikhonov_s": 9.75172956859381,
+      "rho_costas": 2.908586507586581
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "cn0_dbhz": 30.0,
+      "runs": 32,
+      "events": 32,
+      "exposure_s": 1386.9759999999999,
+      "mtbs_sim_s": 43.342999999999996,
+      "mtbs_sim_95ci": [
+        30.702663478055694,
+        63.3670276445306
+      ],
+      "mtbs_tikhonov_s": 1663.225087524571,
+      "rho_costas": 5.508545631465004
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "cn0_dbhz": 32.0,
+      "runs": 32,
+      "events": 5,
+      "exposure_s": 9067.43,
+      "mtbs_sim_s": 1813.486,
+      "mtbs_sim_95ci": [
+        777.0973553339554,
+        5585.159232125501
+      ],
+      "mtbs_tikhonov_s": 11821338.577485835,
+      "rho_costas": 9.955071856243109
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "cn0_dbhz": 34.0,
+      "runs": 32,
+      "events": 0,
+      "exposure_s": 9440.0,
+      "mtbs_sim_s": "inf",
+      "mtbs_sim_95ci": [
+        2559.042689636351,
+        "inf"
+      ],
+      "mtbs_tikhonov_s": 28560168743618.07,
+      "rho_costas": 17.30970308449729
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "cn0_dbhz": 36.0,
+      "runs": 32,
+      "events": 0,
+      "exposure_s": 9440.0,
+      "mtbs_sim_s": "inf",
+      "mtbs_sim_95ci": [
+        2559.042689636351,
+        "inf"
+      ],
+      "mtbs_tikhonov_s": 6.340043215651405e+23,
+      "rho_costas": 29.224448007225114
+    }
+  ]
+}

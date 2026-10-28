@@ -1,0 +1,22 @@
+# E1 arm a: is u-blox cpStdev, and are C/N0-based models, calibrated during real jamming? UGE 1.6.4, Route D
+# at the provisional position (D-30). docs/10 section 2.2, hypothesis H1a.
+id: E1a
+confirmatory: true
+dataset: uge-jammertest2024
+jam_interval: uge-1.6.4-jam
+clean_intervals: [uge-1.6.4-clean-pre, uge-1.6.4-clean-post]  # B1's C_i are fitted on both
+position_interval: uge-1.6.4-clean-pre
+route_d: {dt_s: 1.0, elev_mask_deg: 10.0, min_sats: 5}
+models:
+  B0: {a_m: 0.003, b_m: 0.003}
+  B1: {fit: clean}
+  B2: {e_sigma_m: 0.005, snr_max_dbhz: 52.0}
+  B4: {readings: [censored-at-bound, uncensored-only]}
+  B6: {window_s: 30.0, lag_s: 2.0, min_count: 15}  # 2 dt: sigma(t + dt) must not see the scored increment [t, t + dt]
+  # B7 needs Route C (docs/4 section 2); arm a has no reference station
+# 2024 catalogue group 6: ramped up and down, 2 dB steps, 10 s hold per level (43 up, 42 down = 850 s)
+power_ramp: {p0_dbm: -37.0, step_db: 2.0, levels: 43, hold_s: 10.0, class_width_db: 10.0}
+levels: [0.68, 0.95, 0.99]
+bootstrap: {n_boot: 1000, seed: 20261011}
+sensitivity: {shift_m: 1.0, max_abs_delta_c95: 0.005, extra_position_interval: uge-1.6.4-clean-post}
+g1: {min_jam_min: 10.0, min_epoch_fraction: 0.9, kp_max: 4.0}  # Route D truth (>= 5 satellites) in 90 % of jam epochs

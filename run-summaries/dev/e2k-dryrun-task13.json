@@ -1,0 +1,126 @@
+{
+ "ceiling": {
+  "chirp": null,
+  "noise": 60.0,
+  "swept_cw": null
+ },
+ "front": {
+  "A": {
+   "j_max_ta_db_hz": {
+    "chirp": 70.0,
+    "noise": 70.0,
+    "swept_cw": 70.0
+   },
+   "residual_pass": {
+    "chirp": {
+     "50.0": false,
+     "55.0": false,
+     "60.0": false,
+     "65.0": false,
+     "70.0": false
+    },
+    "noise": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": false,
+     "70.0": false
+    },
+    "swept_cw": {
+     "50.0": false,
+     "55.0": false,
+     "60.0": false,
+     "65.0": false,
+     "70.0": false
+    }
+   },
+   "truth_kept": {
+    "chirp": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": true,
+     "70.0": true
+    },
+    "noise": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": true,
+     "70.0": true
+    },
+    "swept_cw": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": true,
+     "70.0": true
+    }
+   },
+   "ceiling_db_hz": {
+    "chirp": null,
+    "noise": 60.0,
+    "swept_cw": null
+   }
+  },
+  "B": {
+   "j_max_ta_db_hz": {
+    "chirp": 70.0,
+    "noise": 70.0,
+    "swept_cw": 70.0
+   },
+   "residual_pass": {
+    "chirp": {
+     "50.0": false,
+     "55.0": false,
+     "60.0": false,
+     "65.0": false,
+     "70.0": false
+    },
+    "noise": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": true,
+     "70.0": false
+    },
+    "swept_cw": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": false,
+     "70.0": false
+    }
+   },
+   "truth_kept": {
+    "chirp": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": true,
+     "70.0": true
+    },
+    "noise": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": true,
+     "70.0": true
+    },
+    "swept_cw": {
+     "50.0": true,
+     "55.0": true,
+     "60.0": true,
+     "65.0": true,
+     "70.0": true
+    }
+   },
+   "ceiling_db_hz": {
+    "chirp": null,
+    "noise": 65.0,
+    "swept_cw": 60.0
+   }
+  }
+ },
+ "units": 254
+}

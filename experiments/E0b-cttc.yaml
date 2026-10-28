@@ -1,0 +1,33 @@
+# E0 (b-d), development run on GNSS-SDR's public CTTC recording (P2a task 10; docs/10 section 2.1), on the generic
+# `recording` variant since P2b task 10. No gate is decided here: G3 is decided on the FGI and SpoofRepo segments.
+# Real satellites plus a ghost at 45 dB-Hz on an unused PRN; three zero-gain twins (repeat, null), band-limited noise
+# at five J/N0 levels (linearity, V6) and 12 phase tones (G-hz) on the default 35 Hz loop. Twin differences use the
+# patched tracking dump (float64, every 1 ms, in recording time); the observables path is exercised on the zero-gain
+# pair and, with the onset placed on observable epochs, on the jammed pairs.
+id: E0b
+variant: recording
+recording: {interval: cttc-2013-full, item_type: ishort, fs_hz: 4000000.0}
+template: 1C
+frontend_bw_hz: 2000000.0
+seed: 7
+max_channels: 8
+# A false track on the +580 kHz line reads 35.1 to 35.4 dB-Hz in 14 of 48 stock surveys (P2b finding (b); R-8, P2c)
+min_cn0_dbhz: 36
+warmup_s: 30.0
+onset_s: 55.0
+pre_window_s: 20.0
+# The ghost, pinned: on this floor V7 depends on the ghost's PRN and Doppler (the +580 kHz line meets each code
+# differently; P2a read +0.32 dB on PRN 31 at 1500 Hz, +0.79 dB on PRN 30 at 1550 Hz). Re-pinned 23 Oct 2026 (P2b):
+# the recording starts 2013-04-04 06:23:07 UTC (GPS week 1734), when broadcast orbits put P2a's PRN 31 at +16 deg and
+# PRN 22 at -25 deg (BRDM00DLR_R_20130940000_01D_MN.rnx.gz, ftp://gssc.esa.int/gnss/data/daily/2013/094/, sha256
+# 06e952bdea9beed25aae1cb2745d719962abd64c3e3cc8963c819df3879692e3). The stock survey never held PRN 31's own signal
+# in lock but false-locked it on the line, so choose_ghost refused it in 12 of 49 surveys; PRN 22 was held in none.
+# 730 Hz stays at least 223 Hz off every surveyed Doppler's 1 kHz grid, so choose_ghost keeps it. V7 there: -0.074 dB
+ghost: {prn: 22, doppler_hz: 730.0, cn0_db_hz: 45.0}
+noise: {bw_hz: 2000000.0, levels_db_hz: [50.0, 55.0, 60.0, 65.0, 70.0]}
+tones: {n_tones: 12, f_min_hz: 0.05, f_max_hz: 50.0, a_rad: 0.05, onset_s: 40.0}
+loop_cells: [default]
+timeout_s: 1800
+# D-34: the carrier-lock rule never drops a twin's channel, and the pull-in uses the FLL so a start-up frequency false
+# lock is not kept (documented deviations from the v0.0.22 defaults; docs/6 section 9)
+receiver_overrides: {Tracking_1C.max_carrier_lock_fail: "1000000", Tracking_1C.enable_fll_pull_in: "true"}

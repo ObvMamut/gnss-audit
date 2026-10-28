@@ -1,0 +1,30 @@
+# Python and tool caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+
+# Data and results live outside git (D-15)
+/data/
+/results/
+
+# Per-machine Obsidian state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# Personal Claude Code permissions
+.claude/settings.local.json
+
+# Large raw formats (safety net)
+*.bin
+*.dat
+*.ls3w
+*.h5
+*.ubx
+*.parquet
+
+# Private correspondence: kept on this machine, never committed (D-47)
+/outreach/

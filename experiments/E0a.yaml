@@ -1,0 +1,13 @@
+# E0(a): B0 and B1 on the clean intervals of UGE 1.6.4, Route D (docs/10 section 2.1). Gate G-clean-cal.
+id: E0a
+confirmatory: false
+dataset: uge-jammertest2024
+intervals: [uge-1.6.4-clean-pre, uge-1.6.4-clean-post]
+position_interval: uge-1.6.4-clean-pre  # provisional coordinates (D-30)
+route_d: {dt_s: 1.0, elev_mask_deg: 10.0, min_sats: 5}
+models:
+  B0: {a_m: 0.003, b_m: 0.003}
+  B1: {fit: cross}  # fit C_i on one clean interval, score on the other
+levels: [0.68, 0.95, 0.99]
+bootstrap: {n_boot: 1000, seed: 20261011}
+gate: {name: G-clean-cal, model: B1, level: 0.95, lo: 0.92, hi: 0.98}

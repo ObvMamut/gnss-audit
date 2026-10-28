@@ -1,0 +1,163 @@
+# Interval registry (docs/7 section 4.1). One entry per interval.
+# Fields: interval_id, dataset_id, file, t_start, t_end (GPS time), sample_start, sample_end,
+#   state (clean | jammed | spoofed | mixed), class, band, power, receivers, static,
+#   coordinates_source, kp_max, reference_check, excluded (with reasons), notes.
+# Admission criteria: docs/7 section 4.2.
+
+# Times are GPS seconds since 1980-01-06 (GPST). UGE 1.6.4 file times are GPST; the attack_log and the 2024 plan
+# give CEST (UTC+2), so 16:25:00 CEST = 14:25:18 GPST (docs/7 section 2.1).
+
+intervals:
+  - interval_id: uge-1.6.4-clean-pre
+    dataset_id: uge-jammertest2024
+    file: "extracted/Jamming/stationary/Very High Power (≥10W)/Bands_L1_L2_L5/1.6.4/24DR400_240909_f9p_1-6-4.ubx"
+    sample_start: null
+    sample_end: null
+    band: L1, L2 (GPS L1 C/A, L2C; Galileo E1, E5b)
+    receivers: [ZED-F9P HPG 1.50]
+    static: true
+    coordinates_source: nav-pvt-provisional  # mean of clean-pre 3-D fixes; owner decision 2026-10-11, D-30
+    kp_max: 1.0  # GFZ definitive, bin 12 to 15 UTC
+    reference_check: none (no reference station; Route D only)
+    t_start: 1409926785.0  # 14:19:45 GPST, start of the log
+    t_end: 1409927118.0  # 14:25:18 GPST, jammer on (plan and attack_log, CEST)
+    state: clean
+    class: null
+    power: null
+    excluded: []
+    notes: About 5.5 min. The only clean data from this receiver before the scenario. Provisional coordinates come from here.
+
+  - interval_id: uge-1.6.4-jam
+    dataset_id: uge-jammertest2024
+    file: "extracted/Jamming/stationary/Very High Power (≥10W)/Bands_L1_L2_L5/1.6.4/24DR400_240909_f9p_1-6-4.ubx"
+    sample_start: null
+    sample_end: null
+    band: L1, L2 (GPS L1 C/A, L2C; Galileo E1, E5b)
+    receivers: [ZED-F9P HPG 1.50]
+    static: true
+    coordinates_source: nav-pvt-provisional  # mean of clean-pre 3-D fixes; owner decision 2026-10-11, D-30
+    kp_max: 1.0  # GFZ definitive, bin 12 to 15 UTC
+    reference_check: none (no reference station; Route D only)
+    t_start: 1409927118.0  # 14:25:18 GPST
+    t_end: 1409927968.0  # 14:39:28 GPST: 16:39:10 CEST in the 2024 plan (the attack_log says 16:39:00)
+    state: jammed
+    class: PRN, jammer F8.1, L1/G1/L2/L5, power ramped up and down between 0.2 uW (-37 dBm) and 50 W (47 dBm)
+    power: "2 dB steps held 10 s each (2024 catalogue group 6): k = floor((t - t_start) / 10 s), P = -37 dBm + 2 (42 - |k - 42|) dB; peak 14:32:28 GPST"
+    excluded: []
+    notes: 14.2 min by the plan. The AGC on both RF blocks falls below half its clean level only from 14:30:51 to 14:34:21 GPST.
+
+  - interval_id: uge-1.6.4-clean-post
+    dataset_id: uge-jammertest2024
+    file: "extracted/Jamming/stationary/Very High Power (≥10W)/Bands_L1_L2_L5/1.6.4/24DR400_240909_f9p_1-6-4.ubx"
+    sample_start: null
+    sample_end: null
+    band: L1, L2 (GPS L1 C/A, L2C; Galileo E1, E5b)
+    receivers: [ZED-F9P HPG 1.50]
+    static: true
+    coordinates_source: nav-pvt-provisional  # mean of clean-pre 3-D fixes; owner decision 2026-10-11, D-30
+    kp_max: 1.0  # GFZ definitive, bin 12 to 15 UTC
+    reference_check: none (no reference station; Route D only)
+    t_start: 1409927968.0  # 14:39:28 GPST, jammer off
+    t_end: 1409928111.0  # 14:41:51 GPST, end of the log
+    state: clean
+    class: null
+    power: null
+    excluded: []
+    notes: About 2.4 min, starting with reacquisition after the jammer stops. NAV-PVT here sits 2.3 m from the clean-pre mean (spread 1 m).
+
+  - interval_id: cttc-2013-full
+    dataset_id: cttc-2013-sample
+    file: 2013_04_04_GNSS_SIGNAL_at_CTTC_SPAIN.dat
+    t_start: null  # receiver time is not known from the file; sample ranges are the reference
+    t_end: null
+    sample_start: 0
+    sample_end: 400000000
+    state: clean
+    class: null
+    band: L1 (GPS L1 C/A)
+    power: null
+    receivers: [USRP1 DBSRX v2]
+    static: true
+    coordinates_source: capture log, approximate
+    kp_max: null
+    reference_check: none
+    excluded: []
+    notes: The whole 100 s recording; development use only (P2a E0b).
+
+
+  # FGI Jammertest 2023 (P2b task 6): the first 150 s of each file were streamed (the rest hashed and verified) and
+  # screened by the Admit experiment (docs/7 section 4.2). Sample indices are 30.69 MS/s complex samples from the file's
+  # start; GPS time is not known from the file. JT23_17.1.6 (spoofed from 15 s) is not admitted (docs/7 section 2.3).
+  # JT23_16.1.1 (C/N0 spread 5.2 dB before its spoofer arrives at 120 s) is admitted on 19 Oct 2026 as segment B, on
+  # the 3 dB bar with the pre-registered sky check (docs/7 section 4.2, D-37).
+  - interval_id: fgi-jt2023-JT23_4.1.5_L1_E1-clean
+    dataset_id: fgi-jt2023
+    file: JT23_4.1.5_L1_E1.iq
+    t_start: null
+    t_end: null
+    sample_start: 0
+    sample_end: 3682800000  # 120 s: the target length; nothing in the 150 s prefix marks an onset
+    state: clean
+    class: null
+    band: L1 (GPS L1 C/A, Galileo E1)
+    power: null
+    receivers: [LabSat 3 Wideband]
+    static: true
+    coordinates_source: none (the surveyed antenna position is asked of FGI, R13)
+    kp_max: null
+    reference_check: none
+    excluded: []
+    notes: >-
+      Segment A (P2b). Admit run 8a71901a584e (confirmatory, 47f2b99; stock survey, settled records in lock): no onset
+      sign in 150 s; 8 GPS satellites at 37.6 to 46.3 dB-Hz, C/N0 spread 8.7 dB, PVT horizontal SD 3.3 m (837 fixes);
+      floor line excess 2.07 dB.
+  - interval_id: fgi-jt2023-JT23_16.1.1_L1_E1-clean
+    dataset_id: fgi-jt2023
+    file: JT23_16.1.1_L1_E1.iq
+    t_start: null
+    t_end: null
+    sample_start: 0
+    sample_end: 3652110000  # 119 s: the window ends 1 s before the first onset sign (C/N0 step at 120.04 s)
+    state: clean
+    class: null
+    band: L1 (GPS L1 C/A, Galileo E1)
+    power: null
+    receivers: [LabSat 3 Wideband]
+    static: true
+    coordinates_source: none (the surveyed antenna position is asked of FGI, R13)
+    kp_max: null
+    reference_check: none
+    excluded: []
+    notes: >-
+      Segment B (P2b part 2, task 7; D-37). Admit run f3543977809e (confirmatory, 1f22c39; stock survey): first onset
+      sign at 120.04 s; 11 GPS satellites, C/N0 spread 5.2 dB, admitted on the lowered 3 dB bar with the sky check over
+      [30, 119] s (S1, S2, S3 pass: Doppler RMS 0.27 Hz after a 182.5 Hz common drift, Spearman rho 0.98, n 11; G01's
+      elevation from its unhealthy record, S1_healthy_only false) and both controls as expected (JT23_4.1.5 over
+      [30, 120] s in Admit 9ef5e8e97f53 passes S1 to S3; JT23_16.1.1 over [135, 150] s fails S2 at 82.3 Hz); PVT
+      horizontal SD 2.5 m (1013 fixes); floor line excess 2.23 dB.
+
+  # SpoofRepo Targeted SFMC (P2b part 2, task 8): the scenario spoofs L1 and E1 only. Sample indices are 26 MS/s complex
+  # samples from the file's start (the file stores Q before I).
+  - interval_id: fgi-spoofrepo-TGS_L5_E5a-clean
+    dataset_id: fgi-spoofrepo
+    file: TGS_L5_E5a.dat
+    t_start: null
+    t_end: null
+    sample_start: 0
+    sample_end: 3120000000  # 120 s: the target length
+    state: clean
+    class: null
+    band: L5 (GPS L5, Galileo E5a)
+    power: null
+    receivers: [NSL stereo dual-band front end]
+    static: true
+    coordinates_source: record (geodetic-grade receiver)
+    kp_max: null
+    reference_check: none
+    excluded: []
+    notes: >-
+      The L5 segment (D-38, outcome D3). Admit run 810a0579cddf (confirmatory, 47f2b99; stock survey) refused it only on
+      psd_change at 60 and 101 s: two brief L5 power dips. The same scenario's L1 file (Admit 5de01b2f9584, confirmatory,
+      9e661f1) shows no onset sign in either D1 window and no L1 power dip, so the dips are an L5-chain event and stay in
+      the window, noted. 3 GPS L5 satellites at 36.5 to 50.0 dB-Hz (PRN 9, 14, 30); no fix (L5 alone); floor line
+      excess 0.82 dB.

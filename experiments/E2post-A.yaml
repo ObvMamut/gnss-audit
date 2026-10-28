@@ -1,0 +1,43 @@
+# E2post on segment A (P2b part 2, task 1): the paired decomposition of the finished E2 run E2/4b3e282ef77d, read and
+# never written, and gate A's parts A1 and A2. Confirmatory: gate A decides (a') against (b) (the plan's pre-registered
+# rules, committed in 15ef977 before these numbers were computed).
+#
+# Per family, level and ghost channel, on epochs at or after onset + 2 s, valid and not transient in every series,
+# joined on exact record times (t_rx_s at 1 ns; no interpolation; dropped records counted):
+# - dPhi_A, dPhi_B: the ghost's twin difference in A-grid-<family>-<level>-A and -B10 (one jammer draw);
+# - e_c(A), e_c(B): the clean twins' absolute ghost errors, ghost truth on A-clean-A and A-clean-B10;
+# - the paired excess Var(dPhi) + 2 Cov(e_c, dPhi) = Var(e_jammed) - Var(e_clean) per mode, and the slope
+#   beta = Cov(dPhi_A, dPhi_B) / Var(dPhi_A).
+# Per cell: R = sum_g excess_B / sum_g excess_A; SE(R) by a moving-block bootstrap over epochs (1 s blocks, 400
+# replicates, seed 7, the same blocks for every series). Verdict (reported, not deciding here): fail if any ghost's
+# |beta - 1| >= 0.10, or if SE(R) <= 0.05 and |R - 1| >= 0.10; unresolved if the slopes pass and SE(R) > 0.05; else pass.
+#
+# Gate A, the parts decided here ((a') stands only if A1, A2 and Task 2's A3 all hold):
+# - A1: every ghost's beta in [0.90, 1.10] for noise and swept CW at 60 and 70 dB-Hz;
+# - A2: for noise and swept CW at 60 dB-Hz, pooled over ghosts, -(2Cov_B - 2Cov_A) >= 0.5 (Var_B - Var_A): at least
+#   half the extra variance cancels against the clean twin's error.
+# The chirp is computed and reported alongside; it is not part of gate A.
+#
+# B1's decomposition (task 3; reported, nothing gated), per mode A grid unit (families x levels below) and ghost:
+# - r recomputed from the unit's saved e_cyc and pred_cyc on E2's epochs; it must equal E2's saved r within r_tol;
+# - n_iota (rad) per record of A-clean-A: the unit's interference alone, rendered again from the run's spec and the
+#   jammer seed E2 recorded in the unit's unit.json (a cell's seed follows the order of the spec's families, which the
+#   manifest's sorted JSON loses) through mode A's front end (the recording is not read; `block` input samples per
+#   chunk; `workers` unit-ghost pairs in parallel processes), despread by the ghost; E2's prediction rebuilt from it is
+#   compared with the saved pred_cyc;
+# - Var(n_iota) on r's records, the floor 1 / (C/N0 T) at the clean ghost's median C/N0, and r against the formula
+#   floor + Var(n_iota) (docs/3 section 2.2).
+id: E2post
+source_run: E2/4b3e282ef77d  # under the results root
+segment: A
+families: [noise, swept_cw, chirp]
+levels_db_hz: [60.0, 70.0]
+ghost_channels: [7, 8]  # PRN 32 at 1510 Hz and PRN 31 at -2440 Hz (the run's survey); checked against the run
+bootstrap: {block_s: 1.0, n_boot: 400, seed: 7}
+rules: {tol: 0.10, slope_tol: 0.10, se_max: 0.05}
+gate_a:
+  families: [noise, swept_cw]
+  a1: {levels_db_hz: [60.0, 70.0], slope_min: 0.90, slope_max: 1.10}
+  a2: {level_db_hz: 60.0, cancel_share: 0.5}
+b1: {families: [noise, swept_cw, chirp], levels_db_hz: [60.0, 70.0], block: 4194304, workers: 12, r_tol: 1.0e-12}
+confirmatory: true

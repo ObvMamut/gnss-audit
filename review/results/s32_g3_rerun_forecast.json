@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "study": "s32_g3_rerun_forecast",
+    "generated": "2026-10-24T14:57:38+0200",
+    "python": "3.14.8",
+    "platform": "Linux-6.18.58_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "question": "R-4's forecast of the G3 re-run (P2c plan 5612ebf), reproduced from data on disk",
+  "design": {
+    "seed": 20261024,
+    "n": 200000,
+    "levels_db_hz": [
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0
+    ],
+    "rule": "(a') without slopes: unresolved if SE > 0.05, else fail if |R - 1| >= 0.10, else pass",
+    "bases": {
+      "run2": "R ~ N(run 2's R, 2 SE^2)",
+      "s29": "R ~ N(s29's ratio_B, SE^2)"
+    },
+    "se": "run 2's SE in both bases",
+    "draw_order": "family (noise, swept_cw) x basis (run2, s29) x segment (A, B); one (N, 5) draw each",
+    "events": {
+      "ge60/65/70": "R-4's event as the plan's script computed it: no fail at levels 0..i, pass at i",
+      "literal_ge60/65/70": "J_max >= level taken literally: any level j >= i passes with no fail at or below",
+      "not_none": "J_max is not None: some level passes with no fail at or below it (ruling P1)"
+    },
+    "independence": "families, and segments where a product is taken, are treated as independent; this ignores their shared clean twin and dither"
+  },
+  "inputs": {
+    "run2_summary": {
+      "path": "/home/mamut/all/private/GNSS-results/E2/6214cf52489f/summary.json",
+      "sha256": "4419fd70188279102a2ab862fda3ef17acdbb81018b8793918d165b11e962c99"
+    },
+    "s29": {
+      "path": "/home/mamut/all/private/GNSS/review/results/s29_true_analog_jmax.json",
+      "sha256": "efd04c8d0cc39d2d373fb7fae6454793f80c2f8d88648226b99d7562a70e6fc2"
+    },
+    "s31": {
+      "path": "/home/mamut/all/private/GNSS/review/results/s31_e2k_warmup_unlocks.json",
+      "sha256": "815db39bdb9b631c716526e001b0d06170a524768ea070541bb337f9c0541bed"
+    },
+    "cells": {
+      "noise": {
+        "A": {
+          "run2_r": [
+            0.8418417568043082,
+            0.8681125966797479,
+            0.964702858968999,
+            0.9728560123606774,
+            0.9959368409962195
+          ],
+          "se": [
+            0.09125578838387967,
+            0.0388525844148225,
+            0.01626323206674125,
+            0.008111047381628923,
+            0.006716440537351604
+          ],
+          "s29_r": [
+            0.8519411262249103,
+            0.8936766982664511,
+            0.9338761234562525,
+            0.979493011600693,
+            0.9955067124746494
+          ]
+        },
+        "B": {
+          "run2_r": [
+            0.8941070074361567,
+            0.8084684391194612,
+            0.8982079943235054,
+            0.9648016724819853,
+            0.9906183573275423
+          ],
+          "se": [
+            0.08804866396491735,
+            0.03817037460996435,
+            0.017196520236558856,
+            0.00768367302562471,
+            0.0050480906650223634
+          ],
+          "s29_r": [
+            0.8497412585485935,
+            0.8978689981912722,
+            0.9365796186975037,
+            0.9792075965773026,
+            0.9967840639788684
+          ]
+        }
+      },
+      "swept_cw": {
+        "A": {
+          "run2_r": [
+            0.9508747255967148,
+            0.907798334140962,
+            0.9465091160981741,
+            0.9699975734685115,
+            1.0448177809173858
+          ],
+          "se": [
+            0.06368230052167013,
+            0.028890529881905457,
+            0.011511408999236118,
+            0.007881292045112617,
+            0.008463788762193485
+          ],
+          "s29_r": [
+            0.8836274647304143,
+            0.9401859873730025,
+            0.9604279396459974,
+            0.995323311013913,
+            1.0320883266682155
+          ]
+        },
+        "B": {
+          "run2_r": [
+            0.8289715380627393,
+            0.8386357109166368,
+            0.9195747050114056,
+            0.9569389923157343,
+            1.027922253520706
+          ],
+          "se": [
+            0.059653831647423564,
+            0.02902985533053081,
+            0.015074188431063597,
+            0.007418015848179109,
+            0.008555564813445668
+          ],
+          "s29_r": [
+            0.8827605944787967,
+            0.9417114477168543,
+            0.9602609928335943,
+            0.9960282674711657,
+            1.0322636543633494
+          ]
+        }
+      }
+    }
+  },
+  "probabilities": {
+    "noise": {
+      "run2": {
+        "ge60": {
+          "A": 0.27942,
+          "B": 0.02126,
+          "both": 0.005795
+        },
+        "ge65": {
+          "A": 0.27942,
+          "B": 0.02126,
+          "both": 0.005795
+        },
+        "ge70": {
+          "A": 0.27942,
+          "B": 0.02126,
+          "both": 0.005795
+        },
+        "literal_ge60": {
+          "A": 0.27942,
+          "B": 0.02126,
+          "both": 0.005795
+        },
+        "literal_ge65": {
+          "A": 0.27942,
+          "B": 0.02126,
+          "both": 0.005795
+        },
+        "literal_ge70": {
+          "A": 0.27942,
+          "B": 0.02126,
+          "both": 0.005795
+        },
+        "not_none": {
+          "A": 0.2801,
+          "B": 0.044975,
+          "both": 0.01261
+        }
+      },
+      "s29": {
+        "ge60": {
+          "A": 0.42747,
+          "B": 0.471265,
+          "both": 0.20157
+        },
+        "ge65": {
+          "A": 0.42747,
+          "B": 0.471265,
+          "both": 0.20157
+        },
+        "ge70": {
+          "A": 0.42747,
+          "B": 0.471265,
+          "both": 0.20157
+        },
+        "literal_ge60": {
+          "A": 0.42747,
+          "B": 0.471265,
+          "both": 0.20157
+        },
+        "literal_ge65": {
+          "A": 0.42747,
+          "B": 0.471265,
+          "both": 0.20157
+        },
+        "literal_ge70": {
+          "A": 0.42747,
+          "B": 0.471265,
+          "both": 0.20157
+        },
+        "not_none": {
+          "A": 0.43546,
+          "B": 0.47931,
+          "both": 0.209185
+        }
+      }
+    },
+    "swept_cw": {
+      "run2": {
+        "ge60": {
+          "A": 0.573575,
+          "B": 0.05424,
+          "both": 0.03127
+        },
+        "ge65": {
+          "A": 0.573575,
+          "B": 0.05424,
+          "both": 0.03127
+        },
+        "ge70": {
+          "A": 0.573575,
+          "B": 0.05424,
+          "both": 0.03127
+        },
+        "literal_ge60": {
+          "A": 0.573575,
+          "B": 0.05424,
+          "both": 0.03127
+        },
+        "literal_ge65": {
+          "A": 0.573575,
+          "B": 0.05424,
+          "both": 0.03127
+        },
+        "literal_ge70": {
+          "A": 0.573575,
+          "B": 0.05424,
+          "both": 0.03127
+        },
+        "not_none": {
+          "A": 0.57485,
+          "B": 0.066145,
+          "both": 0.037895
+        }
+      },
+      "s29": {
+        "ge60": {
+          "A": 0.91825,
+          "B": 0.9255,
+          "both": 0.84981
+        },
+        "ge65": {
+          "A": 0.91825,
+          "B": 0.9255,
+          "both": 0.84981
+        },
+        "ge70": {
+          "A": 0.91825,
+          "B": 0.9255,
+          "both": 0.84981
+        },
+        "literal_ge60": {
+          "A": 0.91825,
+          "B": 0.9255,
+          "both": 0.84981
+        },
+        "literal_ge65": {
+          "A": 0.91825,
+          "B": 0.9255,
+          "both": 0.84981
+        },
+        "literal_ge70": {
+          "A": 0.91825,
+          "B": 0.9255,
+          "both": 0.84981
+        },
+        "not_none": {
+          "A": 0.91825,
+          "B": 0.925515,
+          "both": 0.849825
+        }
+      }
+    }
+  },
+  "as_printed_in_r4": {
+    "note": "event: J_max >= 60; the strict and K-study rows are R-4's",
+    "run2": {
+      "strict_both_families": 0.00018120965,
+      "k_study_runs": 0.03688379035
+    },
+    "s29": {
+      "strict_both_families": 0.17129620169999998,
+      "k_study_runs": 0.8800837982999999
+    }
+  },
+  "clause_relevant": {
+    "note": "event: J_max not None; a dated correction to R-4's strict and K-study rows",
+    "run2": {
+      "strict_both_families": 0.00047785594999999996,
+      "k_study_runs": 0.05002714404999997
+    },
+    "s29": {
+      "strict_both_families": 0.17777064262500003,
+      "k_study_runs": 0.881239357375
+    }
+  },
+  "thermal_block": {
+    "failed": 7,
+    "units": 102,
+    "p_clean_plug_in": 0.0007089085588585697,
+    "p_clean_beta11_predictive": 0.0035292892414829132
+  },
+  "g3_upper_bound": {
+    "note": "strict both-family P(J_max not None) x P(thermal block clean)",
+    "run2": {
+      "plug_in": 3.387561728564927e-07,
+      "predictive": 1.6864918633135967e-06
+    },
+    "s29": {
+      "plug_in": 0.0001260231300706506,
+      "predictive": 0.0006274040164679164
+    }
+  },
+  "run_time_s": 1.0
+}

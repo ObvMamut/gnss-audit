@@ -1,0 +1,81 @@
+# E2 version 2 (P2b part 2, task 4; docs/10 section 2.3, docs/8 section 5, docs/6 D-35 to D-38): segments A and B,
+# the grid {50, 55, 60, 65, 70} dB-Hz, and the pre-registered rules of 16 Oct 2026 (commit 15ef977, written before the
+# data that decide them). Confirmatory: its gates and decisions feed G3 (docs/12 section 1).
+#
+# One cell per family, as in E2-A (Judgment, from the grids of docs/8 section 3): 2 MHz band-limited noise at the centre;
+# a swept CW of 1 MHz span and 10 ms period, slow enough for the conditional and marginal oracles to differ (F8); a
+# PPD-like chirp of 10 MHz span and 10 us period. Two ghosts at 45 dB-Hz on PRNs not in view. The families keep E2-A's order.
+#
+# Changes against E2-A.yaml (everything else is as there):
+# - segments: B is added. Its interval fgi-jt2023-JT23_16.1.1_L1_E1-clean was admitted on 19 Oct 2026 by the sky check
+#   (docs/7 section 4.2, rules S1 to S3) with min_cn0_spread_db = 3.0 (Admit f3543977809e; D-37) and is registered in
+#   registry/intervals.yaml.
+# - levels_db_hz: {50, 55, 60, 65, 70} in place of E2-A's {60, 70, 80, 90} (docs/10 section 2.3);
+# - mode_b.side_level_db_hz: 65, the tau side check of the front-end rule (segment A, noise and swept CW);
+# - rules: the front-end and truth-fidelity thresholds below, and the bootstrap of the paired excess;
+# - kstudy.fallback_family: noise, used when L_B(swept CW) is None (docs/5 section 4.4).
+#
+# Decision rules, as pre-registered (docs/8 section 5, docs/3 section 2.2, docs/5 section 4.4):
+# - paired units per segment s, family f and level l: s-grid-f-l-A and s-grid-f-l-B10 (same jammer seed), clean twins
+#   s-clean-A and s-clean-B10. Per ghost: the twin difference dPhi, and e_c, the clean twin's absolute ghost error;
+#   epochs after onset + 2 s, valid and not transient in both, paired on identical t_rx_s;
+# - paired excess = Var(dPhi) + 2 Cov(e_c, dPhi) = Var(e_jammed) - Var(e_clean); slope = Cov(dPhi_A, dPhi_B) / Var(dPhi_A);
+# - front-end cell verdict: R = sum_g excess_B / sum_g excess_A; SE(R) from a moving-block bootstrap over epochs (1 s
+#   blocks, 400 replicates, seed 7, the same blocks for every series); fail if any ghost's |slope - 1| >= slope_tol or
+#   if SE(R) <= excess_se_max and |R - 1| >= jmax_tol; unresolved if the slopes pass and SE(R) > excess_se_max; pass otherwise;
+# - front-end J_max(s, f): the largest level that passes with no fail at any level at or below it; None if none.
+#   The tau side check (segment A, 65 dB-Hz, noise and swept CW, tau = 1 ms and 100 ms against mode A): if either cell
+#   fails, J_max(A, f) is capped at the largest grid level below 65;
+# - Route B ceiling L_B(s, f): the largest level <= J_max(s, f) such that at every grid level up to it, in mode A and for
+#   both ghosts, r - 1 / (C/N0 T) < residual_max (C/N0 the clean ghost's median reported value, T = 1 ms) and the lost
+#   ghost truth is at most lost_truth_max_s;
+# - across segments, J_max(f) and L_B(f) are the minima over segments; None if any segment's is None;
+# - K-study: L_K(f) = min(80, L_B(f)); blocks on segment A in mode A: swept CW conditional K = 101 (offset 0.0037 s),
+#   swept CW marginal K = 51, noise K = 51, thermal (swept CW conditional, K = 51, common floor). If L_B(swept CW) is
+#   None the K = 101 block and the thermal block run on noise at L_K(noise) and the conditional-against-marginal
+#   comparison is reported as not done; if L_B(noise) is None too, no K-study runs and G3 fails on K;
+# - K = 51 if the median |sigma^2_101 / sigma^2_51 - 1| is at most 0.2, else 101; 21 for pooled coverage.
+id: E2
+segments:
+  A: {interval: fgi-jt2023-JT23_4.1.5_L1_E1-clean, item_type: ibyte, fs_hz: 30690000.0}
+  B: {interval: fgi-jt2023-JT23_16.1.1_L1_E1-clean, item_type: ibyte, fs_hz: 30690000.0}  # admitted 19 Oct 2026 (D-37)
+template: 1C
+decim: 4
+fir_taps: 129
+frontend_bw_hz: 20000000.0  # the flat part of the LabSat 3W band (+-10 MHz, docs/7 section 2.3)
+quant: {max_level: 4, zero_level: false}  # FGI's 3-bit alphabet +-1..+-4 (docs/7 section 2.3)
+seed: 23
+max_channels: 9  # the 7 strongest real satellites and 2 ghosts
+min_locked_real: 4  # D-34 (P2b task 10): the ghosts must lock; a real channel that starts badly is excluded
+min_cn0_dbhz: 35.0
+survey_channels: 12
+warmup_s: 30.0
+pre_window_s: 20.0
+onset_s: 55.0
+ghosts: {cn0_db_hz: 45.0, doppler_hz: [1500.0, -2500.0]}
+families:
+  noise: {bw_hz: 2000000.0}
+  swept_cw: {span_hz: 1000000.0, period_s: 0.01}
+  chirp: {span_hz: 10000000.0, period_s: 0.00001}
+levels_db_hz: [50.0, 55.0, 60.0, 65.0, 70.0]
+mode_b: {tau_s: 0.01, side_tau_s: [0.001, 0.1], side_level_db_hz: 65.0, side_families: [noise, swept_cw]}
+kstudy:
+  segment: A
+  level_cap_db_hz: 80.0
+  fallback_family: noise
+  offset_s: 0.0037  # the conditional oracle's fixed sweep timing
+  blocks:
+    cond: {family: swept_cw, K: 101, conditional: true}
+    marg: {family: swept_cw, K: 51, conditional: false}
+    noise: {family: noise, K: 51, conditional: false}
+thermal: {segment: A, family: swept_cw, K: 51}
+repeat_fraction: 0.05
+rules: {jmax_tol: 0.10, slope_tol: 0.10, excess_se_max: 0.05, residual_max: 0.05, lost_truth_max_s: 1.0, k_small: 51,
+        bootstrap: {block_s: 1.0, n_boot: 400, seed: 7}}
+pipelines: 3
+workers_a: 6
+timeout_s: 3600
+confirmatory: true
+# D-34: the carrier-lock rule never drops a twin's channel, and the pull-in uses the FLL so a start-up frequency false
+# lock is not kept (documented deviations from the v0.0.22 defaults; docs/6 section 9)
+receiver_overrides: {Tracking_1C.max_carrier_lock_fail: "1000000", Tracking_1C.enable_fll_pull_in: "true"}

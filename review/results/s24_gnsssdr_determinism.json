@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "study": "s24_gnsssdr_determinism",
+    "generated": "2026-10-09T22:40:43+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "nonblocking": [
+    {
+      "start_sample": 171517,
+      "records": 8957,
+      "common_stamps": 8957,
+      "bitwise_identical_at_common_stamps": 8957
+    },
+    {
+      "start_sample": 71517,
+      "records": 8982,
+      "common_stamps": 8956,
+      "bitwise_identical_at_common_stamps": 0
+    },
+    {
+      "start_sample": 47517,
+      "records": 8990,
+      "common_stamps": 8955,
+      "bitwise_identical_at_common_stamps": 0
+    }
+  ],
+  "blocking": [
+    {
+      "start_sample": 163517,
+      "records": 8959,
+      "common_stamps": 8959,
+      "bitwise_identical_at_common_stamps": 8959
+    },
+    {
+      "start_sample": 171517,
+      "records": 8957,
+      "common_stamps": 8957,
+      "bitwise_identical_at_common_stamps": 0
+    },
+    {
+      "start_sample": 87517,
+      "records": 8980,
+      "common_stamps": 8958,
+      "bitwise_identical_at_common_stamps": 0
+    }
+  ]
+}

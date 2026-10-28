@@ -1,0 +1,18 @@
+diff --git a/src/algorithms/tracking/gnuradio_blocks/dll_pll_veml_tracking.cc b/src/algorithms/tracking/gnuradio_blocks/dll_pll_veml_tracking.cc
+index e5d4311..e538c42 100644
+--- a/src/algorithms/tracking/gnuradio_blocks/dll_pll_veml_tracking.cc
++++ b/src/algorithms/tracking/gnuradio_blocks/dll_pll_veml_tracking.cc
+@@ -2713,10 +2713,11 @@ int dll_pll_veml_tracking::general_work(int noutput_items __attribute__((unused)
+                         run_dll_pll();
+                         update_tracking_vars();
+                         check_carrier_phase_coherent_initialization();
++                        // gnssaudit patch D-27: dump every loop update in narrow tracking, not only at data symbol
++                        // boundaries, so the dump keeps one record per integration after bit synchronization
++                        log_data();
+                         if (d_current_data_symbol == 0)
+                             {
+-                                // enable write dump file this cycle (valid DLL/PLL cycle)
+-                                log_data();
+                                 // ########### Output the tracking results to Telemetry block ##########
+                                 // Fill the acquisition data
+                                 current_synchro_data = *d_acquisition_gnss_synchro;

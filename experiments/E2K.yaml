@@ -1,0 +1,43 @@
+# E2K (P2b part 2 addendum of 19 Oct 2026, docs/superpowers/plans/2026-10-19-p2b-g3-true-analog-jmax.md, section
+# "Route B ceiling, K-study, G3"; task 13): the K-study at the Route B ceiling, given J_max_TA. Confirmatory: K and its
+# ceilings feed G3, reported beside the pre-registered result (J_max None, no K-study, G3 failing on J_max and K).
+#
+# Inputs, read and never written:
+# - E2 run 2 (source_run, commit 7bc707e, receiver image p1): its spec, its surveys, its mode A clean twins of segment A
+#   (A-clean-A, which the K-study units are differenced against, and its null partner A-clean-A2) and, per segment,
+#   B1's residual and the ghost truth kept, from its summary;
+# - review s29's committed result (s29_result, refused unless its SHA-256 is s29_sha256; commit 4482537): J_max_TA per
+#   family and segment.
+#
+# Rules (the addendum, with the pre-registered ones of 16 Oct 2026; docs/5 section 4.4):
+# - L_B(s, f): the largest grid level at or below J_max_TA(f), combined over segments, such that at every grid level up
+#   to it, in mode A and for both ghosts, r - 1 / (C/N0 T) < residual_max and the lost ghost truth is at most
+#   lost_truth_max_s; L_B(f) is the minimum over segments, None if any segment's is None;
+# - L_K(f) = min(80, L_B(f)); blocks on segment A in mode A as in kstudy and thermal below; if L_B(swept CW) is None the
+#   K = 101 block and the thermal block run on noise at L_K(noise) and the conditional-against-marginal comparison is
+#   reported as not done; if L_B(noise) is None, no K-study runs and G3 fails on K;
+# - K = 51 if the median |sigma^2_101 / sigma^2_51 - 1| is at most 0.2, else 101.
+# - Swept CW and the chirp (the owner's decision, 19 Oct 2026): the pre-registered B1 bar stands; a family without a
+#   ceiling is excluded from Route B and reported (risk R12). No correction of the B1 floor and no segment-only ceiling.
+#
+# kstudy, thermal and rules are copied unchanged from experiments/E2-v2.yaml (E2K refuses a run whose values are not
+# run 2's). Everything else E2K's twins need (segments, families, seed, ghosts, front end, the D-34 receiver overrides,
+# pipelines) is run 2's spec, read from its manifest. The receiver is image p2 (L5 fix, D-40; C/A unchanged, docs/9).
+id: E2K
+source_run: E2/6214cf52489f  # under the results root
+s29_result: review/results/s29_true_analog_jmax.json  # under the repository
+s29_sha256: efd04c8d0cc39d2d373fb7fae6454793f80c2f8d88648226b99d7562a70e6fc2
+receiver_patch: "p2:0001-acc-phase-float64+0002-log-every-integration+0003-l5-xb-period"
+kstudy:
+  segment: A
+  level_cap_db_hz: 80.0
+  fallback_family: noise
+  offset_s: 0.0037  # the conditional oracle's fixed sweep timing
+  blocks:
+    cond: {family: swept_cw, K: 101, conditional: true}
+    marg: {family: swept_cw, K: 51, conditional: false}
+    noise: {family: noise, K: 51, conditional: false}
+thermal: {segment: A, family: swept_cw, K: 51}
+rules: {jmax_tol: 0.10, slope_tol: 0.10, excess_se_max: 0.05, residual_max: 0.05, lost_truth_max_s: 1.0, k_small: 51,
+        bootstrap: {block_s: 1.0, n_boot: 400, seed: 7}}
+confirmatory: true

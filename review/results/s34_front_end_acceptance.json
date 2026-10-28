@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "study": "s34_front_end_acceptance",
+    "generated": "2026-10-28T06:06:33+0100",
+    "python": "3.14.8",
+    "platform": "Linux-6.18.58_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "question": "does s33's front-end model reproduce run 3's measured mode B / mode A ratios, and if so what conditional range does its true front end support (R-7)",
+  "decides": "the R9 re-scope's conditional range only; never G3",
+  "rule": {
+    "cells": "noise, swept_cw at 50-70 dB-Hz",
+    "accept": "sum z^2 <= chi2_n(0.95) and max |z| < 3, n >= 8 cells present",
+    "tolerances": {
+      "ratio": 0.1,
+      "slope": 0.1,
+      "se_max": 0.05
+    },
+    "cap_db_hz": 70.0
+  },
+  "assumptions": [
+    "each z_c is taken as N(0, 1) under a correct model, and the chi2 bound assumes independent cells; within a segment s33's cells share their synthetic noise, ghost and dither, and run 3's cells share the recording and the clean twins, so the z_c are positively correlated",
+    "positive correlation leaves E[sum z^2] = n but widens its spread, so under a correct model the test rejects more often than 5 %: conservative for the claim it gates (a rejection only removes the conditional support)",
+    "the threshold is R-7's as registered; it is not calibrated",
+    "the run 2 line is in-sample: s33 was built on run 2's N0 and analog SD"
+  ],
+  "order": {
+    "s33_commit": "2026-10-27T15:47:34+01:00",
+    "run3_started_utc": "2026-10-27T15:46:14+00:00"
+  },
+  "inputs": {
+    "run3_summary": {
+      "path": "/home/mamut/all/private/GNSS-results/E2/9650dc00e766/summary.json",
+      "sha256": "f38389b07f8c025114d980d4c0cef1952f6f102b2f5d493e1eb19f717be2a88b",
+      "run_id": "9650dc00e766"
+    },
+    "s33": {
+      "path": "/home/mamut/all/private/GNSS/review/results/s33_front_end_prediction.json",
+      "sha256": "cee73739dcc8b2c207ab5b2b9683ddecb92412e583d6c75e80a21b141e8579ac"
+    },
+    "run2_summary": {
+      "path": "/home/mamut/all/private/GNSS-results/E2/6214cf52489f/summary.json",
+      "sha256": "4419fd70188279102a2ab862fda3ef17acdbb81018b8793918d165b11e962c99"
+    }
+  },
+  "segments": {
+    "A": {
+      "z": {
+        "noise/50.0": 3.742293460987067,
+        "noise/55.0": 3.7330725707626,
+        "noise/60.0": 2.9612321621727853,
+        "noise/65.0": 2.1125817255328054,
+        "noise/70.0": 1.6383665092291542,
+        "swept_cw/50.0": 2.50890374681932,
+        "swept_cw/55.0": 1.8886160842909507,
+        "swept_cw/60.0": 1.3837758687246566,
+        "swept_cw/65.0": 1.7068779846250879,
+        "swept_cw/70.0": 2.524053036370383
+      },
+      "chi2": 64.91731401495159,
+      "n": 10,
+      "max_abs_z": 3.742293460987067,
+      "accepted": false,
+      "chi2_bound": 18.307038053275146,
+      "j_max_ta_s33": {
+        "noise": 85.0,
+        "swept_cw": 75.0
+      },
+      "conditional_range": {
+        "noise": null,
+        "swept_cw": null
+      }
+    },
+    "B": {
+      "z": {
+        "noise/50.0": 1.9452806484919023,
+        "noise/55.0": 1.065445062697544,
+        "noise/60.0": 2.8999689888792837,
+        "noise/65.0": 2.68426418370595,
+        "noise/70.0": 0.6153780347016807,
+        "swept_cw/50.0": 0.2843458358100226,
+        "swept_cw/55.0": 1.2736970622058692,
+        "swept_cw/60.0": 2.7601599526715517,
+        "swept_cw/65.0": -3.2085239142156,
+        "swept_cw/70.0": 1.5023910741471382
+      },
+      "chi2": 42.78651882572163,
+      "n": 10,
+      "max_abs_z": 3.2085239142156,
+      "accepted": false,
+      "chi2_bound": 18.307038053275146,
+      "j_max_ta_s33": {
+        "noise": 85.0,
+        "swept_cw": 80.0
+      },
+      "conditional_range": {
+        "noise": null,
+        "swept_cw": null
+      }
+    }
+  },
+  "combined_range": {
+    "noise": null,
+    "swept_cw": null
+  },
+  "run2_against_s33": {
+    "label": "in-sample, reported",
+    "segments": {
+      "A": {
+        "z": {
+          "noise/50.0": 2.6147179320133094,
+          "noise/55.0": 2.1652210110623096,
+          "noise/60.0": 3.842391357785532,
+          "noise/65.0": 1.7526610875023747,
+          "noise/70.0": 1.1719819174166668,
+          "swept_cw/50.0": 3.0249075294181513,
+          "swept_cw/55.0": 2.617224144911751,
+          "swept_cw/60.0": 2.43468151597207,
+          "swept_cw/65.0": 0.5512567718554148,
+          "swept_cw/70.0": 3.9272155316763677
+        },
+        "chi2": 68.38877347073152,
+        "n": 10,
+        "max_abs_z": 3.9272155316763677,
+        "accepted": false
+      },
+      "B": {
+        "z": {
+          "noise/50.0": 3.0061865477200564,
+          "noise/55.0": 1.518106935216853,
+          "noise/60.0": 1.5601302738988556,
+          "noise/65.0": 3.5299182129310163,
+          "noise/70.0": 0.15826529502790476,
+          "swept_cw/50.0": 1.4891717813228982,
+          "swept_cw/55.0": 0.12509858682355304,
+          "swept_cw/60.0": 1.7362444568310462,
+          "swept_cw/65.0": -2.5987132327429374,
+          "swept_cw/70.0": 1.626771830295478
+        },
+        "chi2": 40.908707310040974,
+        "n": 10,
+        "max_abs_z": 3.5299182129310163,
+        "accepted": false
+      }
+    }
+  }
+}

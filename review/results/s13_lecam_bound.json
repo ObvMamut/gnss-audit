@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "study": "s13_lecam_bound",
+    "generated": "2026-10-09T21:18:32+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "delta_over_var_e0": 1.0,
+  "rows": [
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 3.0,
+      "W_s": 2.0,
+      "kl_d_channel": 3.806215035900898,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 3.0,
+      "W_s": 10.0,
+      "kl_d_channel": 19.717115852889485,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 1.0,
+      "W_s": 2.0,
+      "kl_d_channel": 2.8135215956839366,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 1.0,
+      "W_s": 10.0,
+      "kl_d_channel": 16.10545570867118,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 0.3,
+      "W_s": 2.0,
+      "kl_d_channel": 1.8458369412956053,
+      "tv_upper": 0.960686458032902,
+      "minimax_rel_error_lower_bound": 0.01965677098354901
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 0.3,
+      "W_s": 10.0,
+      "kl_d_channel": 15.477666196384416,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 0.1,
+      "W_s": 2.0,
+      "kl_d_channel": 0.6180071073633753,
+      "tv_upper": 0.5558808808384109,
+      "minimax_rel_error_lower_bound": 0.22205955958079454
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 0.1,
+      "W_s": 10.0,
+      "kl_d_channel": 10.192500690183639,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 0.03,
+      "W_s": 2.0,
+      "kl_d_channel": 0.09535271555977676,
+      "tv_upper": 0.2183491648252596,
+      "minimax_rel_error_lower_bound": 0.3908254175873702
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 0.03,
+      "W_s": 10.0,
+      "kl_d_channel": 2.9426186585859053,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 3.0,
+      "W_s": 2.0,
+      "kl_d_channel": 24.769386023902687,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 3.0,
+      "W_s": 10.0,
+      "kl_d_channel": 138.07389661410966,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 1.0,
+      "W_s": 2.0,
+      "kl_d_channel": 22.496048852987016,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 1.0,
+      "W_s": 10.0,
+      "kl_d_channel": 170.66803816927745,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 0.3,
+      "W_s": 2.0,
+      "kl_d_channel": 10.284514409988484,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 0.3,
+      "W_s": 10.0,
+      "kl_d_channel": 167.8278719418006,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 0.1,
+      "W_s": 2.0,
+      "kl_d_channel": 2.7438098519217036,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 0.1,
+      "W_s": 10.0,
+      "kl_d_channel": 102.28217285190028,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 0.03,
+      "W_s": 2.0,
+      "kl_d_channel": 0.44125745146680395,
+      "tv_upper": 0.46971132170025665,
+      "minimax_rel_error_lower_bound": 0.2651443391498717
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 0.03,
+      "W_s": 10.0,
+      "kl_d_channel": 32.99353641948309,
+      "tv_upper": 1.0,
+      "minimax_rel_error_lower_bound": 0.0
+    }
+  ],
+  "part_b_equivalence": [
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 1.0,
+      "true_var_e_P1_over_P0": 2.5740504258167523,
+      "iw_noise_P1_over_P0": 0.9773724255218723,
+      "iw_dynraw_P1_minus_P0_rel": 0.0054514981330365,
+      "max_rel_diff_psd_d": 0.132901152785025
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "corner_hz": 3.0,
+      "true_var_e_P1_over_P0": 0.8953904083282009,
+      "iw_noise_P1_over_P0": 0.9818509578773567,
+      "iw_dynraw_P1_minus_P0_rel": 0.00657943926185761,
+      "max_rel_diff_psd_d": 0.14284202615459418
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 3.0,
+      "true_var_e_P1_over_P0": 5.131531670859843,
+      "iw_noise_P1_over_P0": 0.9912644750261472,
+      "iw_dynraw_P1_minus_P0_rel": 0.001529278117868924,
+      "max_rel_diff_psd_d": 0.1429140510044622
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "corner_hz": 10.0,
+      "true_var_e_P1_over_P0": 1.7561762034862598,
+      "iw_noise_P1_over_P0": 0.9943069932776488,
+      "iw_dynraw_P1_minus_P0_rel": 0.0042364768272236475,
+      "max_rel_diff_psd_d": 0.13115271550750474
+    }
+  ]
+}

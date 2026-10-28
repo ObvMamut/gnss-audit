@@ -1,0 +1,353 @@
+# Dataset registry (docs/7 section 3.1). One entry per dataset.
+# Fields: id, refs, doi_or_url, licence, access_notes, retrieved, files, notes.
+# files: [{name, size_bytes, published_checksum, sha256, local_path, extracted_ranges}]
+# published_files (datasets not yet fetched): [{name, record_path, size_bytes, published_checksum}], copied from the
+#   record's file listing so that a later fetch can be verified against it
+# status: to-fetch | to-verify | fetched | deferred | own
+# Addresses and URLs below are the record pointers from docs/7 section 2. Files streamed from Fairdata keep only their
+# first 150 s (extracted_ranges); sha256 is that prefix's hash, published_checksum the whole file's, which the stream
+# verified (P2b task 4; the sidecar <name>.prefix.json beside each file records both).
+
+datasets:
+  - id: fgi-jt2023
+    refs: [18, 54]
+    doi_or_url: https://doi.org/10.23729/fd-06d27736-45cb-3ca2-aff8-725d42c6caeb
+    metax_id: 2eee8cfd-db00-4e46-bd62-d7632c09c700  # Fairdata Metax dataset (download authorisation)
+    licence: CC-BY-4.0
+    access_notes: >-
+      Etsin/Fairdata IDA, open access, no login (checked 13 Oct 2026). A single-file URL comes from
+      POST https://etsin.fairdata.fi/api/download/authorize with {"cr_id", "file"}; it is a download.fairdata.fi URL with a
+      token valid for about 72 h. The service ignores HTTP Range (a ranged GET answers 200 with the whole file), so a
+      file can only be streamed from its start; about 4.2 MB/s was measured, so 151.7 GB is about 10 h per full pass.
+    retrieved: 2026-10-15
+    status: fetched  # the first 150 s of the three files; each whole file verified against its published SHA-256
+    files:
+      - name: JT23_4.1.5_L1_E1.iq
+        size_bytes: 9207000000
+        published_checksum: sha256:d4337d91d3529c9d3d60ba88110e541d960499c7a80c92e2c3690faf63135d5d
+        sha256: 3b5a353425bce9efaa46f7c57de06f4689bdb55568ee1139cde283c3072f2232
+        local_path: raw/fgi-jt2023/JT23_4.1.5_L1_E1.iq
+        extracted_ranges: [[0, 9207000000]]
+      - name: JT23_16.1.1_L1_E1.iq
+        size_bytes: 9207000000
+        published_checksum: sha256:328250e8918cc2ccfedbb2f33b5e6362fb43670c2b0c2a35deb5da4b097a72a7
+        sha256: 518041ac4eefa93be067da562048b1e231aa02548b6ad380f696b06f54412063
+        local_path: raw/fgi-jt2023/JT23_16.1.1_L1_E1.iq
+        extracted_ranges: [[0, 9207000000]]
+      - name: JT23_17.1.6_L1_E1.iq
+        size_bytes: 9207000000
+        published_checksum: sha256:4bd6e3963f0b3d6806670db5d1a653de05fd9fe602ec42b005eb6cc4d45931e3
+        sha256: 0e8b54f00896141fe6e11ae384f2210391233e83c4452a6745495e245a4cfb19
+        local_path: raw/fgi-jt2023/JT23_17.1.6_L1_E1.iq
+        extracted_ranges: [[0, 9207000000]]
+    published_files:
+      - {name: JT23_4.1.5_L1_E1.iq, record_path: "/JammerTest2023/JT23_4.1.5/JT23_4.1.5_L1_E1.iq", size_bytes: 24552000000, published_checksum: "sha256:d4337d91d3529c9d3d60ba88110e541d960499c7a80c92e2c3690faf63135d5d"}
+      - {name: JT23_16.1.1_L1_E1.iq, record_path: "/JammerTest2023/JT23_16.1.1/JT23_16.1.1_L1_E1.iq", size_bytes: 55008000000, published_checksum: "sha256:328250e8918cc2ccfedbb2f33b5e6362fb43670c2b0c2a35deb5da4b097a72a7"}
+      - {name: JT23_17.1.6_L1_E1.iq, record_path: "/JammerTest2023/JT23_17.1.6/JT23_17.1.6_L1_E1.iq", size_bytes: 72110000000, published_checksum: "sha256:4bd6e3963f0b3d6806670db5d1a653de05fd9fe602ec42b005eb6cc4d45931e3"}
+    notes: >-
+      LabSat 3 Wideband at 30.69 MHz, centre 1575.42 MHz. The .iq files have no header: interleaved int8 I and Q, but only
+      the values -4..-1 and 1..4 occur (no zero), so the quantisation is 3 bits per component in 8-bit containers (first
+      0.5 s of each file read on 13 Oct 2026). The record's table gives 1174 s for 4.1.5 (jamming), 896 s for 16.1.1 and
+      400 s for 17.1.6, but the file sizes at 2 B per complex sample give 400.0 s for 4.1.5, 896.2 s for 16.1.1 and
+      1174.8 s for 17.1.6; the sizes are the stronger evidence. All three files acquire several GPS satellites strongly in
+      their first 10 ms. Surveyed antenna position and jammer timing asked by email (R13).
+
+  - id: fgi-spoofrepo
+    refs: [19, 55]
+    doi_or_url: https://doi.org/10.23729/7a648509-2ca8-4a7d-8223-0b429182f857
+    metax_id: 367379a8-7d78-4b08-91f0-8027ce7a621b  # Fairdata Metax dataset (download authorisation)
+    licence: CC-BY-4.0
+    access_notes: >-
+      Etsin/Fairdata IDA, open access, no login; same download mechanics as fgi-jt2023 (checked 13 Oct 2026): no HTTP
+      Range, streaming only. 8 files, 127.2 GB in all.
+    retrieved: 2026-10-15
+    status: fetched  # the L5 and L1 files of the Targeted SFMC scenario only (P2b tasks 3 and 8); the other files are not needed
+    files:
+      - name: TGS_L5_E5a.dat
+        size_bytes: 7800000000
+        published_checksum: sha256:38052a7334666122a191ad2b237195bd999fafa48b9630381074ede08851b558
+        sha256: 2d3a0a0a8dd3a6c92a117c36a1f1e503259fca09338384c12b50dc130b338f94
+        local_path: raw/fgi-spoofrepo/TGS_L5_E5a.dat
+        extracted_ranges: [[0, 7800000000]]
+      - name: TGS_L1_E1.dat  # the first 130 s (26 MB/s, real int8), whole file verified against its published SHA-256
+        size_bytes: 3380000000
+        published_checksum: sha256:531378bea6caf0bcae63f0489f90df574550d60f2ac0be1c258fd337121a381c
+        sha256: 943f3ba9d090fbc315b56ee0a30241d42e7729d833a3e2defab23c2e790235d9
+        local_path: raw/fgi-spoofrepo/TGS_L1_E1.dat
+        extracted_ranges: [[0, 3380000000]]
+    published_files:
+      - {name: TGS_L1_E1.dat, record_path: "/FGISpoofRepo/TG_SFMC/TGS_L1_E1.dat", size_bytes: 10115612672, published_checksum: "sha256:531378bea6caf0bcae63f0489f90df574550d60f2ac0be1c258fd337121a381c"}
+      - {name: TGS_L5_E5a.dat, record_path: "/FGISpoofRepo/TG_SFMC/TGS_L5_E5a.dat", size_bytes: 20231225344, published_checksum: "sha256:38052a7334666122a191ad2b237195bd999fafa48b9630381074ede08851b558"}
+      - {name: TGD_L1_E1.dat, record_path: "/FGISpoofRepo/TG_DFMC/TGD_L1_E1.dat", size_bytes: 9961930752, published_checksum: "sha256:10aad73665db7c5e530d9ef1d3b2fdb57bab0a7b9b19177a0128867fbad2606b"}
+      - {name: TGD_L5_E5a.dat, record_path: "/FGISpoofRepo/TG_DFMC/TGD_L5_E5a.dat", size_bytes: 19923861504, published_checksum: "sha256:6c4b40b6f913f704c1ca4f111028b758084015a48cb8ba15358ef5f7c2536a50"}
+      - {name: UTD_L1_E1.dat, record_path: "/FGISpoofRepo/UT_DFMC/UTD_L1_E1.dat", size_bytes: 9825419264, published_checksum: "sha256:e8da962e92cfdbcb677361ce769a54f26dc385417bac9fd618492dcd02fb2d72"}
+      - {name: UTD_L5_E5a.dat, record_path: "/FGISpoofRepo/UT_DFMC/UTD_L5_E5a.dat", size_bytes: 19650838528, published_checksum: "sha256:9cb64d6a131039b6d759a7a44c9bc8c78c2ab7245368a991a803be4e69b0fd5a"}
+      - {name: MCD_L1_E1.dat, record_path: "/FGISpoofRepo/Meaconing_DFMC/MCD_L1_E1.dat", size_bytes: 12509708288, published_checksum: "sha256:0b16d42d922811b57e3f8f056f38c6e9a6689e4a40edf7cb0c724eb72ed2f7e3"}
+      - {name: MCD_L5_E5a.dat, record_path: "/FGISpoofRepo/Meaconing_DFMC/MCD_L5_E5a.dat", size_bytes: 25019416576, published_checksum: "sha256:57e4b0a61d08118de715c7d38e7300737aa565acaebd864e1cd15424cbf529c8"}
+    notes: >-
+      NSL stereo dual-band front end. L1/E1 real 8 bit at 26 MHz, centre 1569.03 MHz, 4.2 MHz bandwidth; L5/E5a complex
+      8+8 bit at 26 MHz, centre 1176.45 MHz, 10.09 MHz bandwidth (record description). Read on 15 Oct 2026: the L5 bytes
+      hold only the odd values -7..7 (3 bits in 8-bit containers, 52 % at +-7), and each pair stores Q before I. The L1
+      file is real 2-bit samples at the stated 6.39 MHz IF. Scenarios 370 s (meaconing 470 s). Static receiver; the record gives its position from a geodetic-grade receiver as
+      60.182 N, 24.828 E, 47.248 m.
+
+  - id: uge-jammertest2024
+    refs: [20, 56]
+    doi_or_url: https://doi.org/10.5281/zenodo.15910564  # also 15911589; 15911359 is README-only
+    licence: GPL-3.0-or-later
+    access_notes: Zenodo, no login. Tarball about 0.4 GB, 1.1 GB extracted. Not usable as test fixtures (GPL).
+    retrieved: 2026-10-11
+    status: fetched
+    files:
+      - name: GNSS_DATASET_JAMMING_SPOOFING.tar.gz
+        size_bytes: 375338522
+        published_checksum: md5:c7b00c63bb1ee5db80c7692a2b06e169
+        sha256: 73e78934aa00d01dfeebabc45f81b38c9c0aecf972f5fc94d9ff60527065b313
+        local_path: raw/uge-jammertest2024/GNSS_DATASET_JAMMING_SPOOFING.tar.gz
+        extracted_ranges: all, into raw/uge-jammertest2024/extracted/
+      - name: README.md
+        size_bytes: 2980
+        published_checksum: md5:cc46942594fc5e471252ab2a9d5e8420
+        sha256: 7ec65dc780d27d369e5c7dcb4b73cd1c0302510e31d36a5d1815c6ba9e4fbf92
+        local_path: raw/uge-jammertest2024/README.md
+    notes: u-blox UBX (RXM-RAWX), RINEX as CSV, MON-RF, NAV-PVT; 24 scenarios; one stationary jamming scenario of 14 min.
+
+  - id: navitec-2024
+    refs: [22]
+    doi_or_url: null
+    licence: null  # to verify
+    access_notes: ESA; registration to verify. No registration without owner approval (decision 3).
+    retrieved: null
+    status: to-verify
+    files: []
+    notes: Scouted 2026-10-10 (docs/7 section 2.1). RINEX only, spoofing scenarios, 2024-09-11 15:13:30-15:23:00 GPST, reference ~9 km away. No public download found; arm a plans on Route D.
+
+  - id: fraunhofer-jt2025
+    refs: [21, 57]
+    doi_or_url: https://zenodo.org/records/21332689
+    licence: CC-BY-NC-SA-4.0  # README and description; the record's rights field says CC-BY-SA-4.0
+    access_notes: Zenodo archive (5.8 MB) holds only Git LFS pointers. Full data about 359 GB in 230 parts on GitHub (Git LFS) or a Fraunhofer GitLab.
+    retrieved: null
+    status: to-verify
+    files: []
+    notes: Scouted 2026-10-10. Raw 8-bit IQ in HDF5 via Git LFS (github FelixOtt94/FraunhoferIIS_Jammertest2025), no observables, no coordinates. Each Innosense sample is about 1.6 ms at 81 MHz, with no time stamp; too short for tracking. Treat as non-commercial. Optional.
+
+  - id: jammertest-plan
+    refs: [23, 58]
+    doi_or_url: https://github.com/NPRA/jammertest-plan
+    licence: MIT
+    access_notes: GitHub; the 2024 plans are in the git history (no 2023 plan). Full clone about 1 GB, so only the files needed are kept.
+    retrieved: 2026-10-11
+    status: fetched
+    files:
+      - name: plan-monday-2024-09-09.json
+        published_checksum: git 5349470b4ecdaedc53360a9ae4958abb5a8325f8 (2024-09-13)
+        sha256: 0b16abfa393e27896d045706ed99f02c76eec9ea3b3b77d92916afac45f2be46
+        local_path: raw/jammertest-plan-2024/plan-monday-2024-09-09.json
+      - name: testcatalog.json
+        published_checksum: git 5349470b4ecdaedc53360a9ae4958abb5a8325f8 (2024-09-13)
+        sha256: 8b9e64e7d9037ff1cf77823794b2172e6623610afd910414a3f35aa0e195bbe4
+        local_path: raw/jammertest-plan-2024/testcatalog.json
+    notes: Labels for interference state and class. The 2024 plan gives test 1.6.4 from 16:25:00 to 16:39:10, 50 W, in local time (CEST, UTC+2), matching the UGE attack_log.
+
+  - id: android-raw-span
+    refs: [17]
+    doi_or_url: null
+    licence: null
+    access_notes: possibly Kaggle (a new credential; needs explicit approval)
+    retrieved: null
+    status: deferred
+    files: []
+    notes: S2 transfer only.
+
+  - id: gfz-kp
+    refs: [59]
+    doi_or_url: https://doi.org/10.5880/Kp.0001
+    licence: CC-BY-4.0  # stated in the JSON service's meta field
+    access_notes: JSON service kp.gfz.de/app/json, no login
+    retrieved: 2026-10-11
+    status: fetched
+    files:
+      - name: kp_2024-09-09.json
+        url: https://kp.gfz.de/app/json/?start=2024-09-09T00:00:00Z&end=2024-09-09T23:59:59Z&index=Kp&status=def
+        sha256: 2fb62f2c8adf4ba45662da42804e5740edabc9093c75233baf5bc71f8cc4376c
+        local_path: raw/gfz-kp/kp_2024-09-09.json
+      - name: kp_2024-09.json
+        url: https://kp.gfz.de/app/json/?start=2024-09-01T00:00:00Z&end=2024-09-30T23:59:59Z&index=Kp&status=def
+        size_bytes: 8321
+        sha256: 9eb6a1ca30e676aac9e37cb43988d5a5b828f4998ecd85e54b923219a8eea593
+        local_path: raw/gfz-kp/kp_2024-09.json
+        retrieved: 2026-10-13  # the month of the G1c verdict (P1c task 8): 240 bins, 2024-09-01 to 2024-09-30
+    notes: Geomagnetic screening (Kp > 4 flagged). 2024-09-09 is definitive; 1.0 in the 12 to 15 UTC bin that holds UGE 1.6.4, 2.667 at most that day.
+
+  - id: igs-brdc
+    refs: []
+    doi_or_url: ftp://gssc.esa.int/gnss/data/daily/2024/253/
+    licence: open (IGS data policy)
+    access_notes: ESA GSSC anonymous FTP. BKG, IGN and WHU were unreachable from this network on 2026-10-11.
+    retrieved: 2026-10-11
+    status: fetched
+    files:
+      - name: BRDC00IGS_R_20242530000_01D_MN.rnx.gz
+        size_bytes: 1305919
+        published_checksum: null
+        sha256: b7d6cd99fbc34ad0c395488f318a0cb3783b86e21f8deb66c6aaf0d66ada4aab
+        local_path: raw/igs-brdc/BRDC00IGS_R_20242530000_01D_MN.rnx.gz
+        extracted_ranges: all, into raw/igs-brdc/extracted/
+      - name: igs-brdc-2024-242-274.sha256
+        size_bytes: 4388
+        published_checksum: null
+        sha256: 5dd3e25cfc1f52370cd419e2dd7951f759d9f9b7462981d8cd455b157bf227cb
+        local_path: null  # the sidecar lives in the repository: registry/igs-brdc-2024-242-274.sha256 lists sha256, size and path (under raw/igs-brdc/) of the 33 daily files of 2024 days 242 to 274 (the month of the G1c verdict, P1c task 8; retrieved 2026-10-13), day 253 included
+        extracted_ranges: all, into raw/igs-brdc/extracted/ (the run manifest of c19ec02883d0 hashes the extracted files)
+      - name: BRDC00IGS_R_20232610000_01D_MN.rnx.gz
+        size_bytes: 1240796
+        published_checksum: null
+        sha256: bbb08d8cd59461a815a0036755e460295387bbbe3fb8a655c13639e633d36f36
+        local_path: raw/igs-brdc/BRDC00IGS_R_20232610000_01D_MN.rnx.gz
+        extracted_ranges: all, into raw/igs-brdc/extracted/
+      - name: BRDC00IGS_R_20232630000_01D_MN.rnx.gz
+        size_bytes: 1243231
+        published_checksum: null
+        sha256: 0a75d6dd12bfcb5d37ae23ebc74820d6b99eeb6c44762df59f1905a7d7def415
+        local_path: raw/igs-brdc/BRDC00IGS_R_20232630000_01D_MN.rnx.gz
+        extracted_ranges: all, into raw/igs-brdc/extracted/
+      - name: igs-brdc-2023-261-263.sha256
+        size_bytes: 483
+        published_checksum: null
+        sha256: 2186dedca80ce0c215061402728f522229e16e61d08201ee181c9396c1615934
+        local_path: null  # the sidecar lives in the repository: registry/igs-brdc-2023-261-263.sha256 lists sha256, size and path (under raw/igs-brdc/) of the daily files of 2023 days 261 (18 Sep, FGI JT23_4.1.5) and 263 (20 Sep, FGI JT23_16.1.1), the days of the sky-consistency check (P2b part 2, task 7; retrieved 2026-10-16)
+        extracted_ranges: null  # a repository file, not an extract
+    notes: Merged multi-GNSS broadcast navigation (RINEX 3) for 2024-09-09. Broadcast orbits only (D-11); 31 GPS and 25 Galileo satellites selectable at 14:30 UTC. Also the daily files of 2023 days 261 and 263 (16 Oct 2026, same source), the ephemerides of the sky-consistency check for FGI JT23_4.1.5 and JT23_16.1.1 (docs/7 section 4.2).
+
+  - id: mendeley-interference
+    refs: [63]
+    doi_or_url: https://doi.org/10.17632/94f5fzgsrh.1
+    licence: CC-BY-4.0
+    access_notes: Mendeley Data; login requirement unknown
+    retrieved: null
+    status: to-verify
+    files: []
+    notes: Scouted 2026-10-10. Part V (10.17632/94f5fzgsrh.1), Yunnan Univ. rooftop, commercial jammer + HackRF spoofing, observables incl. carrier phase; format, coordinates, receiver unstated. Candidate H1a arm if Route D is possible.
+
+  - id: own-station
+    refs: []
+    doi_or_url: null
+    licence: own
+    access_notes: own hardware (D-24)
+    retrieved: null
+    status: own
+    files: []
+    notes: 2 x ZED-F9P + raw-IQ SDR on one surveyed antenna. Hardware not yet ordered.
+
+  - id: reference-stations
+    refs: [65]
+    doi_or_url: null  # RGP (IGN), RENAG via Resif, EUREF EPN, NGS CORS
+    licence: null  # to confirm per network
+    access_notes: FTP or web, no login for Resif and NGS (to confirm)
+    retrieved: null
+    status: to-verify
+    files: []
+    notes: E1 arm c. P1 spike.
+
+  - id: rgp-2024-biaz-scoa
+    refs: [65]
+    doi_or_url: https://rgpdata.ign.fr/pub/data/2024/
+    licence: null  # IGN RGP open data; terms to confirm
+    access_notes: HTTPS, no login. 1 s hourly Hatanaka files (data_1), station biaz and partner scoa, days 242 to 274 of 2024 (history days 242-244 plus the month 245-274).
+    retrieved: 2026-10-13
+    status: fetched
+    files:
+      - name: rgp-2024-biaz-scoa.sha256
+        size_bytes: 165784
+        published_checksum: null
+        sha256: 393a75014b7bef10c424c59abe723b342c65475f57fcf53f56b67c0d3920f87d
+        local_path: null  # the sidecar lives in the repository: registry/rgp-2024-biaz-scoa.sha256 lists sha256, size and path (under raw/rgp/2024/DDD/) of every hourly file
+        extracted_ranges: all hourly files kept as downloaded, read-only
+    notes: E1 arm c station-month (P1c task 8). Station and partner chosen by the screen of day 253 (biaz, scoa).
+
+  - id: rgp-coords
+    refs: [65]
+    doi_or_url: https://rgpdata.ign.fr/pub/data/2024/
+    licence: null  # IGN RGP open data; terms to confirm
+    access_notes: HTTPS, no login. Daily file coorrgf93_YYYY-DDD.txt in the day directory (not in the directory listing, but the URL answers).
+    retrieved: 2026-10-13
+    status: fetched
+    files:
+      - name: rgp-coords-2024-242-274.sha256
+        size_bytes: 3857
+        published_checksum: null
+        sha256: 49c4473d620d5bb3a2c913d34bbcdee368c24e2a20d660de039822a3bbc93ff4
+        local_path: null  # the sidecar lives in the repository: registry/rgp-coords-2024-242-274.sha256 lists sha256, size and path (under raw/rgp-coords/) of the 33 coordinate files of 2024 days 242 to 274
+    notes: RGF93 station coordinates for the G1c month and its history days (P1c task 8); the partner search and the chord distances read them.
+
+  - id: rgp-2024-agde-253-test-hour
+    refs: [65]
+    doi_or_url: https://rgpdata.ign.fr/pub/data/2024/253/data_1/agde253a.24d.Z
+    licence: null  # IGN RGP open data; terms to confirm
+    access_notes: HTTPS, no login.
+    retrieved: 2026-10-13
+    status: fetched
+    files:
+      - name: agde253a.24d.Z
+        url: https://rgpdata.ign.fr/pub/data/2024/253/data_1/agde253a.24d.Z
+        size_bytes: 1979415
+        published_checksum: null
+        sha256: 6e882eecf24ba615bbf2e80a0a4aa346b083ae8546a8a3841e55f9af89f6c513
+        local_path: raw/rgp/2024/253/agde253a.24d.Z
+    notes: The real-data hour of the Hatanaka and RINEX 2.11 tests (P1c task 4; tests/unit/test_io_hatanaka.py, tests/unit/test_io_rgp.py). Station agde, 2024-09-09 hour a.
+
+  - id: links-atlantis-l1
+    refs: [68]
+    doi_or_url: https://doi.org/10.5281/zenodo.14859561
+    licence: CC-BY-4.0
+    access_notes: Zenodo, no login. About 10 GB per file.
+    retrieved: null
+    status: to-verify
+    files: []
+    notes: Setup asked by email.
+
+  - id: jammertest2025-recordings
+    refs: [70]
+    doi_or_url: null
+    licence: null
+    access_notes: via the authors
+    retrieved: null
+    status: to-verify
+    files: []
+    notes: Raw IQ access asked by email.
+
+  - id: fraunhofer-highway-snapshots
+    refs: [69]
+    doi_or_url: null  # IEEE DataPort
+    licence: null
+    access_notes: IEEE DataPort
+    retrieved: null
+    status: deferred
+    files: []
+    notes: 20 ms snapshots; waveform realism only.
+
+  - id: cttc-2013-sample
+    refs: []  # the recording of GNSS-SDR's "My first fix" tutorial (gnss-sdr.org/my-first-fix)
+    doi_or_url: https://sourceforge.net/projects/gnss-sdr/files/data/2013_04_04_GNSS_SIGNAL_at_CTTC_SPAIN.tar.gz
+    licence: null  # none stated for the data file (checked 14 Oct 2026); internal development runs only, never redistributed or used as a committed fixture
+    access_notes: >-
+      SourceForge, no login. The tarball (1 150 716 878 bytes, sha256
+      d5b926aefe7462ca4211bcae2129591a810fa4960a214f35d056a883aa2af3ff) was extracted and then deleted.
+    retrieved: 2026-10-14
+    status: fetched
+    files:
+      - name: 2013_04_04_GNSS_SIGNAL_at_CTTC_SPAIN.dat
+        size_bytes: 1600000000
+        published_checksum: null
+        sha256: 6489a6630784478f144f20bf872848410dee3b54a20fd8d1bdd9258afccf2976
+        local_path: raw/cttc-2013-sample/extracted/2013_04_04_GNSS_SIGNAL_at_CTTC_SPAIN/2013_04_04_GNSS_SIGNAL_at_CTTC_SPAIN.dat
+        extracted_ranges: all, with the capture's .conf, .log, .txt, .nmea and .kml beside it
+    notes: >-
+      Per its capture log: USRP1 with a DBSRX v2 daughterboard and its own (undisciplined) oscillator, 4 MS/s,
+      interleaved int16 I/Q (GNSS-SDR item_type ishort), centred at 1575.42 MHz, 100 s, first fix 2013-04-04 06:23:50,
+      roof of CTTC with a NovAtel GPS-600 antenna ("aproximatted coordinates 40.396764 N, 3.713379 E" as written).
+      Real satellites carry Dopplers of +5 to +7 kHz from the oscillator offset. A development recording for P2a
+      (E0b), not for claims. Its floor is not white (measured 14 Oct 2026, Welch 2^16 Hann): a CW line at +580 kHz
+      stands 42 dB above the median floor per 61 Hz bin, with weaker lines around it and at +340 and +820 kHz, and
+      the PSD falls 6 to 7 dB towards +-2 MHz. Weighted by the C/A spectrum, the density is 2.3 dB above the median.

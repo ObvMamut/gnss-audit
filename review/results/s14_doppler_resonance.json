@@ -1,0 +1,592 @@
+{
+  "meta": {
+    "study": "s14_doppler_resonance",
+    "generated": "2026-10-09T21:18:07+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "j_over_c": 300.0,
+  "rows": [
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -40.0,
+      "despread_power": 0.06884724855424677,
+      "sim": {
+        "sigma_i2": 0.00013952968883977463,
+        "cn0_rep_dbhz": 40.44935493310218,
+        "r_corrected": 0.69371448718103,
+        "max_abs_err_rad": 0.06059419055581022
+      },
+      "pred": {
+        "sigma_i2": 0.00012801648367250198,
+        "cn0_rep_dbhz": 40.597078788601586,
+        "r_corrected": 0.6766615092162235
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -20.0,
+      "despread_power": 0.07409485807988253,
+      "sim": {
+        "sigma_i2": 0.0005571354281975745,
+        "cn0_rep_dbhz": 42.524898222310824,
+        "r_corrected": 2.7937506120118303,
+        "max_abs_err_rad": 0.07542346763220073
+      },
+      "pred": {
+        "sigma_i2": 0.0005437010026869646,
+        "cn0_rep_dbhz": 42.50478957178484,
+        "r_corrected": 2.7481178091227667
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -10.0,
+      "despread_power": 0.07698329118160967,
+      "sim": {
+        "sigma_i2": 0.0022080157850164995,
+        "cn0_rep_dbhz": 44.30477550157675,
+        "r_corrected": 14.542634636298171,
+        "max_abs_err_rad": 0.11998820815029265
+      },
+      "pred": {
+        "sigma_i2": 0.002177406177505804,
+        "cn0_rep_dbhz": 44.335789006126205,
+        "r_corrected": 14.4041748672453
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -5.0,
+      "despread_power": 0.07849420317293278,
+      "sim": {
+        "sigma_i2": 0.007837451780394982,
+        "cn0_rep_dbhz": 45.13037753531697,
+        "r_corrected": 59.76021077233846,
+        "max_abs_err_rad": 0.17292289234105435
+      },
+      "pred": {
+        "sigma_i2": 0.007779538053718458,
+        "cn0_rep_dbhz": 45.16924155103004,
+        "r_corrected": 59.91423442378149
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -3.0,
+      "despread_power": 0.07911104947159353,
+      "sim": {
+        "sigma_i2": 0.01698907856050947,
+        "cn0_rep_dbhz": 45.34294157988018,
+        "r_corrected": 134.9487881323585,
+        "max_abs_err_rad": 0.23181917839564584
+      },
+      "pred": {
+        "sigma_i2": 0.016848539519749992,
+        "cn0_rep_dbhz": 45.363609911291185,
+        "r_corrected": 134.53821769346754
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -2.0,
+      "despread_power": 0.07942214957408852,
+      "sim": {
+        "sigma_i2": 0.02666970253166467,
+        "cn0_rep_dbhz": 45.41643554731001,
+        "r_corrected": 214.94714331865853,
+        "max_abs_err_rad": 0.2762184967386675
+      },
+      "pred": {
+        "sigma_i2": 0.026442727584768465,
+        "cn0_rep_dbhz": 45.4250694374882,
+        "r_corrected": 213.58267393023309
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -1.0,
+      "despread_power": 0.07973503495155915,
+      "sim": {
+        "sigma_i2": 0.041413087840012346,
+        "cn0_rep_dbhz": 45.4271703887953,
+        "r_corrected": 334.12148294380717,
+        "max_abs_err_rad": 0.33067276979661114
+      },
+      "pred": {
+        "sigma_i2": 0.040986157731725426,
+        "cn0_rep_dbhz": 45.43420387135274,
+        "r_corrected": 331.1602060222172
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": -0.5,
+      "despread_power": 0.07989214725158471,
+      "sim": {
+        "sigma_i2": 0.05580309938157864,
+        "cn0_rep_dbhz": 45.46439012933543,
+        "r_corrected": 453.6228066602121,
+        "max_abs_err_rad": 0.37496841529617586
+      },
+      "pred": {
+        "sigma_i2": 0.05553222118056851,
+        "cn0_rep_dbhz": 45.48108874887498,
+        "r_corrected": 453.2374723366969
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 0.5,
+      "despread_power": 0.08020771131452693,
+      "sim": {
+        "sigma_i2": 0.0561172114474177,
+        "cn0_rep_dbhz": 45.465042827165654,
+        "r_corrected": 456.32523910915916,
+        "max_abs_err_rad": 0.3761785926623551
+      },
+      "pred": {
+        "sigma_i2": 0.055751566554322764,
+        "cn0_rep_dbhz": 45.45715021499461,
+        "r_corrected": 452.48723684845436
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 1.0,
+      "despread_power": 0.08036616316463376,
+      "sim": {
+        "sigma_i2": 0.041837761257070546,
+        "cn0_rep_dbhz": 45.41847278024362,
+        "r_corrected": 336.7328049947932,
+        "max_abs_err_rad": 0.32632883403378876
+      },
+      "pred": {
+        "sigma_i2": 0.04131057623149437,
+        "cn0_rep_dbhz": 45.435948190107084,
+        "r_corrected": 333.9087965385555
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 2.0,
+      "despread_power": 0.08068440669773735,
+      "sim": {
+        "sigma_i2": 0.027083066474522657,
+        "cn0_rep_dbhz": 45.40568902071119,
+        "r_corrected": 217.84142714006774,
+        "max_abs_err_rad": 0.2914786726101538
+      },
+      "pred": {
+        "sigma_i2": 0.026862982153827406,
+        "cn0_rep_dbhz": 45.418873725248226,
+        "r_corrected": 216.6461969958799
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 3.0,
+      "despread_power": 0.08100443690071157,
+      "sim": {
+        "sigma_i2": 0.017345752394745634,
+        "cn0_rep_dbhz": 45.307056044745494,
+        "r_corrected": 136.73343520789348,
+        "max_abs_err_rad": 0.23758950579167978
+      },
+      "pred": {
+        "sigma_i2": 0.01725178044690872,
+        "cn0_rep_dbhz": 45.33610889625916,
+        "r_corrected": 136.85063500147027
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 5.0,
+      "despread_power": 0.08164985818611048,
+      "sim": {
+        "sigma_i2": 0.008148567667681472,
+        "cn0_rep_dbhz": 45.109233656452474,
+        "r_corrected": 61.81772879507801,
+        "max_abs_err_rad": 0.17695146719977833
+      },
+      "pred": {
+        "sigma_i2": 0.008092294121022425,
+        "cn0_rep_dbhz": 45.14904457748247,
+        "r_corrected": 61.9884576549374
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 10.0,
+      "despread_power": 0.0832946883172383,
+      "sim": {
+        "sigma_i2": 0.0023859674993674143,
+        "cn0_rep_dbhz": 44.21591977582834,
+        "r_corrected": 15.260267424999967,
+        "max_abs_err_rad": 0.11902941827701115
+      },
+      "pred": {
+        "sigma_i2": 0.0023559186173668658,
+        "cn0_rep_dbhz": 44.235612865004974,
+        "r_corrected": 15.155802056253481
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 20.0,
+      "despread_power": 0.08671834727109952,
+      "sim": {
+        "sigma_i2": 0.0006531618961496357,
+        "cn0_rep_dbhz": 42.17671219500319,
+        "r_corrected": 2.952077913440578,
+        "max_abs_err_rad": 0.09271030980833421
+      },
+      "pred": {
+        "sigma_i2": 0.0006363309627545038,
+        "cn0_rep_dbhz": 42.144967268176366,
+        "r_corrected": 2.8679335772524923
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 40.0,
+      "despread_power": 0.09409972382382405,
+      "sim": {
+        "sigma_i2": 0.00019164117520113468,
+        "cn0_rep_dbhz": 39.539954077811416,
+        "r_corrected": 0.6762607135311218,
+        "max_abs_err_rad": 0.06415329174380723
+      },
+      "pred": {
+        "sigma_i2": 0.00017497163676089003,
+        "cn0_rep_dbhz": 39.65553033158221,
+        "r_corrected": 0.6354970672673248
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 100.0,
+      "despread_power": 0.12039356210174965,
+      "sim": {
+        "sigma_i2": 5.8618951297163724e-05,
+        "cn0_rep_dbhz": 38.53433891469449,
+        "r_corrected": 0.2937977842821198,
+        "max_abs_err_rad": 0.05512356166192156
+      },
+      "pred": {
+        "sigma_i2": 3.7011542647064594e-05,
+        "cn0_rep_dbhz": 38.62610049480067,
+        "r_corrected": 0.27467093524999286
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "doppler_offset_hz": 250.0,
+      "despread_power": 0.20795226101221514,
+      "sim": {
+        "sigma_i2": 5.4631492103420776e-05,
+        "cn0_rep_dbhz": 36.83798941202811,
+        "r_corrected": 0.1962243689203652,
+        "max_abs_err_rad": 0.05784762184512726
+      },
+      "pred": {
+        "sigma_i2": 1.236786583384982e-05,
+        "cn0_rep_dbhz": 36.64572443776751,
+        "r_corrected": 0.14385575973709483
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -40.0,
+      "despread_power": 0.06884724855424677,
+      "sim": {
+        "sigma_i2": 0.005569659095646049,
+        "cn0_rep_dbhz": 40.520866545710746,
+        "r_corrected": 2.332358481751142,
+        "max_abs_err_rad": 0.22717497467529793
+      },
+      "pred": {
+        "sigma_i2": 0.0054794671645606195,
+        "cn0_rep_dbhz": 40.83050818422002,
+        "r_corrected": 2.473415319342332
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -20.0,
+      "despread_power": 0.07409485807988253,
+      "sim": {
+        "sigma_i2": 0.01700080660617076,
+        "cn0_rep_dbhz": 42.50365708417968,
+        "r_corrected": 10.279009802042651,
+        "max_abs_err_rad": 0.32971608774746675
+      },
+      "pred": {
+        "sigma_i2": 0.016830498973798878,
+        "cn0_rep_dbhz": 42.86694328168508,
+        "r_corrected": 11.089521968696316
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -10.0,
+      "despread_power": 0.07698329118160967,
+      "sim": {
+        "sigma_i2": 0.033656940119309905,
+        "cn0_rep_dbhz": 44.27246351878334,
+        "r_corrected": 30.038989046645597,
+        "max_abs_err_rad": 0.39010118586364295
+      },
+      "pred": {
+        "sigma_i2": 0.03311350891448494,
+        "cn0_rep_dbhz": 44.6137361002165,
+        "r_corrected": 32.02552214904136
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -5.0,
+      "despread_power": 0.07849420317293278,
+      "sim": {
+        "sigma_i2": 0.04670146153481994,
+        "cn0_rep_dbhz": 45.102353166540055,
+        "r_corrected": 50.215817423086555,
+        "max_abs_err_rad": 0.44622082350479275
+      },
+      "pred": {
+        "sigma_i2": 0.0459506203647445,
+        "cn0_rep_dbhz": 45.26130007787848,
+        "r_corrected": 51.30283885742931
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -3.0,
+      "despread_power": 0.07911104947159353,
+      "sim": {
+        "sigma_i2": 0.06090195226838853,
+        "cn0_rep_dbhz": 45.31758886660257,
+        "r_corrected": 68.57268830874563,
+        "max_abs_err_rad": 0.47353925203880687
+      },
+      "pred": {
+        "sigma_i2": 0.05977190329773637,
+        "cn0_rep_dbhz": 45.38528827497168,
+        "r_corrected": 68.3710219263891
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -2.0,
+      "despread_power": 0.07942214957408852,
+      "sim": {
+        "sigma_i2": 0.05272082414990417,
+        "cn0_rep_dbhz": 45.45523879219205,
+        "r_corrected": 61.45253047920065,
+        "max_abs_err_rad": 0.47529574134355906
+      },
+      "pred": {
+        "sigma_i2": 0.05169666228332917,
+        "cn0_rep_dbhz": 45.48304939635851,
+        "r_corrected": 60.64834929573844
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -1.0,
+      "despread_power": 0.07973503495155915,
+      "sim": {
+        "sigma_i2": 0.04148869343181335,
+        "cn0_rep_dbhz": 45.484446803673585,
+        "r_corrected": 48.94722041344445,
+        "max_abs_err_rad": 0.4151486981344808
+      },
+      "pred": {
+        "sigma_i2": 0.040252938454602476,
+        "cn0_rep_dbhz": 45.49413445323073,
+        "r_corrected": 47.59001168331169
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": -0.5,
+      "despread_power": 0.07989214725158471,
+      "sim": {
+        "sigma_i2": 0.04097344037267957,
+        "cn0_rep_dbhz": 45.42015336946105,
+        "r_corrected": 47.61238867658129,
+        "max_abs_err_rad": 0.4011031519729087
+      },
+      "pred": {
+        "sigma_i2": 0.03996715432785252,
+        "cn0_rep_dbhz": 45.42816605268568,
+        "r_corrected": 46.53762541748183
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 0.5,
+      "despread_power": 0.08020771131452693,
+      "sim": {
+        "sigma_i2": 0.041081915201815436,
+        "cn0_rep_dbhz": 45.474598577927416,
+        "r_corrected": 48.36156908066823,
+        "max_abs_err_rad": 0.40366346506169387
+      },
+      "pred": {
+        "sigma_i2": 0.04012501962581003,
+        "cn0_rep_dbhz": 45.46378015002868,
+        "r_corrected": 47.10725639522507
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 1.0,
+      "despread_power": 0.08036616316463376,
+      "sim": {
+        "sigma_i2": 0.04174108400975537,
+        "cn0_rep_dbhz": 45.42697068859822,
+        "r_corrected": 48.570812695043244,
+        "max_abs_err_rad": 0.415936884217997
+      },
+      "pred": {
+        "sigma_i2": 0.04057155329181948,
+        "cn0_rep_dbhz": 45.43351669838443,
+        "r_corrected": 47.283972882656784
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 2.0,
+      "despread_power": 0.08068440669773735,
+      "sim": {
+        "sigma_i2": 0.053654436161072114,
+        "cn0_rep_dbhz": 45.414237471353566,
+        "r_corrected": 61.87053812074828,
+        "max_abs_err_rad": 0.48184536713750065
+      },
+      "pred": {
+        "sigma_i2": 0.05251827792733231,
+        "cn0_rep_dbhz": 45.4397153131038,
+        "r_corrected": 60.9746510215971
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 3.0,
+      "despread_power": 0.08100443690071157,
+      "sim": {
+        "sigma_i2": 0.062198350527539456,
+        "cn0_rep_dbhz": 45.35691113028728,
+        "r_corrected": 70.6741539573935,
+        "max_abs_err_rad": 0.4585323696575218
+      },
+      "pred": {
+        "sigma_i2": 0.061202441398543424,
+        "cn0_rep_dbhz": 45.42124602185054,
+        "r_corrected": 70.57170723026198
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 5.0,
+      "despread_power": 0.08164985818611048,
+      "sim": {
+        "sigma_i2": 0.04861035031325655,
+        "cn0_rep_dbhz": 45.12221284918416,
+        "r_corrected": 52.48438926648822,
+        "max_abs_err_rad": 0.4287801306625055
+      },
+      "pred": {
+        "sigma_i2": 0.04779794538904285,
+        "cn0_rep_dbhz": 45.29522584736449,
+        "r_corrected": 53.74757838143477
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 10.0,
+      "despread_power": 0.0832946883172383,
+      "sim": {
+        "sigma_i2": 0.03624398300344556,
+        "cn0_rep_dbhz": 44.262824578136886,
+        "r_corrected": 32.2286694216564,
+        "max_abs_err_rad": 0.4042723726115162
+      },
+      "pred": {
+        "sigma_i2": 0.03582828640095411,
+        "cn0_rep_dbhz": 44.658639089412844,
+        "r_corrected": 34.942835509433586
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 20.0,
+      "despread_power": 0.08671834727109952,
+      "sim": {
+        "sigma_i2": 0.019950303058497154,
+        "cn0_rep_dbhz": 42.17732881074062,
+        "r_corrected": 11.075902134481154,
+        "max_abs_err_rad": 0.32965571788806075
+      },
+      "pred": {
+        "sigma_i2": 0.01969789932838769,
+        "cn0_rep_dbhz": 42.576112717424195,
+        "r_corrected": 12.022138810419605
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 40.0,
+      "despread_power": 0.09409972382382405,
+      "sim": {
+        "sigma_i2": 0.007660220931013102,
+        "cn0_rep_dbhz": 39.54335665754986,
+        "r_corrected": 2.4320511189665,
+        "max_abs_err_rad": 0.24601805287678563
+      },
+      "pred": {
+        "sigma_i2": 0.007489280371221749,
+        "cn0_rep_dbhz": 39.91058190857684,
+        "r_corrected": 2.6018439223832144
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 100.0,
+      "despread_power": 0.12039356210174965,
+      "sim": {
+        "sigma_i2": 0.0019579492664070046,
+        "cn0_rep_dbhz": 38.59892625736816,
+        "r_corrected": 0.6527335917296413,
+        "max_abs_err_rad": 0.191539369734829
+      },
+      "pred": {
+        "sigma_i2": 0.0018023581360673024,
+        "cn0_rep_dbhz": 38.676468306178776,
+        "r_corrected": 0.6296693051972365
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "doppler_offset_hz": 250.0,
+      "despread_power": 0.20795226101221514,
+      "sim": {
+        "sigma_i2": 0.0008847745860119162,
+        "cn0_rep_dbhz": 36.79130943273394,
+        "r_corrected": 0.26802757859100873,
+        "max_abs_err_rad": 0.2080734820934537
+      },
+      "pred": {
+        "sigma_i2": 0.0006648347586184538,
+        "cn0_rep_dbhz": 36.470003029257676,
+        "r_corrected": 0.21367479505779735
+      }
+    }
+  ]
+}

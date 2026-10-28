@@ -1,0 +1,58 @@
+[project]
+name = "gnssaudit"
+version = "0.0.1"
+description = "Carrier-phase uncertainty audit and in-phase witness estimator for GNSS receivers under interference"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.3",
+    "pyarrow>=25.0.1,<26",
+    "pyyaml>=6.0.3,<7",
+    "scipy>=1.16",
+]
+
+[project.scripts]
+gnssaudit = "gnssaudit.cli.main:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "hypothesis>=6",
+    "sympy>=1.13",
+    "ruff>=0.12",
+    "pyright>=1.1.400",
+    "matplotlib>=3.11.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.8,<0.10"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+markers = [
+    "slow: long Monte Carlo runs",
+    "container: needs Docker and the pinned GNSS-SDR image",
+    "data: needs the fetched datasets under $GNSSAUDIT_DATA",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+# docs hold interface sketches in code blocks, not code
+extend-exclude = ["docs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY"]
+
+[tool.ruff.lint.per-file-ignores]
+# review studies: long result-dict lines kept on one line (fmt: skip) and printf-style progress output
+"review/*.py" = ["E501", "UP031"]
+
+[tool.pyright]
+include = ["src", "tests", "review"]
+pythonVersion = "3.14"
+typeCheckingMode = "standard"

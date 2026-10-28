@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+type: software
+title: "gnss-audit: carrier-phase uncertainty audit and in-phase witness estimator for GNSS receivers under interference"
+abstract: >-
+  Code, experiment specifications and results of a study of whether C/N0-derived and receiver-reported GNSS
+  carrier-phase uncertainties stay calibrated under radio-frequency interference. Truth comes from twin runs of GNSS-SDR
+  on public jamming recordings, with and without injected interference, and from synthetic ghost satellites.
+authors:
+  - family-names: Woroszylski
+    given-names: Julian
+license: MIT
+repository-code: "https://github.com/ObvMamut/gnss-audit"
+version: 0.0.1
+date-released: 2026-10-28
+keywords:
+  - GNSS
+  - carrier phase
+  - interference
+  - jamming
+  - uncertainty quantification
+  - GNSS-SDR

@@ -1,0 +1,5 @@
+# IGS merged broadcast navigation (RINEX 3, gzip), 2023 days 261 and 263
+# URL pattern: ftp://gssc.esa.int/gnss/data/daily/2023/DDD/BRDC00IGS_R_2023DDD0000_01D_MN.rnx.gz
+# columns: sha256, size in bytes, path under $GNSSAUDIT_DATA
+bbb08d8cd59461a815a0036755e460295387bbbe3fb8a655c13639e633d36f36  1240796  raw/igs-brdc/BRDC00IGS_R_20232610000_01D_MN.rnx.gz
+0a75d6dd12bfcb5d37ae23ebc74820d6b99eeb6c44762df59f1905a7d7def415  1243231  raw/igs-brdc/BRDC00IGS_R_20232630000_01D_MN.rnx.gz

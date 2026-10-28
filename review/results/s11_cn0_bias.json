@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "study": "s11_cn0_bias",
+    "generated": "2026-10-09T21:09:43+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "rows": [
+    {
+      "cn0_dbhz": 25,
+      "iid_mean_db_bias": 4.6953420240327794,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 2.94804563768546,
+      "b3_coverage95_if_only_bias": 0.7463436346841474
+    },
+    {
+      "cn0_dbhz": 28,
+      "iid_mean_db_bias": 2.5262937537855485,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 1.7890784122868224,
+      "b3_coverage95_if_only_bias": 0.857167219659007
+    },
+    {
+      "cn0_dbhz": 30,
+      "iid_mean_db_bias": 1.4271949646225295,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 1.3890551739278572,
+      "b3_coverage95_if_only_bias": 0.9036845702024743,
+      "in_loop_bn5": {
+        "reported_minus_true_db": 1.425022968339654,
+        "var_true_over_b3": 1.7401533318897076,
+        "b3_coverage95": 0.8633
+      },
+      "in_loop_bn35": {
+        "reported_minus_true_db": 1.3781135591825553,
+        "var_true_over_b3": 1.7059665842350662,
+        "b3_coverage95": 0.8696375
+      }
+    },
+    {
+      "cn0_dbhz": 33,
+      "iid_mean_db_bias": 0.6330898397852138,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 1.1569350646766323,
+      "b3_coverage95_if_only_bias": 0.9315738004874163,
+      "in_loop_bn5": {
+        "reported_minus_true_db": 0.6381376733801147,
+        "var_true_over_b3": 1.4493737378857765,
+        "b3_coverage95": 0.89554
+      },
+      "in_loop_bn35": {
+        "reported_minus_true_db": 0.5932904476089433,
+        "var_true_over_b3": 1.4117087726070199,
+        "b3_coverage95": 0.9021375
+      }
+    },
+    {
+      "cn0_dbhz": 35,
+      "iid_mean_db_bias": 0.5586601430231042,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 1.137276366616151,
+      "b3_coverage95_if_only_bias": 0.9339186203932832,
+      "in_loop_bn5": {
+        "reported_minus_true_db": 0.5573435541348033,
+        "var_true_over_b3": 1.347024334208152,
+        "b3_coverage95": 0.908485
+      },
+      "in_loop_bn35": {
+        "reported_minus_true_db": 0.5389544975800931,
+        "var_true_over_b3": 1.3218577077082585,
+        "b3_coverage95": 0.9130025
+      }
+    },
+    {
+      "cn0_dbhz": 40,
+      "iid_mean_db_bias": 0.5039705703421902,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 1.123044737282219,
+      "b3_coverage95_if_only_bias": 0.9356114197105692,
+      "in_loop_bn5": {
+        "reported_minus_true_db": 0.502051155892353,
+        "var_true_over_b3": 1.1392544835581848,
+        "b3_coverage95": 0.9336175
+      },
+      "in_loop_bn35": {
+        "reported_minus_true_db": 0.47726160153143127,
+        "var_true_over_b3": 1.12582723682328,
+        "b3_coverage95": 0.9356975
+      }
+    },
+    {
+      "cn0_dbhz": 45,
+      "iid_mean_db_bias": 0.4617161356436341,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 1.1121711202573268,
+      "b3_coverage95_if_only_bias": 0.9369017858904356,
+      "in_loop_bn5": {
+        "reported_minus_true_db": 0.4838946362940746,
+        "var_true_over_b3": 1.1190845052542358,
+        "b3_coverage95": 0.9372025
+      },
+      "in_loop_bn35": {
+        "reported_minus_true_db": 0.4922696885310103,
+        "var_true_over_b3": 1.1254821359374285,
+        "b3_coverage95": 0.9352775
+      }
+    },
+    {
+      "cn0_dbhz": 50,
+      "iid_mean_db_bias": 0.47672591862749414,
+      "invalid_fraction": 0.0,
+      "b3_variance_ratio_true_over_pred": 1.1160215785244296,
+      "b3_coverage95_if_only_bias": 0.9364451692754563,
+      "in_loop_bn5": {
+        "reported_minus_true_db": 0.4664252694228779,
+        "var_true_over_b3": 1.1295735785360492,
+        "b3_coverage95": 0.9353475
+      },
+      "in_loop_bn35": {
+        "reported_minus_true_db": 0.4675380566740017,
+        "var_true_over_b3": 1.1209206051768663,
+        "b3_coverage95": 0.9360875
+      }
+    }
+  ]
+}

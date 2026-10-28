@@ -1,0 +1,38 @@
+# E0 (b-d) on the L5 segment, the first 120 s of SpoofRepo TGS_L5_E5a (P2b part 2, task 9; docs/10 section 2.1; the
+# interval admitted by D-38, outcome D3, with the dips at 60 and 101 s noted). Confirmatory:
+# its gates and the L5 loop cells feed G3. Decimated by 2 (129-tap FIR) to 13 MS/s; the file stores Q before I. No
+# ghost (C/A only, D-16): V7 and the ghost checks do not apply. Band-limited noise 10 MHz wide (L5's BPSK(10) main lobe
+# is about 20 MHz, so the separation is about 10 times that of C/A to 2 MHz noise: the levels sit 10 dB higher than on
+# C/A). V6 is not judged (kappa is taken against C/A); linearity is.
+id: E0b
+variant: recording
+recording: {interval: fgi-spoofrepo-TGS_L5_E5a-clean, item_type: ibyte, fs_hz: 26000000.0, q_first: true}
+template: L5
+decim: 2
+fir_taps: 129
+workers: 6
+frontend_bw_hz: 10000000.0  # the record's 10.09 MHz L5/E5a band
+seed: 13
+max_channels: 4
+min_cn0_dbhz: 35.0
+warmup_s: 30.0
+onset_s: 55.0
+pre_window_s: 20.0
+noise: {bw_hz: 10000000.0, levels_db_hz: [60.0, 65.0, 70.0, 75.0, 80.0]}
+tones: {n_tones: 12, f_min_hz: 0.05, f_max_hz: 50.0, a_rad: 0.05, onset_s: 40.0}
+# bn5-t1 is kept on L5 (D-39: decided by this run); if it fails only on its own cell, it is dropped from E3's L5 design
+# and this spec is re-run without it (P2b part 2, task 9, pre-registered)
+loop_cells: [default, default-o2, bn15-t1, bn5-t1]
+# D-34 (as on segment A, which asks 4 of 8): the segment has 3 GPS L5 satellites at 35 dB-Hz or more (PRN 9, 14, 30;
+# Admit 810a0579cddf), so the default of 4 locked real channels cannot be met; 2, the L5 admission rule's minimum
+# (min_sats 2), is set before the run (Judgment, 19 Oct 2026)
+min_locked_real: 2
+timeout_s: 3600
+confirmatory: true
+# D-34: the carrier-lock rule never drops a twin's channel, and the pull-in uses the FLL so a start-up frequency false
+# lock is not kept (documented deviations from the v0.0.22 defaults; docs/6 section 9)
+receiver_overrides: {Tracking_L5.max_carrier_lock_fail: "1000000", Tracking_L5.enable_fll_pull_in: "true"}
+# D-40: the receiver this run needs. GNSS-SDR's L5 replica is patched in image p2 (0003, XB on its 8191-chip period);
+# `gnssaudit run` refuses this spec on any other build. The key also gives the L5 re-run its own run id: ee71d4c3c306 is
+# the failed run on p1 (19 Oct 2026).
+receiver_patch: "p2:0001-acc-phase-float64+0002-log-every-integration+0003-l5-xb-period"

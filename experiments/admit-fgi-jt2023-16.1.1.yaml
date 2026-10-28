@@ -1,0 +1,22 @@
+# Admit (P2b task 5/6; docs/7 section 4.2): is the first 150 s of FGI JT23_16.1.1 (an incoherent-spoofing recording) a clean
+# Route B base? Change detectors and absolute checks, plus a survey through the patched receiver on free channels.
+id: Admit
+dataset: fgi-jt2023
+local_path: raw/fgi-jt2023/JT23_16.1.1_L1_E1.iq
+item_type: ibyte
+fs_hz: 30690000.0
+frontend_bw_hz: 20000000.0  # the flat part of the LabSat 3W band (+-10 MHz, docs/7 section 2.3)
+template: 1C
+decim: 4
+fir_taps: 129
+workers: 6
+max_channels: 12
+acquisition: true
+band: L1 (GPS L1 C/A, Galileo E1)
+receivers: [LabSat 3 Wideband]
+coordinates_source: none (the surveyed antenna position is asked of FGI, R13)
+timeout_s: 3600
+# the survey is no twin: it runs the stock receiver, whose lock rule drops noise tracks and bad starts so the free
+# channels keep searching (under D-34's raised limit they are kept for good and hide satellites; P2b task 6)
+stock_receiver: true
+confirmatory: true

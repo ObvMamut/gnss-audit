@@ -1,0 +1,35 @@
+# E1 arm c, scout: the event detector for the RGP stations, frozen on 11 Oct 2026 before any month is scanned
+# (docs/10 section 2.2, amendment of 11 Oct 2026). Judgment, not measurement: edit only with a dated amendment.
+id: E1c-scout
+confirmatory: false
+rule:
+  # An event is a spell of simultaneous C/N0 drops on several satellites, kept only if a partner station shows none.
+  # Reference signals: GPS band-1 C/N0 (S1, RINEX code 1C) only. The reference is the C/N0 one sidereal day earlier
+  # (86164 s), which repeats the GPS ground track and hence the multipath and elevation pattern. GLONASS repeats its
+  # ground track every 8 sidereal days and Galileo every 10, so a 1-day lag would leave their pattern in the drop.
+  reference_signals: {G: [1C]}
+  sidereal_s: 86164.0
+  lags: [1, 2, 3]            # reference = median of C/N0 at t - k * sidereal_s
+  lag_tolerance_s: 0.5       # nearest epoch within this distance
+  min_lags: 2                # fewer lags present: no reference, the satellite-epoch is not counted
+  drop_db: 6.0               # dropped = at least this far below the reference
+  elev_mask_deg: 10.0        # only satellites above the mask are counted (NaN elevation: not counted)
+  min_sats: 4                # flagged epoch: at least this many dropped satellites ...
+  min_frac: 0.5              # ... and at least this fraction of the reference-bearing satellites above the mask
+  merge_gap_s: 30.0          # flagged epochs closer than this (gap < merge_gap_s) belong to one event
+  min_duration_s: 10.0       # an event lasts at least this long (end - start)
+  partner_guard_s: 60.0      # partner must have no flagged epoch in [start - guard, end + guard]
+  partner_min_coverage: 0.8  # and be evaluable (>= min_sats referenced satellites above the mask) at this fraction of the
+                             # event's 1 s stamps, else the event is unscreened, not clear
+partner: {min_km: 5.0, max_km: 30.0}
+# Added 11 Oct 2026 (P1c task 8), after the freeze and without touching `rule`: what the rule is run on.
+# Screen: one target day for a seeded sample of metropolitan stations (geodetic 41.0-51.5 N, 5.5 W-10.0 E, see
+# io.rgp.is_metropolitan) with at least one partner in [partner.min_km, partner.max_km], plus `always`; each with its
+# nearest partner that has data on the target day.
+screen: {year: 2024, doy: 253, history_days: 3, n_stations: 30, seed: 20240909, always: [agde]}
+# Month: the screen's pick (most clear events; ties: more partners) and its nearest partner; null runs the screen only.
+month: {station: biaz, partner: scoa, year: 2024, doy_first: 245, doy_last: 274}
+# G1c, D-32 (proposed 11 Oct 2026, pending owner confirmation, so every verdict is provisional): clear-partner events
+# with Kp <= kp_max sum to >= min_clear_flagged_min of flagged epochs, and published coordinates exist for the station
+# and partner on every day. Classes: drop-depth bins [6, 12), [12, 20), >= 20 dB.
+g1c: {min_clear_flagged_min: 10.0, kp_max: 4.0, depth_edges_db: [6.0, 12.0, 20.0]}

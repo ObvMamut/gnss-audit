@@ -1,0 +1,76 @@
+# E2 version 3: run 3, G3's confirmatory re-run under its pre-registered fallback (P2c; docs/12 section 1.2, rules R-0
+# to R-8 of the plan docs/superpowers/plans/2026-10-24-p2c-g3-fallback-ghost-truth.md, commit 5612ebf, committed before
+# run 3's data; D-43, D-44). Confirmatory: its gates and decisions decide G3 a second time; on failure R9 applies (R-5).
+#
+# E2-v2.yaml with these changes (R-3); every other key is E2-v2's, value for value (tests/unit/test_e2_helpers.py):
+# - seed: 20261024, which gives fresh jammer, dither, floor, ghost-code and repeat draws;
+# - truth: ghost. G3's truth is the ghosts' absolute error (R-1): J_max as registered (rule (a') of docs/8 section 5,
+#   on the ghosts' paired excess, with the tau side check at 65 dB-Hz); the ghost ceiling L_G(s, f), the largest level
+#   <= J_max(s, f) such that at every grid level up to it, in mode A, both ghosts lose at most 1.0 s of truth (B1 does
+#   not enter; it is reported); L_K(f) = min(80, L_G(f)) with the registered K-study and thermal blocks below, on the
+#   ghosts' oracle (keys on the 20 ms grid, round(t / 0.02) 0.02 of the record kept); check C-1 on every mode A grid
+#   unit (reported, deciding nothing); the Route B arm reported beside it (R-6: L_B under the registered J_max, L_B
+#   under s29's J_max_TA, the real satellites' K-study); G3's clauses (R-2) in the summary's g3_clauses;
+# - receiver_patch: the patched image p2, the build this spec runs on (D-40);
+# - s29_result and s29_sha256: E2K's pin of s29's J_max_TA, read only by the Route B arm (refused at the start of the
+#   run unless the file has this SHA-256).
+# - workers_b: 6 (added 27 Oct 2026, ruling R3a): execution only; every injected byte as on one core
+#
+# G3 under ghost truth (R-2): clause 1, every gate the run writes passes, on both segments; clause 2, G-hz as passed on
+# E0 (fee767ba3538, 46b76d4b47d9), not re-run; clause 3, L_G(noise) and L_G(swept CW) both not None (a family without
+# one is excluded and reported; a narrowed result is reported beside the verdict, never as the verdict); clause 4, K
+# chosen: K = 51 if the median |sigma^2_101 / sigma^2_51 - 1| is at most 0.2, else 101, with realized K equal to planned
+# K. If L_G(swept CW) is None the K = 101 and thermal blocks run on noise at L_K(noise); if L_G(noise) is None too, no
+# K-study runs and G3 fails on K.
+#
+# How it runs: confirmatory, from a clean tree, write-once, resumed from disk at the same commit. No unit is re-run
+# after a gate failure.
+id: E2
+segments:
+  A: {interval: fgi-jt2023-JT23_4.1.5_L1_E1-clean, item_type: ibyte, fs_hz: 30690000.0}
+  B: {interval: fgi-jt2023-JT23_16.1.1_L1_E1-clean, item_type: ibyte, fs_hz: 30690000.0}  # admitted 19 Oct 2026 (D-37)
+template: 1C
+decim: 4
+fir_taps: 129
+frontend_bw_hz: 20000000.0  # the flat part of the LabSat 3W band (+-10 MHz, docs/7 section 2.3)
+quant: {max_level: 4, zero_level: false}  # FGI's 3-bit alphabet +-1..+-4 (docs/7 section 2.3)
+seed: 20261024  # R-3: fresh jammer, dither, floor, ghost-code and repeat draws
+truth: ghost  # R-1, R-2: the ghost ceiling L_G, the ghosts' oracle, check C-1, the Route B arm reported
+receiver_patch: "p2:0001-acc-phase-float64+0002-log-every-integration+0003-l5-xb-period"
+s29_result: review/results/s29_true_analog_jmax.json  # under the repository; read by the Route B arm only
+s29_sha256: efd04c8d0cc39d2d373fb7fae6454793f80c2f8d88648226b99d7562a70e6fc2
+max_channels: 9  # the 7 strongest real satellites and 2 ghosts
+min_locked_real: 4  # D-34 (P2b task 10): the ghosts must lock; a real channel that starts badly is excluded
+min_cn0_dbhz: 35.0
+survey_channels: 12
+warmup_s: 30.0
+pre_window_s: 20.0
+onset_s: 55.0
+ghosts: {cn0_db_hz: 45.0, doppler_hz: [1500.0, -2500.0]}
+families:
+  noise: {bw_hz: 2000000.0}
+  swept_cw: {span_hz: 1000000.0, period_s: 0.01}
+  chirp: {span_hz: 10000000.0, period_s: 0.00001}
+levels_db_hz: [50.0, 55.0, 60.0, 65.0, 70.0]
+mode_b: {tau_s: 0.01, side_tau_s: [0.001, 0.1], side_level_db_hz: 65.0, side_families: [noise, swept_cw]}
+kstudy:
+  segment: A
+  level_cap_db_hz: 80.0
+  fallback_family: noise
+  offset_s: 0.0037  # the conditional oracle's fixed sweep timing
+  blocks:
+    cond: {family: swept_cw, K: 101, conditional: true}
+    marg: {family: swept_cw, K: 51, conditional: false}
+    noise: {family: noise, K: 51, conditional: false}
+thermal: {segment: A, family: swept_cw, K: 51}
+repeat_fraction: 0.05
+rules: {jmax_tol: 0.10, slope_tol: 0.10, excess_se_max: 0.05, residual_max: 0.05, lost_truth_max_s: 1.0, k_small: 51,
+        bootstrap: {block_s: 1.0, n_boot: 400, seed: 7}}
+pipelines: 3
+workers_a: 6
+workers_b: 6  # mode B on 6 cores (perf-inject, bitwise the same output; owner 27 Oct 2026, ruling R3a)
+timeout_s: 3600
+confirmatory: true
+# D-34: the carrier-lock rule never drops a twin's channel, and the pull-in uses the FLL so a start-up frequency false
+# lock is not kept (documented deviations from the v0.0.22 defaults; docs/6 section 9)
+receiver_overrides: {Tracking_1C.max_carrier_lock_fail: "1000000", Tracking_1C.enable_fll_pull_in: "true"}

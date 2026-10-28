@@ -1,0 +1,691 @@
+{
+  "meta": {
+    "study": "s21_overlay_codes",
+    "generated": "2026-10-09T22:21:35+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "curves": [
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 0.5,
+      "r": 317.8992787761424,
+      "cn0_drop_db": 0.0015768050296535896
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "r": 237.01267533570592,
+      "cn0_drop_db": 0.0068506704577859035
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 2.0,
+      "r": 152.9313107443855,
+      "cn0_drop_db": 0.033251331540045954
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "r": 43.91569428991038,
+      "cn0_drop_db": 0.25138561331480574
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 10.0,
+      "r": 11.215651644661472,
+      "cn0_drop_db": 0.9462186485834918
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "r": 2.329385394778379,
+      "cn0_drop_db": 2.666639820054613
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 40.0,
+      "r": 0.6190838811793234,
+      "cn0_drop_db": 4.605198106617044
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 80.0,
+      "r": 0.39877933128758064,
+      "cn0_drop_db": 4.665417214101478
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 0.5,
+      "r": 33.525202792855254,
+      "cn0_drop_db": 0.001424782062153469
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "r": 33.7775800435441,
+      "cn0_drop_db": 0.005695026646473574
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 2.0,
+      "r": 43.05568371405259,
+      "cn0_drop_db": 0.023213198172789967
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "r": 37.66802459753716,
+      "cn0_drop_db": 0.1568887463710681
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 10.0,
+      "r": 24.828774890375804,
+      "cn0_drop_db": 0.6596028420002251
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "r": 9.19973672377044,
+      "cn0_drop_db": 2.292601036327458
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 40.0,
+      "r": 2.1696274950171595,
+      "cn0_drop_db": 4.416749589676518
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 80.0,
+      "r": 0.8243324319284718,
+      "cn0_drop_db": 4.618637689271613
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 0.5,
+      "r": 21.891178281481604,
+      "cn0_drop_db": 2.2055003268238234
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "r": 21.87918351591402,
+      "cn0_drop_db": 2.2075646025155926
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 2.0,
+      "r": 21.826454230152308,
+      "cn0_drop_db": 2.215800314952035
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "r": 21.21143588727181,
+      "cn0_drop_db": 2.2725072475773644
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 10.0,
+      "r": 18.28214355899554,
+      "cn0_drop_db": 2.4623759612923317
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "r": 10.939975357744643,
+      "cn0_drop_db": 3.0640365106952365
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 40.0,
+      "r": 1.6565805528562756,
+      "cn0_drop_db": 4.183072495683303
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 80.0,
+      "r": 0.8352237572786904,
+      "cn0_drop_db": 4.64784756800432
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 0.5,
+      "r": 14.831013149982487,
+      "cn0_drop_db": 1.9934472315295064
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "r": 14.815513540754987,
+      "cn0_drop_db": 1.9955032220197177
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 2.0,
+      "r": 14.753752852251694,
+      "cn0_drop_db": 2.003706571793899
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "r": 14.331836242780911,
+      "cn0_drop_db": 2.0602210492584176
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 10.0,
+      "r": 12.960982024832239,
+      "cn0_drop_db": 2.249845654396327
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "r": 9.024220512202024,
+      "cn0_drop_db": 2.855462239826674
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 40.0,
+      "r": 3.225952058459052,
+      "cn0_drop_db": 4.0177375352951215
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 80.0,
+      "r": 1.1035024143631236,
+      "cn0_drop_db": 4.601580198785445
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 0.5,
+      "r": 1.5140475143849208,
+      "cn0_drop_db": 4.700109827239647
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "r": 1.2533325409554408,
+      "cn0_drop_db": 4.699825172923386
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 2.0,
+      "r": 0.9880322637607168,
+      "cn0_drop_db": 4.699860026015522
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "r": 0.7088274878850512,
+      "cn0_drop_db": 4.707184370928353
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 10.0,
+      "r": 1.1797067778938264,
+      "cn0_drop_db": 4.710495241057696
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "r": 1.8833058308655242,
+      "cn0_drop_db": 4.611823592171288
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 40.0,
+      "r": 0.702174385504707,
+      "cn0_drop_db": 4.783180055324446
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 80.0,
+      "r": 1.1554521485671867,
+      "cn0_drop_db": 4.72217061135562
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 0.5,
+      "r": 0.8447106809025027,
+      "cn0_drop_db": 5.298989378107692
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "r": 0.8459045968568257,
+      "cn0_drop_db": 5.299063360128531
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 2.0,
+      "r": 0.8703144625558578,
+      "cn0_drop_db": 5.299423921389081
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "r": 0.8748205007491978,
+      "cn0_drop_db": 5.302926736468483
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 10.0,
+      "r": 0.8594801823587778,
+      "cn0_drop_db": 5.299182143644099
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "r": 0.8715679133883434,
+      "cn0_drop_db": 5.2470245741526025
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 40.0,
+      "r": 0.7781099619309781,
+      "cn0_drop_db": 5.371237735478682
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 80.0,
+      "r": 0.7959978245448134,
+      "cn0_drop_db": 5.367906807954683
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 0.5,
+      "r": 4.550334233982434,
+      "cn0_drop_db": 4.676299524431279
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "r": 3.4838085343188467,
+      "cn0_drop_db": 4.676221224925468
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 2.0,
+      "r": 2.3824118852403924,
+      "cn0_drop_db": 4.675982915041946
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "r": 0.9602385970938832,
+      "cn0_drop_db": 4.674910387022459
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 10.0,
+      "r": 0.5314395148888817,
+      "cn0_drop_db": 4.671735748858098
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "r": 0.41470371322095984,
+      "cn0_drop_db": 4.661725661268044
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 40.0,
+      "r": 0.5757530798607495,
+      "cn0_drop_db": 4.646945714905164
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 80.0,
+      "r": 0.44138471812510977,
+      "cn0_drop_db": 4.62651905649431
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 0.5,
+      "r": 0.9332029256942228,
+      "cn0_drop_db": 4.803110234361091
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "r": 0.9369872841453667,
+      "cn0_drop_db": 4.8030137893641625
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 2.0,
+      "r": 1.0589318106353374,
+      "cn0_drop_db": 4.802635634386102
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "r": 1.007984072317576,
+      "cn0_drop_db": 4.800222315348589
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 10.0,
+      "r": 0.8892557116292099,
+      "cn0_drop_db": 4.793244779688527
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "r": 0.7670049996179922,
+      "cn0_drop_db": 4.777615920039594
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 40.0,
+      "r": 0.9719679808955771,
+      "cn0_drop_db": 4.76941460959723
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 80.0,
+      "r": 0.8677248130297964,
+      "cn0_drop_db": 4.740064174388532
+    }
+  ],
+  "peak_r": {
+    "pilot_unmodulated|5": 317.8992787761424,
+    "pilot_unmodulated|35": 43.05568371405259,
+    "ca_data_random_bits|5": 21.891178281481604,
+    "ca_data_random_bits|35": 14.831013149982487,
+    "e1c_cs25|5": 1.8833058308655242,
+    "e1c_cs25|35": 0.8748205007491978,
+    "l5q_nh20|5": 4.550334233982434,
+    "l5q_nh20|35": 1.0589318106353374
+  },
+  "simulator": [
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "sim_r": 266.53297424359215,
+      "sim_cn0_drop_db": 0.007443423671290361,
+      "pred_r": 237.01267533570592,
+      "pred_cn0_drop_db": 0.0068506704577859035
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "sim_r": 49.10111685388654,
+      "sim_cn0_drop_db": 0.2837510713273588,
+      "pred_r": 43.91569428991038,
+      "pred_cn0_drop_db": 0.25138561331480574
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "sim_r": 2.690972790550342,
+      "sim_cn0_drop_db": 2.660784444155027,
+      "pred_r": 2.329385394778379,
+      "pred_cn0_drop_db": 2.666639820054613
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "sim_r": 38.6102258139541,
+      "sim_cn0_drop_db": 0.009710245076895774,
+      "pred_r": 33.7775800435441,
+      "pred_cn0_drop_db": 0.005695026646473574
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "sim_r": 41.144647574196,
+      "sim_cn0_drop_db": 0.265334677809804,
+      "pred_r": 37.66802459753716,
+      "pred_cn0_drop_db": 0.1568887463710681
+    },
+    {
+      "signal": "pilot_unmodulated",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "sim_r": 9.509210794542215,
+      "sim_cn0_drop_db": 2.6902326665536194,
+      "pred_r": 9.19973672377044,
+      "pred_cn0_drop_db": 2.292601036327458
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "sim_r": 30.53168582202904,
+      "sim_cn0_drop_db": 1.7009853096809024,
+      "pred_r": 21.87918351591402,
+      "pred_cn0_drop_db": 2.2075646025155926
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "sim_r": 27.40772834996777,
+      "sim_cn0_drop_db": 1.8011917492199387,
+      "pred_r": 21.21143588727181,
+      "pred_cn0_drop_db": 2.2725072475773644
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "sim_r": 12.976620900933272,
+      "sim_cn0_drop_db": 3.036596426592965,
+      "pred_r": 10.939975357744643,
+      "pred_cn0_drop_db": 3.0640365106952365
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "sim_r": 18.303190843631004,
+      "sim_cn0_drop_db": 1.6586906405469506,
+      "pred_r": 14.815513540754987,
+      "pred_cn0_drop_db": 1.9955032220197177
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "sim_r": 17.705584219796055,
+      "sim_cn0_drop_db": 1.8035943768394276,
+      "pred_r": 14.331836242780911,
+      "pred_cn0_drop_db": 2.0602210492584176
+    },
+    {
+      "signal": "ca_data_random_bits",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "sim_r": 9.801085917941869,
+      "sim_cn0_drop_db": 3.039245421091316,
+      "pred_r": 9.024220512202024,
+      "pred_cn0_drop_db": 2.855462239826674
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "sim_r": 1.5921467314909095,
+      "sim_cn0_drop_db": 4.339245816366365,
+      "pred_r": 1.2533325409554408,
+      "pred_cn0_drop_db": 4.699825172923386
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "sim_r": 1.0303744770175853,
+      "sim_cn0_drop_db": 4.949840852045483,
+      "pred_r": 0.7088274878850512,
+      "pred_cn0_drop_db": 4.707184370928353
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "sim_r": 0.7481133710925754,
+      "sim_cn0_drop_db": 4.714126695728325,
+      "pred_r": 1.8833058308655242,
+      "pred_cn0_drop_db": 4.611823592171288
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "sim_r": 1.2267466398610258,
+      "sim_cn0_drop_db": 4.311434485659532,
+      "pred_r": 0.8459045968568257,
+      "pred_cn0_drop_db": 5.299063360128531
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "sim_r": 1.0688202363889316,
+      "sim_cn0_drop_db": 4.782787326895232,
+      "pred_r": 0.8748205007491978,
+      "pred_cn0_drop_db": 5.302926736468483
+    },
+    {
+      "signal": "e1c_cs25",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "sim_r": 1.2358703655068806,
+      "sim_cn0_drop_db": 4.451039121308149,
+      "pred_r": 0.8715679133883434,
+      "pred_cn0_drop_db": 5.2470245741526025
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 1.0,
+      "sim_r": 5.29982723372023,
+      "sim_cn0_drop_db": 4.254037148143141,
+      "pred_r": 3.4838085343188467,
+      "pred_cn0_drop_db": 4.676221224925468
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 5.0,
+      "sim_r": 1.2764686412076516,
+      "sim_cn0_drop_db": 4.330378082548172,
+      "pred_r": 0.9602385970938832,
+      "pred_cn0_drop_db": 4.674910387022459
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 5.0,
+      "beat_hz": 20.0,
+      "sim_r": 0.5014759936282991,
+      "sim_cn0_drop_db": 4.750872428880683,
+      "pred_r": 0.41470371322095984,
+      "pred_cn0_drop_db": 4.661725661268044
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 1.0,
+      "sim_r": 1.5262508769149727,
+      "sim_cn0_drop_db": 4.254869473681609,
+      "pred_r": 0.9369872841453667,
+      "pred_cn0_drop_db": 4.8030137893641625
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 5.0,
+      "sim_r": 1.4787623402203292,
+      "sim_cn0_drop_db": 4.348118051430035,
+      "pred_r": 1.007984072317576,
+      "pred_cn0_drop_db": 4.800222315348589
+    },
+    {
+      "signal": "l5q_nh20",
+      "bn_cfg_hz": 35.0,
+      "beat_hz": 20.0,
+      "sim_r": 0.9300244888313023,
+      "sim_cn0_drop_db": 4.768863319724893,
+      "pred_r": 0.7670049996179922,
+      "pred_cn0_drop_db": 4.777615920039594
+    }
+  ]
+}

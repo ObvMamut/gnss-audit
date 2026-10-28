@@ -1,0 +1,478 @@
+{
+  "meta": {
+    "study": "s05_predictive_shape",
+    "generated": "2026-10-09T21:02:38+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "W_s": 2.0,
+  "rows": [
+    {
+      "class": "wideband_noise",
+      "bn_cfg_hz": 5.0,
+      "nu": 27.03079975648847,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6690461538461538,
+          "student": 0.6779333333333334,
+          "quantile_N5": 0.6738820512820513,
+          "oracle_gauss": 0.680025641025641
+        },
+        "0.95": {
+          "gauss": 0.9389,
+          "student": 0.9495615384615385,
+          "quantile_N5": 0.9369794871794872,
+          "oracle_gauss": 0.9524179487179487
+        },
+        "0.99": {
+          "gauss": 0.9835358974358974,
+          "student": 0.9894205128205128,
+          "quantile_N5": 0.980974358974359,
+          "oracle_gauss": 0.9901897435897435
+        },
+        "0.999": {
+          "gauss": 0.9968461538461538,
+          "student": 0.9987641025641025,
+          "quantile_N5": 0.9916435897435898,
+          "oracle_gauss": 0.9987820512820513
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.05841550574212946,
+      "half_width95_ratio_quantile_over_gauss": 0.9914502908849656
+    },
+    {
+      "class": "wideband_noise",
+      "bn_cfg_hz": 35.0,
+      "nu": 190.5824771344377,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6834564102564102,
+          "student": 0.6846948717948718,
+          "quantile_N5": 0.6845230769230769,
+          "oracle_gauss": 0.6813974358974358
+        },
+        "0.95": {
+          "gauss": 0.9501384615384615,
+          "student": 0.9515205128205129,
+          "quantile_N5": 0.9491153846153846,
+          "oracle_gauss": 0.9497948717948718
+        },
+        "0.99": {
+          "gauss": 0.9895025641025641,
+          "student": 0.9902435897435897,
+          "quantile_N5": 0.9884666666666667,
+          "oracle_gauss": 0.9898615384615385
+        },
+        "0.999": {
+          "gauss": 0.9988948717948718,
+          "student": 0.9990666666666667,
+          "quantile_N5": 0.9976794871794872,
+          "oracle_gauss": 0.9989307692307692
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.025108768849281232,
+      "half_width95_ratio_quantile_over_gauss": 0.9962222628885823
+    },
+    {
+      "class": "cw_beat_7hz",
+      "bn_cfg_hz": 5.0,
+      "nu": 27.03079975648847,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6228,
+          "student": 0.6346974358974359,
+          "quantile_N5": 0.6994307692307692,
+          "oracle_gauss": 0.6092076923076923
+        },
+        "0.95": {
+          "gauss": 0.9826769230769231,
+          "student": 0.9891948717948718,
+          "quantile_N5": 0.9513615384615385,
+          "oracle_gauss": 0.9798589743589744
+        },
+        "0.99": {
+          "gauss": 0.9996923076923077,
+          "student": 0.9999641025641026,
+          "quantile_N5": 0.9867410256410256,
+          "oracle_gauss": 0.9995179487179487
+        },
+        "0.999": {
+          "gauss": 1.0,
+          "student": 1.0,
+          "quantile_N5": 0.9945435897435897,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.058003660891085766,
+      "half_width95_ratio_quantile_over_gauss": 0.8857093759670926
+    },
+    {
+      "class": "cw_beat_7hz",
+      "bn_cfg_hz": 35.0,
+      "nu": 190.5824771344377,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6092923076923077,
+          "student": 0.6108923076923077,
+          "quantile_N5": 0.6816307692307693,
+          "oracle_gauss": 0.6097923076923077
+        },
+        "0.95": {
+          "gauss": 0.9794512820512821,
+          "student": 0.9806076923076923,
+          "quantile_N5": 0.9468153846153846,
+          "oracle_gauss": 0.9803461538461539
+        },
+        "0.99": {
+          "gauss": 0.9995384615384615,
+          "student": 0.9996179487179487,
+          "quantile_N5": 0.9876384615384616,
+          "oracle_gauss": 0.9995846153846154
+        },
+        "0.999": {
+          "gauss": 1.0,
+          "student": 1.0,
+          "quantile_N5": 0.9976102564102564,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.002758083804183516,
+      "half_width95_ratio_quantile_over_gauss": 0.887590161115921
+    },
+    {
+      "class": "cw_beat_0.3hz",
+      "bn_cfg_hz": 5.0,
+      "nu": 27.03079975648847,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.5119564102564103,
+          "student": 0.522251282051282,
+          "quantile_N5": 0.5536358974358975,
+          "oracle_gauss": 0.6063923076923077
+        },
+        "0.95": {
+          "gauss": 0.8864948717948717,
+          "student": 0.9042435897435898,
+          "quantile_N5": 0.8657025641025641,
+          "oracle_gauss": 0.9810666666666666
+        },
+        "0.99": {
+          "gauss": 0.9680897435897435,
+          "student": 0.9803461538461539,
+          "quantile_N5": 0.9367974358974359,
+          "oracle_gauss": 0.9997641025641025
+        },
+        "0.999": {
+          "gauss": 0.9952333333333333,
+          "student": 0.9987461538461538,
+          "quantile_N5": 0.9625641025641025,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": -0.05071651657404315,
+      "half_width95_ratio_quantile_over_gauss": 0.9279172048381181
+    },
+    {
+      "class": "cw_beat_0.3hz",
+      "bn_cfg_hz": 35.0,
+      "nu": 190.5824771344377,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.5295,
+          "student": 0.531074358974359,
+          "quantile_N5": 0.5666538461538462,
+          "oracle_gauss": 0.6074846153846154
+        },
+        "0.95": {
+          "gauss": 0.9172769230769231,
+          "student": 0.9196769230769231,
+          "quantile_N5": 0.8998897435897436,
+          "oracle_gauss": 0.9805692307692307
+        },
+        "0.99": {
+          "gauss": 0.9847384615384616,
+          "student": 0.9859564102564102,
+          "quantile_N5": 0.9731564102564103,
+          "oracle_gauss": 0.9995717948717948
+        },
+        "0.999": {
+          "gauss": 0.9990333333333333,
+          "student": 0.9992076923076924,
+          "quantile_N5": 0.9935282051282052,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.0013620106630033459,
+      "half_width95_ratio_quantile_over_gauss": 0.932302347931913
+    },
+    {
+      "class": "swept_slow",
+      "bn_cfg_hz": 5.0,
+      "nu": 27.03079975648847,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6675179487179487,
+          "student": 0.6769205128205128,
+          "quantile_N5": 0.6938538461538462,
+          "oracle_gauss": 0.6538435897435897
+        },
+        "0.95": {
+          "gauss": 0.9647435897435898,
+          "student": 0.9743974358974359,
+          "quantile_N5": 0.956125641025641,
+          "oracle_gauss": 0.958125641025641
+        },
+        "0.99": {
+          "gauss": 0.9973897435897436,
+          "student": 0.9991974358974359,
+          "quantile_N5": 0.9913333333333333,
+          "oracle_gauss": 0.9965025641025641
+        },
+        "0.999": {
+          "gauss": 0.9999666666666667,
+          "student": 1.0,
+          "quantile_N5": 0.9984564102564103,
+          "oracle_gauss": 0.9999666666666667
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.06651197343184952,
+      "half_width95_ratio_quantile_over_gauss": 0.9679332434628515
+    },
+    {
+      "class": "swept_slow",
+      "bn_cfg_hz": 35.0,
+      "nu": 190.5824771344377,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6517974358974359,
+          "student": 0.6531820512820513,
+          "quantile_N5": 0.6829897435897436,
+          "oracle_gauss": 0.6483948717948718
+        },
+        "0.95": {
+          "gauss": 0.9632615384615385,
+          "student": 0.9647589743589744,
+          "quantile_N5": 0.9511666666666667,
+          "oracle_gauss": 0.9618128205128205
+        },
+        "0.99": {
+          "gauss": 0.9971025641025641,
+          "student": 0.9974615384615385,
+          "quantile_N5": 0.989948717948718,
+          "oracle_gauss": 0.9968410256410256
+        },
+        "0.999": {
+          "gauss": 0.9999692307692307,
+          "student": 0.9999820512820513,
+          "quantile_N5": 0.9986179487179487,
+          "oracle_gauss": 0.9999666666666667
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.014496812178114892,
+      "half_width95_ratio_quantile_over_gauss": 0.955604704030097
+    },
+    {
+      "class": "chirp_inband",
+      "bn_cfg_hz": 5.0,
+      "nu": 27.03079975648847,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6257384615384616,
+          "student": 0.6380384615384616,
+          "quantile_N5": 0.7000307692307692,
+          "oracle_gauss": 0.6084435897435897
+        },
+        "0.95": {
+          "gauss": 0.9851153846153846,
+          "student": 0.9908948717948718,
+          "quantile_N5": 0.955374358974359,
+          "oracle_gauss": 0.9808871794871795
+        },
+        "0.99": {
+          "gauss": 0.9997769230769231,
+          "student": 0.9999538461538462,
+          "quantile_N5": 0.9900230769230769,
+          "oracle_gauss": 0.9996384615384616
+        },
+        "0.999": {
+          "gauss": 1.0,
+          "student": 1.0,
+          "quantile_N5": 0.9978871794871795,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.06556621097325625,
+      "half_width95_ratio_quantile_over_gauss": 0.886688497077244
+    },
+    {
+      "class": "chirp_inband",
+      "bn_cfg_hz": 35.0,
+      "nu": 190.5824771344377,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6114692307692308,
+          "student": 0.6132307692307692,
+          "quantile_N5": 0.6832307692307692,
+          "oracle_gauss": 0.6082333333333333
+        },
+        "0.95": {
+          "gauss": 0.9813820512820512,
+          "student": 0.9824948717948718,
+          "quantile_N5": 0.9517846153846153,
+          "oracle_gauss": 0.9805282051282052
+        },
+        "0.99": {
+          "gauss": 0.9995846153846154,
+          "student": 0.9996538461538461,
+          "quantile_N5": 0.9898564102564102,
+          "oracle_gauss": 0.9995666666666667
+        },
+        "0.999": {
+          "gauss": 1.0,
+          "student": 1.0,
+          "quantile_N5": 0.998576923076923,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.011035880169696796,
+      "half_width95_ratio_quantile_over_gauss": 0.891650916819601
+    },
+    {
+      "class": "pulsed_noise_lowprf",
+      "bn_cfg_hz": 5.0,
+      "nu": 27.03079975648847,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6767461538461539,
+          "student": 0.6851384615384616,
+          "quantile_N5": 0.6778179487179488,
+          "oracle_gauss": 0.6877820512820513
+        },
+        "0.95": {
+          "gauss": 0.9380692307692308,
+          "student": 0.9487307692307693,
+          "quantile_N5": 0.9369820512820513,
+          "oracle_gauss": 0.9481948717948718
+        },
+        "0.99": {
+          "gauss": 0.9833692307692308,
+          "student": 0.9895538461538461,
+          "quantile_N5": 0.9790179487179487,
+          "oracle_gauss": 0.9878743589743589
+        },
+        "0.999": {
+          "gauss": 0.9970692307692308,
+          "student": 0.9988307692307692,
+          "quantile_N5": 0.989897435897436,
+          "oracle_gauss": 0.9983179487179488
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.06563658553773968,
+      "half_width95_ratio_quantile_over_gauss": 0.9999741440466691
+    },
+    {
+      "class": "pulsed_noise_lowprf",
+      "bn_cfg_hz": 35.0,
+      "nu": 190.5824771344377,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.7019846153846154,
+          "student": 0.7032205128205128,
+          "quantile_N5": 0.6798820512820513,
+          "oracle_gauss": 0.7011538461538461
+        },
+        "0.95": {
+          "gauss": 0.9450384615384615,
+          "student": 0.9464384615384616,
+          "quantile_N5": 0.9489846153846154,
+          "oracle_gauss": 0.945923076923077
+        },
+        "0.99": {
+          "gauss": 0.9840461538461538,
+          "student": 0.9848948717948718,
+          "quantile_N5": 0.9891461538461539,
+          "oracle_gauss": 0.9845641025641025
+        },
+        "0.999": {
+          "gauss": 0.9966769230769231,
+          "student": 0.9970769230769231,
+          "quantile_N5": 0.9982564102564102,
+          "oracle_gauss": 0.9969076923076923
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.018659667065433077,
+      "half_width95_ratio_quantile_over_gauss": 1.0195534798863024
+    },
+    {
+      "class": "pulsed_cw",
+      "bn_cfg_hz": 5.0,
+      "nu": 27.03079975648847,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6254102564102564,
+          "student": 0.6378589743589743,
+          "quantile_N5": 0.6982461538461538,
+          "oracle_gauss": 0.6084205128205128
+        },
+        "0.95": {
+          "gauss": 0.9831051282051282,
+          "student": 0.9892615384615384,
+          "quantile_N5": 0.9548358974358975,
+          "oracle_gauss": 0.979625641025641
+        },
+        "0.99": {
+          "gauss": 0.9996794871794872,
+          "student": 0.9999333333333333,
+          "quantile_N5": 0.9885666666666667,
+          "oracle_gauss": 0.9996666666666667
+        },
+        "0.999": {
+          "gauss": 1.0,
+          "student": 1.0,
+          "quantile_N5": 0.9956307692307692,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.06408674439518859,
+      "half_width95_ratio_quantile_over_gauss": 0.8927757282751287
+    },
+    {
+      "class": "pulsed_cw",
+      "bn_cfg_hz": 35.0,
+      "nu": 190.5824771344377,
+      "coverage": {
+        "0.68": {
+          "gauss": 0.6127769230769231,
+          "student": 0.614376923076923,
+          "quantile_N5": 0.6806358974358975,
+          "oracle_gauss": 0.611648717948718
+        },
+        "0.95": {
+          "gauss": 0.9782358974358975,
+          "student": 0.9794076923076923,
+          "quantile_N5": 0.9496410256410256,
+          "oracle_gauss": 0.9786692307692307
+        },
+        "0.99": {
+          "gauss": 0.9993615384615384,
+          "student": 0.9994871794871795,
+          "quantile_N5": 0.9890794871794871,
+          "oracle_gauss": 0.9994897435897436
+        },
+        "0.999": {
+          "gauss": 1.0,
+          "student": 1.0,
+          "quantile_N5": 0.9980589743589744,
+          "oracle_gauss": 1.0
+        }
+      },
+      "mean_log_ratio_sigma2_iw_over_window_var": 0.005947166311330515,
+      "half_width95_ratio_quantile_over_gauss": 0.897149797448515
+    }
+  ]
+}

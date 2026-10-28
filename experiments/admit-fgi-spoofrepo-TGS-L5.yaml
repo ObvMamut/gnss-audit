@@ -1,0 +1,26 @@
+# Admit (P2b task 5/6; docs/7 section 4.2): is the first 150 s of SpoofRepo TGS_L5_E5a (Targeted SFMC: the spoofer
+# transmits on L1 and E1 only) a clean L5 Route B base? No C/A scan on L5; the PVT is checked against the record's
+# geodetic position.
+id: Admit
+dataset: fgi-spoofrepo
+local_path: raw/fgi-spoofrepo/TGS_L5_E5a.dat
+item_type: ibyte
+q_first: true  # the file stores Q before I: GNSS-SDR tracks real L5 only so (P2b task 6)
+fs_hz: 26000000.0
+frontend_bw_hz: 10000000.0  # the record's 10.09 MHz L5/E5a bandwidth
+template: L5
+decim: 2
+fir_taps: 129
+workers: 6
+max_channels: 10
+acquisition: false
+rules: {min_sats: 2, require_pvt: false}  # GPS L5 alone: 2 strong satellites in view, no fix (docs/7 4.2)
+known_position: [60.182, 24.828, 47.248]
+band: L5 (GPS L5, Galileo E5a)
+receivers: [NSL stereo dual-band front end]
+coordinates_source: record (geodetic-grade receiver)
+timeout_s: 3600
+# the survey is no twin: it runs the stock receiver, whose lock rule drops noise tracks and bad starts so the free
+# channels keep searching (under D-34's raised limit they are kept for good and hide satellites; P2b task 6)
+stock_receiver: true
+confirmatory: true

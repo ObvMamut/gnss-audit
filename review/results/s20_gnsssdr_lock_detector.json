@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "study": "s20_gnsssdr_lock_detector",
+    "generated": "2026-10-09T22:09:03+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "rows": [
+    {
+      "cn0_after_step_dbhz": 30.0,
+      "predicted_mean_lock_stat": 0.36750600160215297,
+      "default": {
+        "acquired": true,
+        "loss_of_lock_declared": 1,
+        "tracking_sessions": 1
+      },
+      "nodrop": {
+        "acquired": true,
+        "loss_of_lock_declared": 0,
+        "tracking_sessions": 1,
+        "phase_sd_rad_after_step": 0.25005886273605255,
+        "dumped_lock_stat_median": 0.31400203704833984,
+        "reported_cn0_median": 31.255386352539062,
+        "doppler_sd_hz": 11.922016143798828
+      }
+    },
+    {
+      "cn0_after_step_dbhz": 33.0,
+      "predicted_mean_lock_stat": 0.5675810441494633,
+      "default": {
+        "acquired": true,
+        "loss_of_lock_declared": 1,
+        "tracking_sessions": 1
+      },
+      "nodrop": {
+        "acquired": true,
+        "loss_of_lock_declared": 0,
+        "tracking_sessions": 1,
+        "phase_sd_rad_after_step": 0.15884540525397492,
+        "dumped_lock_stat_median": 0.5319868326187134,
+        "reported_cn0_median": 33.501033782958984,
+        "doppler_sd_hz": 9.47683048248291
+      }
+    },
+    {
+      "cn0_after_step_dbhz": 36.0,
+      "predicted_mean_lock_stat": 0.7538419635104331,
+      "default": {
+        "acquired": true,
+        "loss_of_lock_declared": 0,
+        "tracking_sessions": 1,
+        "phase_sd_rad_after_step": 0.09856524675190323,
+        "dumped_lock_stat_median": 0.7355788946151733,
+        "reported_cn0_median": 36.40750503540039,
+        "doppler_sd_hz": 6.755037307739258
+      },
+      "nodrop": {
+        "acquired": true,
+        "loss_of_lock_declared": 0,
+        "tracking_sessions": 1,
+        "phase_sd_rad_after_step": 0.09860150481818787,
+        "dumped_lock_stat_median": 0.735578179359436,
+        "reported_cn0_median": 36.40528869628906,
+        "doppler_sd_hz": 6.741997241973877
+      }
+    },
+    {
+      "cn0_after_step_dbhz": 40.0,
+      "predicted_mean_lock_stat": 0.9000207458375089,
+      "default": {
+        "acquired": true,
+        "loss_of_lock_declared": 0,
+        "tracking_sessions": 1,
+        "phase_sd_rad_after_step": 0.0588972484908429,
+        "dumped_lock_stat_median": 0.8924314379692078,
+        "reported_cn0_median": 40.40099334716797,
+        "doppler_sd_hz": 3.996417999267578
+      },
+      "nodrop": {
+        "acquired": true,
+        "loss_of_lock_declared": 0,
+        "tracking_sessions": 1,
+        "phase_sd_rad_after_step": 0.05886175491035062,
+        "dumped_lock_stat_median": 0.8924314379692078,
+        "reported_cn0_median": 40.400089263916016,
+        "doppler_sd_hz": 3.9938912391662598
+      }
+    }
+  ]
+}

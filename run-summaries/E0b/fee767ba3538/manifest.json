@@ -1,0 +1,1474 @@
+{
+  "counts": {
+    "gates_failed": 0,
+    "receiver_runs": 21
+  },
+  "git_describe": "84b1437d0fd1",
+  "host": {
+    "machine": "x86_64",
+    "node": "chris",
+    "python": "3.14.8"
+  },
+  "inputs": {
+    "/home/mamut/all/private/GNSS-data/raw/fgi-jt2023/JT23_4.1.5_L1_E1.iq": "3b5a353425bce9efaa46f7c57de06f4689bdb55568ee1139cde283c3072f2232"
+  },
+  "run_id": "fee767ba3538",
+  "spec": {
+    "confirmatory": true,
+    "decim": 4,
+    "fir_taps": 129,
+    "frontend_bw_hz": 20000000.0,
+    "ghost": {
+      "cn0_db_hz": 45.0,
+      "doppler_hz": 1500.0
+    },
+    "id": "E0b",
+    "loop_cells": [
+      "default",
+      "default-o2",
+      "bn15-t1",
+      "bn5-t20",
+      "bn15-t20"
+    ],
+    "max_channels": 8,
+    "min_cn0_dbhz": 35.0,
+    "min_locked_real": 4,
+    "noise": {
+      "bw_hz": 2000000.0,
+      "levels_db_hz": [
+        50.0,
+        55.0,
+        60.0,
+        65.0,
+        70.0
+      ]
+    },
+    "onset_s": 55.0,
+    "pre_window_s": 20.0,
+    "receiver_overrides": {
+      "Tracking_1C.enable_fll_pull_in": "true",
+      "Tracking_1C.max_carrier_lock_fail": "1000000"
+    },
+    "recording": {
+      "fs_hz": 30690000.0,
+      "interval": "fgi-jt2023-JT23_4.1.5_L1_E1-clean",
+      "item_type": "ibyte"
+    },
+    "seed": 11,
+    "template": "1C",
+    "timeout_s": 3600,
+    "tones": {
+      "a_rad": 0.05,
+      "f_max_hz": 50.0,
+      "f_min_hz": 0.05,
+      "n_tones": 12,
+      "onset_s": 40.0
+    },
+    "variant": "recording",
+    "warmup_s": 30.0,
+    "workers": 6
+  },
+  "started_utc": "2026-10-15T20:55:39+00:00",
+  "summary": {
+    "channels": {
+      "0": [
+        "G",
+        "1C",
+        4
+      ],
+      "1": [
+        "G",
+        "1C",
+        6
+      ],
+      "2": [
+        "G",
+        "1C",
+        7
+      ],
+      "3": [
+        "G",
+        "1C",
+        9
+      ],
+      "4": [
+        "G",
+        "1C",
+        11
+      ],
+      "5": [
+        "G",
+        "1C",
+        16
+      ],
+      "6": [
+        "G",
+        "1C",
+        26
+      ],
+      "7": [
+        "G",
+        "1C",
+        32
+      ]
+    },
+    "cn0_clean_dbhz": {
+      "0": 44.457462310791016,
+      "1": 40.83499526977539,
+      "4": 43.767107009887695,
+      "6": 42.3768424987793,
+      "7": 43.20820617675781
+    },
+    "floor_line_excess_db": 2.0820684927575592,
+    "gates": {
+      "G-hz[bn15-t1]": {
+        "channels": 4,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.00645506880339148,
+        "stamp_offset_T": 0.5
+      },
+      "G-hz[bn15-t20]": {
+        "channels": 4,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.05526922215765362,
+        "stamp_offset_T": 0.5000000000000001
+      },
+      "G-hz[bn5-t20]": {
+        "channels": 3,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.047672275360971156,
+        "stamp_offset_T": 0.5000000000000001
+      },
+      "G-hz[default-o2]": {
+        "channels": 3,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.008999324385715577,
+        "stamp_offset_T": 0.5
+      },
+      "G-hz[default]": {
+        "channels": 4,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.005004632800937202,
+        "stamp_offset_T": 0.5
+      },
+      "G-identity[50][ch0]": {
+        "common_fraction": {
+          "4": 1.0
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "4": 0.0
+        },
+        "tol": 0.1
+      },
+      "G-identity[50][ch1]": {
+        "common_fraction": {
+          "6": 0.9996
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "6": 0.010549966215986195
+        },
+        "tol": 0.1
+      },
+      "G-identity[50][ch4]": {
+        "common_fraction": {
+          "11": 0.99976
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "11": 0.006034228998181872
+        },
+        "tol": 0.1
+      },
+      "G-identity[50][ch6]": {
+        "common_fraction": {
+          "26": 0.99968
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "26": 0.007277388238297208
+        },
+        "tol": 0.1
+      },
+      "G-identity[55][ch0]": {
+        "common_fraction": {
+          "4": 1.0
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "4": 0.0
+        },
+        "tol": 0.1
+      },
+      "G-identity[55][ch1]": {
+        "common_fraction": {
+          "6": 0.99988
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "6": 0.005889782446921716
+        },
+        "tol": 0.1
+      },
+      "G-identity[55][ch4]": {
+        "common_fraction": {
+          "11": 0.99956
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "11": 0.006422379987396135
+        },
+        "tol": 0.1
+      },
+      "G-identity[55][ch6]": {
+        "common_fraction": {
+          "26": 0.99968
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "26": 0.007294624062554427
+        },
+        "tol": 0.1
+      },
+      "G-identity[60][ch0]": {
+        "common_fraction": {
+          "4": 1.0
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "4": 0.0
+        },
+        "tol": 0.1
+      },
+      "G-identity[60][ch1]": {
+        "common_fraction": {
+          "6": 0.99968
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "6": 0.008577433654546192
+        },
+        "tol": 0.1
+      },
+      "G-identity[60][ch4]": {
+        "common_fraction": {
+          "11": 1.0
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "11": 0.0
+        },
+        "tol": 0.1
+      },
+      "G-identity[60][ch6]": {
+        "common_fraction": {
+          "26": 0.99972
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "26": 0.006406168052580097
+        },
+        "tol": 0.1
+      },
+      "G-identity[65][ch0]": {
+        "common_fraction": {
+          "4": 0.99996
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "4": 0.0034344188846170648
+        },
+        "tol": 0.1
+      },
+      "G-identity[65][ch1]": {
+        "common_fraction": {
+          "6": 0.99972
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "6": 0.0070174043777107
+        },
+        "tol": 0.1
+      },
+      "G-identity[65][ch4]": {
+        "common_fraction": {
+          "11": 1.0
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "11": 0.0
+        },
+        "tol": 0.1
+      },
+      "G-identity[65][ch6]": {
+        "common_fraction": {
+          "26": 0.99956
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "26": 0.009180454056228497
+        },
+        "tol": 0.1
+      },
+      "G-identity[70][ch0]": {
+        "common_fraction": {
+          "4": 1.0
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "4": 0.0
+        },
+        "tol": 0.1
+      },
+      "G-identity[70][ch1]": {
+        "common_fraction": {
+          "6": 0.99968
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "6": 0.01020314318871147
+        },
+        "tol": 0.1
+      },
+      "G-identity[70][ch4]": {
+        "common_fraction": {
+          "11": 0.99976
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "11": 0.006034228998181872
+        },
+        "tol": 0.1
+      },
+      "G-identity[70][ch6]": {
+        "common_fraction": {
+          "26": 0.99956
+        },
+        "passed": true,
+        "rms_over_sigma": {
+          "26": 0.009180454056228497
+        },
+        "tol": 0.1
+      },
+      "G-null[ch0]": {
+        "breaking_exclusions": 0,
+        "epochs": 89925,
+        "kept_share": 0.9997665265826162,
+        "passed": true,
+        "rms_over_sigma": 0.0,
+        "slips": 0,
+        "tol": 0.1
+      },
+      "G-null[ch1]": {
+        "breaking_exclusions": 0,
+        "epochs": 89909,
+        "kept_share": 0.9995886420741333,
+        "passed": true,
+        "rms_over_sigma": 0.007136991171611615,
+        "slips": 0,
+        "tol": 0.1
+      },
+      "G-null[ch4]": {
+        "breaking_exclusions": 0,
+        "epochs": 89945,
+        "kept_share": 0.9999888822182198,
+        "passed": true,
+        "rms_over_sigma": 0.0,
+        "slips": 0,
+        "tol": 0.1
+      },
+      "G-null[ch6]": {
+        "breaking_exclusions": 0,
+        "epochs": 89947,
+        "kept_share": 0.9999777651780454,
+        "passed": true,
+        "rms_over_sigma": 0.008287487833859273,
+        "slips": 0,
+        "tol": 0.1
+      },
+      "G-phase-precision": {
+        "float32_would_pass": false,
+        "max_abs_phase_rad": 1977822.414303285,
+        "passed": true
+      },
+      "G-repeat[ch0]": {
+        "injector_identical": true,
+        "passed": true,
+        "receiver": [
+          {
+            "4": [
+              0.9997665265826162,
+              0.0
+            ]
+          },
+          {
+            "4": [
+              0.9997554115201174,
+              0.0
+            ]
+          }
+        ],
+        "tol": 0.1
+      },
+      "G-repeat[ch1]": {
+        "injector_identical": true,
+        "passed": true,
+        "receiver": [
+          {
+            "6": [
+              0.9993106975296289,
+              0.007314329631044664
+            ]
+          },
+          {
+            "6": [
+              0.9992439992439992,
+              0.00843367641121968
+            ]
+          }
+        ],
+        "tol": 0.1
+      },
+      "G-repeat[ch4]": {
+        "injector_identical": true,
+        "passed": true,
+        "receiver": [
+          {
+            "11": [
+              0.9999888822182198,
+              0.0
+            ]
+          },
+          {
+            "11": [
+              0.999966647767068,
+              0.0
+            ]
+          }
+        ],
+        "tol": 0.1
+      },
+      "G-repeat[ch6]": {
+        "injector_identical": true,
+        "passed": true,
+        "receiver": [
+          {
+            "26": [
+              0.9997220647255667,
+              0.008580542447700948
+            ]
+          },
+          {
+            "26": [
+              0.9996442428487254,
+              0.00799182329319671
+            ]
+          }
+        ],
+        "tol": 0.1
+      },
+      "G-warmup-lock[cleancell-bn15-t1]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[cleancell-bn15-t20]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[cleancell-bn5-t20]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          1,
+          3
+        ]
+      },
+      "G-warmup-lock[cleancell-default-o2]": {
+        "attempts": 3,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[cleancell-default]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[jam50]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[jam55]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[jam60]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[jam65]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[jam70]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[tones-bn15-t1]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          2,
+          3
+        ]
+      },
+      "G-warmup-lock[tones-bn15-t20]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[tones-bn5-t20]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[tones-default-o2]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3,
+          6
+        ]
+      },
+      "G-warmup-lock[tones-default]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[zero0]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          2,
+          3,
+          5
+        ]
+      },
+      "G-warmup-lock[zero1]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      },
+      "G-warmup-lock[zero2]": {
+        "attempts": 1,
+        "passed": true,
+        "unlocked_channels": [
+          3
+        ]
+      }
+    },
+    "ghost": {
+      "applicable": true,
+      "cn0_reported_dbhz": 43.19308280944824,
+      "cn0_set_dbhz": 42.91793150724244,
+      "error_sd_over_b3": 0.9801165082651772,
+      "error_sd_se": 0.007275318283468515,
+      "sanity_pass": true,
+      "start_s": 0.20898273053111763,
+      "tracked": true,
+      "v7_cn0_error_db": 0.2751513022057992,
+      "v7_pass": true
+    },
+    "ghost_doppler_hz": 1510.0,
+    "ghost_prn": 32,
+    "ghz": {
+      "bn15-t1": {
+        "channels": 4,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.00645506880339148,
+        "stamp_offset_T": 0.5
+      },
+      "bn15-t20": {
+        "channels": 4,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.05526922215765362,
+        "stamp_offset_T": 0.5000000000000001
+      },
+      "bn5-t20": {
+        "channels": 3,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.047672275360971156,
+        "stamp_offset_T": 0.5000000000000001
+      },
+      "default": {
+        "channels": 4,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.005004632800937202,
+        "stamp_offset_T": 0.5
+      },
+      "default-o2": {
+        "channels": 3,
+        "identified": true,
+        "integration_mismatch": [],
+        "passed": true,
+        "rms_phase_resid_deg": 0.008999324385715577,
+        "stamp_offset_T": 0.5
+      }
+    },
+    "ghz_rows": {
+      "bn15-t1": [
+        {
+          "err_db": -0.0005247310804862779,
+          "err_deg": 0.013299164858208659,
+          "f_hz": 0.05,
+          "snr_db": 95.27929651458707,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0016317833125318424,
+          "err_deg": 0.0036431664624001986,
+          "f_hz": 0.09369087114301919,
+          "snr_db": 95.27822352687417,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0003047484362273511,
+          "err_deg": -0.0054556825591211,
+          "f_hz": 0.17555958671075653,
+          "snr_db": 95.28059888161046,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.001178250691115114,
+          "err_deg": -0.0032116321152272647,
+          "f_hz": 0.3289666123287839,
+          "snr_db": 95.28741543111735,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.00039576682792795187,
+          "err_deg": 0.0027223218161685253,
+          "f_hz": 0.6164233697210328,
+          "snr_db": 95.38677712748279,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0014334967238206148,
+          "err_deg": -0.005534371075012409,
+          "f_hz": 1.1550648500415794,
+          "snr_db": 97.12097350886081,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0007317913794361152,
+          "err_deg": -0.0007041445775135988,
+          "f_hz": 2.1643806405415282,
+          "snr_db": 96.20576797944656,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0005591446032833522,
+          "err_deg": -0.0039817016832681025,
+          "f_hz": 4.055654153948433,
+          "snr_db": 95.11337184127486,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0001911438382746502,
+          "err_deg": 0.0011068262108369041,
+          "f_hz": 7.599555414764665,
+          "snr_db": 93.17373394191897,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0003735004843437626,
+          "err_deg": 0.0030936647551628926,
+          "f_hz": 14.240179342178994,
+          "snr_db": 89.68629660773814,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.00046931711847529735,
+          "err_deg": 0.0074697526750736095,
+          "f_hz": 26.68349615603153,
+          "snr_db": 85.01218528993235,
+          "status": "pass"
+        },
+        {
+          "err_db": -1.3645591414478955e-05,
+          "err_deg": 0.012198867168626061,
+          "f_hz": 50.0,
+          "snr_db": 79.81673454069758,
+          "status": "pass"
+        }
+      ],
+      "bn15-t20": [
+        {
+          "err_db": 0.0049301545328258875,
+          "err_deg": 0.06643199086949991,
+          "f_hz": 0.05,
+          "snr_db": 56.79971018727153,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.007002971003060797,
+          "err_deg": -0.03132415118180506,
+          "f_hz": 0.09369087114301919,
+          "snr_db": 56.78820950937027,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.011075675819650964,
+          "err_deg": 0.017490978227910847,
+          "f_hz": 0.17555958671075653,
+          "snr_db": 56.811594315563305,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.007410803697042749,
+          "err_deg": -0.015140173116892234,
+          "f_hz": 0.3289666123287839,
+          "snr_db": 56.878162462066975,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.004960331285743058,
+          "err_deg": 0.06607203164179896,
+          "f_hz": 0.6164233697210328,
+          "snr_db": 58.318013252862556,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.00261643936114885,
+          "err_deg": -0.01366081055657191,
+          "f_hz": 1.1550648500415794,
+          "snr_db": 58.213080538393854,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.009137113446856032,
+          "err_deg": 0.10803098541518691,
+          "f_hz": 2.1643806405415282,
+          "snr_db": 57.939354503861026,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.012436183977605228,
+          "err_deg": 0.03872324153794052,
+          "f_hz": 4.055654153948433,
+          "snr_db": 58.050762086182246,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0007472109180309618,
+          "err_deg": -0.042793237092576264,
+          "f_hz": 7.599555414764665,
+          "snr_db": 56.85221933464823,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0067520588552025815,
+          "err_deg": 0.07115983883775454,
+          "f_hz": 14.240179342178994,
+          "snr_db": 49.30132212840084,
+          "status": "pass"
+        },
+        {
+          "err_db": "nan",
+          "err_deg": "nan",
+          "f_hz": 26.68349615603153,
+          "snr_db": "nan",
+          "status": "above_nyquist"
+        },
+        {
+          "err_db": "nan",
+          "err_deg": "nan",
+          "f_hz": 50.0,
+          "snr_db": "nan",
+          "status": "above_nyquist"
+        }
+      ],
+      "bn5-t20": [
+        {
+          "err_db": 0.01100873587734504,
+          "err_deg": 0.057077848523489114,
+          "f_hz": 0.05,
+          "snr_db": 62.40664848650806,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.013657236019346783,
+          "err_deg": 0.012532716957516586,
+          "f_hz": 0.09369087114301919,
+          "snr_db": 62.3911153528146,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.00446800894926992,
+          "err_deg": 0.016942896235507918,
+          "f_hz": 0.17555958671075653,
+          "snr_db": 62.57207355079588,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.008327904750924193,
+          "err_deg": -0.014583431560636989,
+          "f_hz": 0.3289666123287839,
+          "snr_db": 64.37320644862744,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0038780754435542627,
+          "err_deg": 0.07606119532795916,
+          "f_hz": 0.6164233697210328,
+          "snr_db": 63.39983074023551,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.002130101330041193,
+          "err_deg": -0.004320209107248509,
+          "f_hz": 1.1550648500415794,
+          "snr_db": 62.68622990376183,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.010351411281644567,
+          "err_deg": 0.06337230573430427,
+          "f_hz": 2.1643806405415282,
+          "snr_db": 61.32641299325581,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.015285969900455552,
+          "err_deg": 0.03096497039126207,
+          "f_hz": 4.055654153948433,
+          "snr_db": 58.380346007288715,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0009079702046203319,
+          "err_deg": -0.037687802450996975,
+          "f_hz": 7.599555414764665,
+          "snr_db": 53.46686007691909,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.010527822573859948,
+          "err_deg": 0.08131759812695195,
+          "f_hz": 14.240179342178994,
+          "snr_db": 46.74783237402977,
+          "status": "pass"
+        },
+        {
+          "err_db": "nan",
+          "err_deg": "nan",
+          "f_hz": 26.68349615603153,
+          "snr_db": "nan",
+          "status": "above_nyquist"
+        },
+        {
+          "err_db": "nan",
+          "err_deg": "nan",
+          "f_hz": 50.0,
+          "snr_db": "nan",
+          "status": "above_nyquist"
+        }
+      ],
+      "default": [
+        {
+          "err_db": -1.926594204946283e-05,
+          "err_deg": -0.00012647652288846615,
+          "f_hz": 0.05,
+          "snr_db": 92.36545562998218,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.000222615622834272,
+          "err_deg": -0.0016333270069752795,
+          "f_hz": 0.09369087114301919,
+          "snr_db": 92.36569879208263,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0014058757024516446,
+          "err_deg": -0.003875372936714139,
+          "f_hz": 0.17555958671075653,
+          "snr_db": 92.36690591559406,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0006573137877855723,
+          "err_deg": -0.0012966034922738028,
+          "f_hz": 0.3289666123287839,
+          "snr_db": 92.36648668875601,
+          "status": "pass"
+        },
+        {
+          "err_db": 9.310365292624018e-05,
+          "err_deg": 0.0027771017690749428,
+          "f_hz": 0.6164233697210328,
+          "snr_db": 92.37041712383635,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.00017450387392453864,
+          "err_deg": -0.0056815738723643185,
+          "f_hz": 1.1550648500415794,
+          "snr_db": 92.4436791111877,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0008012936717710117,
+          "err_deg": 0.003256315687020116,
+          "f_hz": 2.1643806405415282,
+          "snr_db": 93.89405814240527,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0004501345473733152,
+          "err_deg": -0.008829266039177386,
+          "f_hz": 4.055654153948433,
+          "snr_db": 93.4226791518821,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0004283652490697868,
+          "err_deg": 0.0006468330265425321,
+          "f_hz": 7.599555414764665,
+          "snr_db": 92.33794564731133,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.00046746144070507905,
+          "err_deg": 0.006751792517493872,
+          "f_hz": 14.240179342178994,
+          "snr_db": 90.53676761137106,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0002854122645342331,
+          "err_deg": 0.0063686267790561794,
+          "f_hz": 26.68349615603153,
+          "snr_db": 87.21181303492182,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0014491655730432154,
+          "err_deg": 0.008127492569531419,
+          "f_hz": 50.0,
+          "snr_db": 82.64305117839876,
+          "status": "pass"
+        }
+      ],
+      "default-o2": [
+        {
+          "err_db": -0.0007438683405940102,
+          "err_deg": 0.013030050586157164,
+          "f_hz": 0.05,
+          "snr_db": 90.1203533584351,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0021877124585946645,
+          "err_deg": 0.01161501813461716,
+          "f_hz": 0.09369087114301919,
+          "snr_db": 90.12377760574745,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.00015910205508545028,
+          "err_deg": -0.005869355062549809,
+          "f_hz": 0.17555958671075653,
+          "snr_db": 90.12347817521788,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0008506350848419045,
+          "err_deg": 0.001378234024881405,
+          "f_hz": 0.3289666123287839,
+          "snr_db": 90.13023297772789,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0012142787017525225,
+          "err_deg": -0.004287577635640819,
+          "f_hz": 0.6164233697210328,
+          "snr_db": 90.14935641726879,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0017886451368839113,
+          "err_deg": -0.011858903953876974,
+          "f_hz": 1.1550648500415794,
+          "snr_db": 90.22552397893072,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0011325866153934414,
+          "err_deg": 0.00849582743666781,
+          "f_hz": 2.1643806405415282,
+          "snr_db": 90.46483865498129,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.0014573704184466288,
+          "err_deg": -0.00962921686733516,
+          "f_hz": 4.055654153948433,
+          "snr_db": 91.15667679343132,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.00039424563406301763,
+          "err_deg": 0.004835011029757795,
+          "f_hz": 7.599555414764665,
+          "snr_db": 92.17059914448576,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.00012383465167978148,
+          "err_deg": 0.010836128823242232,
+          "f_hz": 14.240179342178994,
+          "snr_db": 90.39079652200644,
+          "status": "pass"
+        },
+        {
+          "err_db": -0.0001037339831805776,
+          "err_deg": 0.012652639089665883,
+          "f_hz": 26.68349615603153,
+          "snr_db": 85.24243343030417,
+          "status": "pass"
+        },
+        {
+          "err_db": 0.00028791677418104846,
+          "err_deg": 0.0024511688279763976,
+          "f_hz": 50.0,
+          "snr_db": 79.66796709781975,
+          "status": "pass"
+        }
+      ]
+    },
+    "jammed_exclusions": {
+      "one_twin_epoch": 326,
+      "slips": 0,
+      "warmup": 600017
+    },
+    "kappa_s": 4.6340031576576846e-07,
+    "linearity_pass": true,
+    "linearity_slope": {
+      "11": 1.001264033751033,
+      "26": 1.0179639408394567,
+      "4": 1.005292658978355,
+      "6": 1.0166349089346323
+    },
+    "n0_per_hz": 1.7734847546080346e-07,
+    "null_floor_var_cyc2": {
+      "11": 0.0,
+      "26": 3.3222318229378774e-09,
+      "4": 0.0,
+      "6": 3.625034811179495e-09
+    },
+    "observables_agreement_rms_over_sigma": {
+      "50.0": {
+        "11": 0.0914106426335797,
+        "26": 0.12124580431053023,
+        "4": 0.07932872270949344,
+        "6": 0.12401671313413805
+      },
+      "55.0": {
+        "11": 0.16652274442062806,
+        "26": 0.22279769838182348,
+        "4": 0.1432312154354538,
+        "6": 0.21636010565625477
+      },
+      "60.0": {
+        "11": 0.2995679681534936,
+        "26": 0.3927074284451092,
+        "4": 0.259071661677091,
+        "6": 0.3876760004098109
+      },
+      "65.0": {
+        "11": 0.5276273092784658,
+        "26": 0.685264405577095,
+        "4": 0.45793263477871243,
+        "6": 0.7001947436609531
+      },
+      "70.0": {
+        "11": 0.9571060730720596,
+        "26": 1.2971178629205293,
+        "4": 0.8169956951798361,
+        "6": 1.2763477651964397
+      }
+    },
+    "observables_null": {
+      "exclusions": 6000,
+      "rms_cyc": {
+        "11": 0.0,
+        "26": 3.496710986543767e-05,
+        "4": 0.0,
+        "6": 4.753756829614494e-05
+      },
+      "slips": 0
+    },
+    "receiver_runs": 21,
+    "receivers": {
+      "image": "sha256:1a63194c869aa1b1b1f184ec119ad1547b94bef72c2f4c4d8d59b0e795eb633a",
+      "logs": {
+        "cleancell-bn15-t1": "logs/cleancell-bn15-t1.log.gz",
+        "cleancell-bn15-t20": "logs/cleancell-bn15-t20.log.gz",
+        "cleancell-bn5-t20": "logs/cleancell-bn5-t20.log.gz",
+        "cleancell-default": "logs/cleancell-default.log.gz",
+        "cleancell-default-o2": "logs/cleancell-default-o2.log.gz",
+        "cleancell-default-o2~1": "logs/cleancell-default-o2~1.log.gz",
+        "cleancell-default-o2~2": "logs/cleancell-default-o2~2.log.gz",
+        "jam50": "logs/jam50.log.gz",
+        "jam55": "logs/jam55.log.gz",
+        "jam60": "logs/jam60.log.gz",
+        "jam65": "logs/jam65.log.gz",
+        "jam70": "logs/jam70.log.gz",
+        "survey": "logs/survey.log.gz",
+        "tones-bn15-t1": "logs/tones-bn15-t1.log.gz",
+        "tones-bn15-t20": "logs/tones-bn15-t20.log.gz",
+        "tones-bn5-t20": "logs/tones-bn5-t20.log.gz",
+        "tones-default": "logs/tones-default.log.gz",
+        "tones-default-o2": "logs/tones-default-o2.log.gz",
+        "zero0": "logs/zero0.log.gz",
+        "zero1": "logs/zero1.log.gz",
+        "zero2": "logs/zero2.log.gz"
+      },
+      "overrides": {
+        "Tracking_1C.enable_fll_pull_in": "true",
+        "Tracking_1C.max_carrier_lock_fail": "1000000"
+      },
+      "patch_id": "p1:0001-acc-phase-float64+0002-log-every-integration",
+      "runs": {
+        "cleancell-bn15-t1": {
+          "config_sha256": "9acb6635fec409ffa73adbdd34c0ee9e3ce788e6a5ca08d56e0dd1a20f4c772e",
+          "exit_code": 0,
+          "wall_s": 9.18
+        },
+        "cleancell-bn15-t20": {
+          "config_sha256": "570d4c4680b8ef6fd05922cb05a946bf7f3f5912354089bb7ebd29435a2d1f85",
+          "exit_code": 0,
+          "wall_s": 9.36
+        },
+        "cleancell-bn5-t20": {
+          "config_sha256": "15b0bb081f1b2c4f77e000ff1086d011b4e8a31459482223af0111e1cc3754c6",
+          "exit_code": 0,
+          "wall_s": 9.21
+        },
+        "cleancell-default": {
+          "config_sha256": "aef987f627380af8927b5e402eb5bd0f4c3c64129a4d27913962373a51ee55ef",
+          "exit_code": 0,
+          "wall_s": 9.59
+        },
+        "cleancell-default-o2": {
+          "config_sha256": "e0bcfdc81104f7b5846d485fc0dab964777e1846162f1b1ca35ce04a29ad8add",
+          "exit_code": 0,
+          "wall_s": 11.2
+        },
+        "cleancell-default-o2~1": {
+          "config_sha256": "e0bcfdc81104f7b5846d485fc0dab964777e1846162f1b1ca35ce04a29ad8add",
+          "exit_code": 0,
+          "wall_s": 9.8
+        },
+        "cleancell-default-o2~2": {
+          "config_sha256": "e0bcfdc81104f7b5846d485fc0dab964777e1846162f1b1ca35ce04a29ad8add",
+          "exit_code": 0,
+          "wall_s": 9.83
+        },
+        "jam50": {
+          "config_sha256": "dd7e4c3df6ec56512859b2a512d78c082245f4f48aa6598d386c30e8337967c8",
+          "exit_code": 0,
+          "wall_s": 10.15
+        },
+        "jam55": {
+          "config_sha256": "1fee96ac087ace35eac736488410e3357d6fc709a1869a55bd68ae4040c1695c",
+          "exit_code": 0,
+          "wall_s": 9.75
+        },
+        "jam60": {
+          "config_sha256": "76e23809bdf0dad509e37dd861309df88232cc18b66273db3d981a4d7f25b124",
+          "exit_code": 0,
+          "wall_s": 9.55
+        },
+        "jam65": {
+          "config_sha256": "935cac0984c6284f59a59f25ccdf8e75989061a65659643f46f04753cb1fed00",
+          "exit_code": 0,
+          "wall_s": 9.54
+        },
+        "jam70": {
+          "config_sha256": "9c98fc07d5cb3e727aff28814cdb494cd459cf2ffd7d2618ed082f64f1989185",
+          "exit_code": 0,
+          "wall_s": 10.76
+        },
+        "survey": {
+          "config_sha256": "e16f4e800d19ef3a508b133c3c59538ec807f07d7b1bc6d770ee31b227f658e7",
+          "exit_code": 0,
+          "wall_s": 41.95
+        },
+        "tones-bn15-t1": {
+          "config_sha256": "af968bddbed090f3cb77c373aeccd941c0c5b25b72376717702f80e42429e46b",
+          "exit_code": 0,
+          "wall_s": 9.77
+        },
+        "tones-bn15-t20": {
+          "config_sha256": "e797fd7beff2c309dc20e826c5d9003043a6cd2075995a0e0e98ba86dd34b107",
+          "exit_code": 0,
+          "wall_s": 9.58
+        },
+        "tones-bn5-t20": {
+          "config_sha256": "7a1c6c3398624a97025da80d77c1564f7835c3e319912179ab722f5267df2a6b",
+          "exit_code": 0,
+          "wall_s": 9.35
+        },
+        "tones-default": {
+          "config_sha256": "376eb33ae33d275354d83d6834ffd9849b81e3617a12be03d454a1eba499300f",
+          "exit_code": 0,
+          "wall_s": 9.57
+        },
+        "tones-default-o2": {
+          "config_sha256": "423d1b107c535e3a3e83fb003e9b24c44e5050b4cf0be136d909419ebfb6a8a9",
+          "exit_code": 0,
+          "wall_s": 9.41
+        },
+        "zero0": {
+          "config_sha256": "b9ef508d0fa2f0225a5d046b8262e3163cc03d0113fe29f9c2732215009e00cc",
+          "exit_code": 0,
+          "wall_s": 9.97
+        },
+        "zero1": {
+          "config_sha256": "790886cc5d2826cd103087b1dcccd34b7cf79a529d8f2d13d051f61b016e0917",
+          "exit_code": 0,
+          "wall_s": 10.36
+        },
+        "zero2": {
+          "config_sha256": "b9a87a409cf764510143003972f10a8ee7973ddb24aee7a7700db5a42b16ead2",
+          "exit_code": 0,
+          "wall_s": 9.75
+        }
+      },
+      "source_commit": "3fcb502a",
+      "template": "1C"
+    },
+    "seconds": 120.0,
+    "segment": {
+      "decim": 4,
+      "delay": 64.0,
+      "interval": "fgi-jt2023-JT23_4.1.5_L1_E1-clean",
+      "sample_end": 3682800000,
+      "sample_start": 0
+    },
+    "stock_lock_verdict": {
+      "0": {
+        "drops": 0,
+        "first_drop_s": null
+      },
+      "1": {
+        "drops": 0,
+        "first_drop_s": null
+      },
+      "4": {
+        "drops": 0,
+        "first_drop_s": null
+      },
+      "6": {
+        "drops": 0,
+        "first_drop_s": null
+      },
+      "7": {
+        "drops": 0,
+        "first_drop_s": null
+      }
+    },
+    "survey_cn0_dbhz": {
+      "11": 43.79431915283203,
+      "16": 41.514671325683594,
+      "20": 37.88084030151367,
+      "26": 42.422950744628906,
+      "4": 44.49631881713867,
+      "6": 40.8803596496582,
+      "7": 40.64414596557617,
+      "9": 46.30390930175781
+    },
+    "survey_receiver": {
+      "overrides": {},
+      "stock_receiver": true
+    },
+    "tau_int_95_s": {
+      "50.0": {
+        "11": 0.0010000651678012673,
+        "26": 0.0010000651678012673,
+        "4": 0.0010000651678012673,
+        "6": 0.0010000651678012673
+      },
+      "55.0": {
+        "11": 0.0010000651678012673,
+        "26": 0.0010000333919599044,
+        "4": 0.0010000651678012673,
+        "6": 0.004999848852811723
+      },
+      "60.0": {
+        "11": 0.001000033372765189,
+        "26": 0.0018566918512739265,
+        "4": 0.0010000333808499998,
+        "6": 0.004412914769118503
+      },
+      "65.0": {
+        "11": 0.004067585683210462,
+        "26": 0.004612916865354844,
+        "4": 0.003056510002301858,
+        "6": 0.0057174815748419925
+      },
+      "70.0": {
+        "11": 0.005662367129426869,
+        "26": 0.0066675277886803115,
+        "4": 0.0073762353413173365,
+        "6": 0.0070736364743985035
+      }
+    },
+    "template": "1C",
+    "throughput": {
+      "injector_x_realtime": {
+        "cleancell-bn15-t1": 0.5525675974360863,
+        "cleancell-bn15-t20": 0.5525675974360863,
+        "cleancell-bn5-t20": 0.5525675974360863,
+        "cleancell-default": 0.5525675974360863,
+        "cleancell-default-o2": 0.5525675974360863,
+        "jam50": 0.611920205605189,
+        "jam55": 0.6153972389177214,
+        "jam60": 0.610233617770003,
+        "jam65": 0.6104540251812286,
+        "jam70": 0.6191247639586838,
+        "tones-bn15-t1": 0.5149617855441644,
+        "tones-bn15-t20": 0.5149617855441644,
+        "tones-bn5-t20": 0.5149617855441644,
+        "tones-default": 0.5149617855441644,
+        "tones-default-o2": 0.5149617855441644,
+        "zero0": 0.794207579387666,
+        "zero1": 0.8018656741351544,
+        "zero2": 0.7893802049757266
+      },
+      "injector_x_realtime_median": 0.5525675974360863,
+      "receiver_x_realtime": {
+        "cleancell-bn15-t1": 13.073070037330446,
+        "cleancell-bn15-t20": 12.824664515176657,
+        "cleancell-bn5-t20": 13.035522005925122,
+        "cleancell-default": 12.508341042595566,
+        "cleancell-default-o2": 10.713796854258618,
+        "jam50": 11.827631256600704,
+        "jam55": 12.302130089467765,
+        "jam60": 12.568046338036439,
+        "jam65": 12.584724881361014,
+        "jam70": 11.149453027068342,
+        "tones-bn15-t1": 12.286132763213855,
+        "tones-bn15-t20": 12.52687794595725,
+        "tones-bn5-t20": 12.83317663074811,
+        "tones-default": 12.536741853771915,
+        "tones-default-o2": 12.755890117007969,
+        "zero0": 12.036185035434205,
+        "zero1": 11.586938913326003,
+        "zero2": 12.311360905097718
+      },
+      "receiver_x_realtime_median": 12.517609494276407,
+      "shm_peak_bytes": 3682800000
+    },
+    "v6_pass": false,
+    "v6_residual_db": {
+      "50.0": {
+        "11": -0.03634266216544854,
+        "26": -0.02087597210197198,
+        "4": -0.05238537151603448,
+        "6": -0.02495769817619073
+      },
+      "55.0": {
+        "11": -0.14266096836027964,
+        "26": -0.07285773044524058,
+        "4": -0.14421545749602183,
+        "6": -0.08763968234953745
+      },
+      "60.0": {
+        "11": -0.46782182632450486,
+        "26": -0.19944452224735643,
+        "4": -0.40940736709598924,
+        "6": -0.16154550491337205
+      },
+      "65.0": {
+        "11": -0.9171650588692555,
+        "26": -0.49012686612023204,
+        "4": -0.9401238143624195,
+        "6": -0.41410757901085704
+      },
+      "70.0": {
+        "11": -1.7120212857816437,
+        "26": -0.7720474546048859,
+        "4": -1.5672344510648468,
+        "6": -0.7423748319242218
+      }
+    },
+    "variant": "recording",
+    "visible": {
+      "11": -176.26644897460938,
+      "16": 2406.190673828125,
+      "26": -117.79246520996094,
+      "4": -2002.484619140625,
+      "6": -2779.1416015625,
+      "7": 3458.18603515625,
+      "9": -112.07557678222656
+    },
+    "wall_s": 2270.5
+  },
+  "timings_s": {
+    "total": 2271.097
+  }
+}

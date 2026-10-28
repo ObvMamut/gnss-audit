@@ -1,0 +1,1128 @@
+{
+  "meta": {
+    "study": "s28_twin_pair_quantisation",
+    "generated": "2026-10-16T15:24:18+0200",
+    "python": "3.14.8",
+    "platform": "Linux-6.18.56_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "design": {
+    "fs_hz": 30690000.0,
+    "window_samples": 30690,
+    "quant": {
+      "max_level": 4,
+      "zero_level": false
+    },
+    "sigma_per_component": 1.504,
+    "band_hz": 20000000.0,
+    "fir_taps": 129,
+    "root_seed": 28,
+    "ghost": {
+      "prn": 32,
+      "doppler_hz": 1510.0,
+      "cn0_db_hz": 45.0,
+      "seed": 15863571846242751693
+    },
+    "families": {
+      "noise": {
+        "bw_hz": 2000000.0
+      },
+      "swept_cw": {
+        "span_hz": 1000000.0,
+        "period_s": 0.01
+      },
+      "chirp": {
+        "span_hz": 10000000.0,
+        "period_s": 1e-05
+      }
+    },
+    "levels_db_hz": [
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0
+    ],
+    "mode_b_tau_s": 0.01,
+    "dither_seed": 6746384424311375114,
+    "chunk_samples": 8388608,
+    "checkpoints_s": [
+      5.0,
+      10.0,
+      20.0
+    ],
+    "bootstrap": {
+      "block_windows": 1000,
+      "n_boot": 400,
+      "seed": 7
+    }
+  },
+  "floor": {
+    "n0_per_hz": 2.510099790242748e-07,
+    "n0_spread_db": 0.01175221949399102,
+    "analog_sd": 1.5038546415400966,
+    "n0_analog_per_hz": 2.262016e-07,
+    "recording_power": 5.154274225234985
+  },
+  "self_check": {
+    "zero_jammer": {
+      "noise": {
+        "n_windows": 820,
+        "excess_A": 0.0,
+        "excess_real": 0.0,
+        "excess_B": 0.0,
+        "z_equal_clean": true
+      },
+      "swept_cw": {
+        "n_windows": 820,
+        "excess_A": 0.0,
+        "excess_real": 0.0,
+        "excess_B": 0.0,
+        "z_equal_clean": true
+      },
+      "chirp": {
+        "n_windows": 820,
+        "excess_A": 0.0,
+        "excess_real": 0.0,
+        "excess_B": 0.0,
+        "z_equal_clean": true
+      }
+    },
+    "mode_b_vs_inject": {
+      "samples": 8388608,
+      "family": "noise",
+      "level_db_hz": 70.0,
+      "bitwise_equal": true,
+      "share_of_samples_changed": 0.7587019205093384,
+      "output_sha256": "7beaa276de7cdd6d8c31dcde4b570cacaace57b3905c4f78ad998a14e14db733"
+    }
+  },
+  "cells": {
+    "noise": {
+      "50.0": {
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "agc_gain_real": 0.9972421254312677,
+        "var_e_clean": 0.015096957779640638,
+        "gains": {
+          "clean": 1.0222939111986906,
+          "A": 1.0224825551145211,
+          "real": 1.0196816146365655,
+          "B": 0.996435769980341
+        },
+        "var_dphi_A": 0.0006908194331878054,
+        "cov2_A": -2.4760284275530826e-05,
+        "excess_A": 0.0006660591489122745,
+        "var_dphi_real": 0.0012108390824501433,
+        "cov2_real": -0.0005450426382469163,
+        "excess_real": 0.000665796444203227,
+        "var_dphi_B": 0.0012785068895046756,
+        "cov2_B": -6.622391508322766e-05,
+        "excess_B": 0.001212282974421448,
+        "var_ratio_real": 1.7527577023458836,
+        "cancel_real": {
+          "cancel": 0.0005202823539713855,
+          "extra_var": 0.0005200196492623379,
+          "share": 1.0005051822742086,
+          "holds": true
+        },
+        "slope_real": 1.02454723799985,
+        "ratio_real": 0.9996055835139018,
+        "ratio_real_se": 0.055366746194313685,
+        "var_ratio_B": 1.850710660533926,
+        "cancel_B": {
+          "cancel": 4.146363080769684e-05,
+          "extra_var": 0.0005876874563168703,
+          "share": 0.07055388091411026,
+          "holds": false
+        },
+        "slope_B": 1.0529191050349649,
+        "ratio_B": 1.820083060793022,
+        "ratio_B_se": 0.08103625738584667,
+        "b_over_real": 1.8208012148100507,
+        "b_over_real_se": 0.1185956350376255,
+        "resolved": false
+      },
+      "55.0": {
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "agc_gain_real": 0.9913560076622429,
+        "var_e_clean": 0.015096957779640638,
+        "gains": {
+          "clean": 1.0222939111986906,
+          "A": 1.022027713724217,
+          "real": 1.0133625464773786,
+          "B": 0.9763207704188509
+        },
+        "var_dphi_A": 0.0021825608697558004,
+        "cov2_A": -2.6201828460328295e-05,
+        "excess_A": 0.0021563590412954723,
+        "var_dphi_real": 0.0031022021926778967,
+        "cov2_real": -0.0008549391387410001,
+        "excess_real": 0.002247263053936897,
+        "var_dphi_B": 0.0033034049320989785,
+        "cov2_B": -5.18368367902565e-05,
+        "excess_B": 0.003251568095308722,
+        "var_ratio_real": 1.4213588430296527,
+        "cancel_real": {
+          "cancel": 0.0008287373102806718,
+          "extra_var": 0.0009196413229220963,
+          "share": 0.9011527533880456,
+          "holds": true
+        },
+        "slope_real": 1.0255861753993973,
+        "ratio_real": 1.0421562508378996,
+        "ratio_real_se": 0.022909916159580226,
+        "var_ratio_B": 1.5135453850909486,
+        "cancel_B": {
+          "cancel": 2.5635008329928206e-05,
+          "extra_var": 0.0011208440623431781,
+          "share": 0.022871163965785746,
+          "holds": false
+        },
+        "slope_B": 1.0605526880835192,
+        "ratio_B": 1.50789735523602,
+        "ratio_B_se": 0.024405171528945353,
+        "b_over_real": 1.4469014161971028,
+        "b_over_real_se": 0.04241176200301542,
+        "resolved": false
+      },
+      "60.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.9734064748991499,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.0221089267768961,
+          "real": 0.9946646001850374,
+          "B": 0.9421113055756414
+        },
+        "var_dphi_A": 0.006633636911124091,
+        "cov2_A": -0.0001107014854678884,
+        "excess_A": 0.006522935425656203,
+        "var_dphi_real": 0.008263593048956573,
+        "cov2_real": -0.001338056395136109,
+        "excess_real": 0.006925536653820464,
+        "var_dphi_B": 0.009017283177319346,
+        "cov2_B": -0.0004447431170886006,
+        "excess_B": 0.008572540060230746,
+        "var_ratio_real": 1.2457107857530116,
+        "cancel_real": {
+          "cancel": 0.0012273549096682205,
+          "extra_var": 0.0016299561378324817,
+          "share": 0.7529987348618835,
+          "holds": true
+        },
+        "slope_real": 1.0292072100995127,
+        "ratio_real": 1.0617208667405686,
+        "ratio_real_se": 0.019631125359549875,
+        "var_ratio_B": 1.3593272134322074,
+        "cancel_B": {
+          "cancel": 0.0003340416316207122,
+          "extra_var": 0.0023836462661952548,
+          "share": 0.14013892764126665,
+          "holds": false
+        },
+        "slope_B": 1.076048674662003,
+        "ratio_B": 1.3142150735561442,
+        "ratio_B_se": 0.02554056689819801,
+        "b_over_real": 1.2378159973352698,
+        "b_over_real_se": 0.02787136774927082,
+        "resolved": true
+      },
+      "65.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.9224733014431177,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.0235700785004773,
+          "real": 0.9441295614166826,
+          "B": 0.8827871439013747
+        },
+        "var_dphi_A": 0.020902458168492934,
+        "cov2_A": 0.0010424889483649246,
+        "excess_A": 0.02194494711685786,
+        "var_dphi_real": 0.023555215441829522,
+        "cov2_real": -0.000684797966037603,
+        "excess_real": 0.02287041747579192,
+        "var_dphi_B": 0.02650325239185138,
+        "cov2_B": 0.0008917653669322023,
+        "excess_B": 0.027395017758783582,
+        "var_ratio_real": 1.1269112585683911,
+        "cancel_real": {
+          "cancel": 0.0017272869144025276,
+          "extra_var": 0.002652757273336588,
+          "share": 0.6511288958714186,
+          "holds": true
+        },
+        "slope_real": 1.0230571187805444,
+        "ratio_real": 1.042172366787028,
+        "ratio_real_se": 0.005884450761926494,
+        "var_ratio_B": 1.2679490698276212,
+        "cancel_B": {
+          "cancel": 0.00015072358143272235,
+          "extra_var": 0.0056007942233584455,
+          "share": 0.026911108571730895,
+          "holds": false
+        },
+        "slope_B": 1.0864355724709605,
+        "ratio_B": 1.2483519606086924,
+        "ratio_B_se": 0.008484719284056188,
+        "b_over_real": 1.1978363660296494,
+        "b_over_real_se": 0.010934527784007832,
+        "resolved": true
+      },
+      "70.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.8022197402519652,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.0180243701453997,
+          "real": 0.8168802295512079,
+          "B": 0.7611152389062614
+        },
+        "var_dphi_A": 0.06858372072002832,
+        "cov2_A": 0.0005486791664925435,
+        "excess_A": 0.06913239988652085,
+        "var_dphi_real": 0.07348931764249975,
+        "cov2_real": -0.0009418136224588323,
+        "excess_real": 0.07254750402004091,
+        "var_dphi_B": 0.08461187734109583,
+        "cov2_B": 0.00031030179825444206,
+        "excess_B": 0.08492217913935028,
+        "var_ratio_real": 1.0715271331296972,
+        "cancel_real": {
+          "cancel": 0.001490492788951376,
+          "extra_var": 0.004905596922471431,
+          "share": 0.30383515248139636,
+          "holds": false
+        },
+        "slope_real": 1.019541727539127,
+        "ratio_real": 1.0493994731721432,
+        "ratio_real_se": 0.006019605503633547,
+        "var_ratio_B": 1.2337020571761843,
+        "cancel_B": {
+          "cancel": 0.00023837736823810148,
+          "extra_var": 0.01602815662106752,
+          "share": 0.014872413208439494,
+          "holds": false
+        },
+        "slope_B": 1.0946005284973714,
+        "ratio_B": 1.2283991193528354,
+        "ratio_B_se": 0.007127695293597131,
+        "b_over_real": 1.1705734096088396,
+        "b_over_real_se": 0.007117158200351515,
+        "resolved": true
+      }
+    },
+    "swept_cw": {
+      "50.0": {
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "agc_gain_real": 0.9972421254312677,
+        "var_e_clean": 0.015096957779640638,
+        "gains": {
+          "clean": 1.0222939111986906,
+          "A": 1.0234124094104822,
+          "real": 1.020648783100682,
+          "B": 0.9944787379373251
+        },
+        "var_dphi_A": 0.0012132291041307508,
+        "cov2_A": -4.295359250426087e-05,
+        "excess_A": 0.00117027551162649,
+        "var_dphi_real": 0.0018239692810394388,
+        "cov2_real": -0.0006622460558535915,
+        "excess_real": 0.0011617232251858473,
+        "var_dphi_B": 0.0019263293767309527,
+        "cov2_B": -8.940726100765839e-05,
+        "excess_B": 0.0018369221157232944,
+        "var_ratio_real": 1.5034005323720523,
+        "cancel_real": {
+          "cancel": 0.0006192924633493306,
+          "extra_var": 0.000610740176908688,
+          "share": 1.0140031502167266,
+          "holds": true
+        },
+        "slope_real": 1.017599161620186,
+        "ratio_real": 0.992692074340036,
+        "ratio_real_se": 0.033012802032822135,
+        "var_ratio_B": 1.58777049625027,
+        "cancel_B": {
+          "cancel": 4.645366850339752e-05,
+          "extra_var": 0.0007131002726002019,
+          "share": 0.06514324883653728,
+          "holds": false
+        },
+        "slope_B": 1.0464082998746298,
+        "ratio_B": 1.569649281279308,
+        "ratio_B_se": 0.04026777880142389,
+        "b_over_real": 1.5812046070004597,
+        "b_over_real_se": 0.06639535727676898,
+        "resolved": false
+      },
+      "55.0": {
+        "n_windows": 10000,
+        "length_s": 10.0,
+        "agc_gain_real": 0.9913560076622429,
+        "var_e_clean": 0.01510385503916033,
+        "gains": {
+          "clean": 1.0225247794180545,
+          "A": 1.0218735439196927,
+          "real": 1.01310925174304,
+          "B": 0.9705297405868453
+        },
+        "var_dphi_A": 0.004817156659459226,
+        "cov2_A": 0.0001242748532122363,
+        "excess_A": 0.004941431512671463,
+        "var_dphi_real": 0.005999635619979929,
+        "cov2_real": -0.000819517255751644,
+        "excess_real": 0.005180118364228285,
+        "var_dphi_B": 0.0064120159857050454,
+        "cov2_B": -2.155195143943098e-05,
+        "excess_B": 0.006390464034265615,
+        "var_ratio_real": 1.2454723904813692,
+        "cancel_real": {
+          "cancel": 0.0009437921089638803,
+          "extra_var": 0.0011824789605207027,
+          "share": 0.798147062632119,
+          "holds": true
+        },
+        "slope_real": 1.0261989923004642,
+        "ratio_real": 1.0483031791384236,
+        "ratio_real_se": 0.017489057316296117,
+        "var_ratio_B": 1.3310789826845404,
+        "cancel_B": {
+          "cancel": 0.0001458268046516673,
+          "extra_var": 0.0015948593262458191,
+          "share": 0.09143552804430269,
+          "holds": false
+        },
+        "slope_B": 1.060361117800936,
+        "ratio_B": 1.2932414459005157,
+        "ratio_B_se": 0.025672756011235604,
+        "b_over_real": 1.2336521262516833,
+        "b_over_real_se": 0.031284155285635835,
+        "resolved": true
+      },
+      "60.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.9734064748991499,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.024368837240465,
+          "real": 0.9977538360249688,
+          "B": 0.9353763267944605
+        },
+        "var_dphi_A": 0.010280950465654928,
+        "cov2_A": 0.0005751403371595473,
+        "excess_A": 0.010856090802814475,
+        "var_dphi_real": 0.01203856026470797,
+        "cov2_real": -0.0009845185200608136,
+        "excess_real": 0.011054041744647155,
+        "var_dphi_B": 0.013682474648586771,
+        "cov2_B": 0.0003547880301291838,
+        "excess_B": 0.014037262678715955,
+        "var_ratio_real": 1.1709579094777864,
+        "cancel_real": {
+          "cancel": 0.001559658857220361,
+          "extra_var": 0.001757609799053041,
+          "share": 0.8873749213623345,
+          "holds": true
+        },
+        "slope_real": 1.0154379030803036,
+        "ratio_real": 1.0182340904684917,
+        "ratio_real_se": 0.01802624892654712,
+        "var_ratio_B": 1.3308569761419577,
+        "cancel_B": {
+          "cancel": 0.00022035230703036348,
+          "extra_var": 0.003401524182931843,
+          "share": 0.06478046169303943,
+          "holds": false
+        },
+        "slope_B": 1.0842754658798843,
+        "ratio_B": 1.2930310674148702,
+        "ratio_B_se": 0.014037571182112709,
+        "b_over_real": 1.2698760329463568,
+        "b_over_real_se": 0.02653151482393766,
+        "resolved": true
+      },
+      "65.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.9224733014431177,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.0222690741795093,
+          "real": 0.9432800439262926,
+          "B": 0.8682061694766884
+        },
+        "var_dphi_A": 0.018284337133832682,
+        "cov2_A": -0.0008281671131057714,
+        "excess_A": 0.01745617002072691,
+        "var_dphi_real": 0.021193476436741965,
+        "cov2_real": -0.0028543635365391304,
+        "excess_real": 0.018339112900202834,
+        "var_dphi_B": 0.024915920300277564,
+        "cov2_B": -0.0010250032327033473,
+        "excess_B": 0.023890917067574218,
+        "var_ratio_real": 1.1591055383422304,
+        "cancel_real": {
+          "cancel": 0.0020261964234333588,
+          "extra_var": 0.0029091393029092825,
+          "share": 0.6964934341257095,
+          "holds": true
+        },
+        "slope_real": 1.0243368321284516,
+        "ratio_real": 1.0505805613962023,
+        "ratio_real_se": 0.010556034067998576,
+        "var_ratio_B": 1.362692019836696,
+        "cancel_B": {
+          "cancel": 0.0001968361195975759,
+          "extra_var": 0.006631583166444882,
+          "share": 0.029681618198433537,
+          "holds": false
+        },
+        "slope_B": 1.112727674582138,
+        "ratio_B": 1.368623073629948,
+        "ratio_B_se": 0.014716645653110759,
+        "b_over_real": 1.3027302464182977,
+        "b_over_real_se": 0.02154182385527814,
+        "resolved": true
+      },
+      "70.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.8022197402519652,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.030841342731617,
+          "real": 0.8240878939727573,
+          "B": 0.772197336885789
+        },
+        "var_dphi_A": 0.11878855637281603,
+        "cov2_A": 0.0013102766935395081,
+        "excess_A": 0.12009883306635553,
+        "var_dphi_real": 0.1297044717706554,
+        "cov2_real": -0.0007429016845204539,
+        "excess_real": 0.12896157008613493,
+        "var_dphi_B": 0.14827061067134953,
+        "cov2_B": 0.0008163469903044288,
+        "excess_B": 0.14908695766165395,
+        "var_ratio_real": 1.0918936615710686,
+        "cancel_real": {
+          "cancel": 0.002053178378059962,
+          "extra_var": 0.010915915397839357,
+          "share": 0.1880903527766767,
+          "holds": false
+        },
+        "slope_real": 1.0361334226028602,
+        "ratio_real": 1.0737953633145016,
+        "ratio_real_se": 0.006314610912282453,
+        "var_ratio_B": 1.2481893475159722,
+        "cancel_B": {
+          "cancel": 0.0004939297032350794,
+          "extra_var": 0.029482054298533497,
+          "share": 0.01675357145175764,
+          "holds": false
+        },
+        "slope_B": 1.107888105704323,
+        "ratio_B": 1.2413689113805315,
+        "ratio_B_se": 0.0034147656927207407,
+        "b_over_real": 1.1560572468377752,
+        "b_over_real_se": 0.005992186028593589,
+        "resolved": true
+      }
+    },
+    "chirp": {
+      "50.0": {
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "agc_gain_real": 0.9972421254312677,
+        "var_e_clean": 0.015096957779640638,
+        "gains": {
+          "clean": 1.0222939111986906,
+          "A": 1.0223017721797423,
+          "real": 1.0194891917147666,
+          "B": 0.9930285581236908
+        },
+        "var_dphi_A": 0.00015764132746530222,
+        "cov2_A": -2.4371048452296907e-05,
+        "excess_A": 0.0001332702790130053,
+        "var_dphi_real": 0.0007287856294006476,
+        "cov2_real": -0.0005809053759205892,
+        "excess_real": 0.00014788025348005842,
+        "var_dphi_B": 0.0007764968816436358,
+        "cov2_B": -0.00010258257161777572,
+        "excess_B": 0.0006739143100258601,
+        "var_ratio_real": 4.623061992173706,
+        "cancel_real": {
+          "cancel": 0.0005565343274682923,
+          "extra_var": 0.0005711443019353454,
+          "share": 0.9744198192688842,
+          "holds": true
+        },
+        "slope_real": 1.0265490654518843,
+        "ratio_real": 1.1096266517580218,
+        "ratio_real_se": 0.32365307874248644,
+        "var_ratio_B": 4.92571899849389,
+        "cancel_B": {
+          "cancel": 7.821152316547882e-05,
+          "extra_var": 0.0006188555541783336,
+          "share": 0.12638090203346686,
+          "holds": false
+        },
+        "slope_B": 1.0660089432916344,
+        "ratio_B": 5.056748699086129,
+        "ratio_B_se": 1.023716530358499,
+        "b_over_real": 4.557162259102681,
+        "b_over_real_se": 7.870274679843145,
+        "resolved": false
+      },
+      "55.0": {
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "agc_gain_real": 0.9913560076622429,
+        "var_e_clean": 0.015096957779640638,
+        "gains": {
+          "clean": 1.0222939111986906,
+          "A": 1.0222686985738685,
+          "real": 1.0133996440341064,
+          "B": 0.9705653527236336
+        },
+        "var_dphi_A": 0.0004902813615208593,
+        "cov2_A": -4.947205560122711e-05,
+        "excess_A": 0.0004408093059196322,
+        "var_dphi_real": 0.0014302543126941695,
+        "cov2_real": -0.0009765904255956519,
+        "excess_real": 0.0004536638870985177,
+        "var_dphi_B": 0.001541001268782028,
+        "cov2_B": -0.0001695841769199168,
+        "excess_B": 0.0013714170918621112,
+        "var_ratio_real": 2.9172112687651466,
+        "cancel_real": {
+          "cancel": 0.0009271183699944247,
+          "extra_var": 0.0009399729511733102,
+          "share": 0.9863245201227973,
+          "holds": true
+        },
+        "slope_real": 1.0239436117829765,
+        "ratio_real": 1.0291613198865386,
+        "ratio_real_se": 0.1097992636364698,
+        "var_ratio_B": 3.143095760364664,
+        "cancel_B": {
+          "cancel": 0.0001201121213186897,
+          "extra_var": 0.0010507199072611688,
+          "share": 0.1143141197655394,
+          "holds": false
+        },
+        "slope_B": 1.0532728057239324,
+        "ratio_B": 3.1111346186329065,
+        "ratio_B_se": 0.38123065444298543,
+        "b_over_real": 3.022980516772529,
+        "b_over_real_se": 0.4864298078444694,
+        "resolved": false
+      },
+      "60.0": {
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "agc_gain_real": 0.9734064748991499,
+        "var_e_clean": 0.015096957779640638,
+        "gains": {
+          "clean": 1.0222939111986906,
+          "A": 1.0223151236109471,
+          "real": 0.995101639212059,
+          "B": 0.9315150506203005
+        },
+        "var_dphi_A": 0.0014911877814815784,
+        "cov2_A": 3.636171067350856e-05,
+        "excess_A": 0.0015275494921550869,
+        "var_dphi_real": 0.003050003493824005,
+        "cov2_real": -0.0014353453919546898,
+        "excess_real": 0.0016146581018693152,
+        "var_dphi_B": 0.003405669119616915,
+        "cov2_B": -0.0001537734238522053,
+        "excess_B": 0.0032518956957647096,
+        "var_ratio_real": 2.0453517200856193,
+        "cancel_real": {
+          "cancel": 0.0014717071026281983,
+          "extra_var": 0.0015588157123424267,
+          "share": 0.9441187248598293,
+          "holds": true
+        },
+        "slope_real": 1.0304222513534897,
+        "ratio_real": 1.0570250654146298,
+        "ratio_real_se": 0.043977279949276145,
+        "var_ratio_B": 2.283863348339129,
+        "cancel_B": {
+          "cancel": 0.00019013513452571386,
+          "extra_var": 0.0019144813381353366,
+          "share": 0.09931417493518185,
+          "holds": false
+        },
+        "slope_B": 1.1021377950053488,
+        "ratio_B": 2.1288316434035095,
+        "ratio_B_se": 0.2047724851787797,
+        "b_over_real": 2.0139840700640828,
+        "b_over_real_se": 0.2044710000869906,
+        "resolved": false
+      },
+      "65.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.9224733014431177,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.0222019739770687,
+          "real": 0.9423994930650214,
+          "B": 0.8685549362224758
+        },
+        "var_dphi_A": 0.007577754295597242,
+        "cov2_A": 0.0003844740349560401,
+        "excess_A": 0.007962228330553283,
+        "var_dphi_real": 0.009975287634350075,
+        "cov2_real": -0.0014497671721206942,
+        "excess_real": 0.008525520462229381,
+        "var_dphi_B": 0.01176103000558961,
+        "cov2_B": 0.00024238856728869856,
+        "excess_B": 0.012003418572878309,
+        "var_ratio_real": 1.3163910104799552,
+        "cancel_real": {
+          "cancel": 0.0018342412070767344,
+          "extra_var": 0.0023975333387528334,
+          "share": 0.7650534728459224,
+          "holds": true
+        },
+        "slope_real": 1.027419426628516,
+        "ratio_real": 1.0707455385968512,
+        "ratio_real_se": 0.018554894315498418,
+        "var_ratio_B": 1.5520468923653143,
+        "cancel_B": {
+          "cancel": 0.00014208546766734156,
+          "extra_var": 0.004183275709992369,
+          "share": 0.03396512147835476,
+          "holds": false
+        },
+        "slope_B": 1.118356443236935,
+        "ratio_B": 1.5075451336679027,
+        "ratio_B_se": 0.08915389261096689,
+        "b_over_real": 1.4079396825164003,
+        "b_over_real_se": 0.08036001692082628,
+        "resolved": true
+      },
+      "70.0": {
+        "n_windows": 5000,
+        "length_s": 5.0,
+        "agc_gain_real": 0.8022197402519652,
+        "var_e_clean": 0.015027356610215441,
+        "gains": {
+          "clean": 1.0224644602073423,
+          "A": 1.0222044785027276,
+          "real": 0.8172373466909821,
+          "B": 0.7633035479824933
+        },
+        "var_dphi_A": 0.020403950019189245,
+        "cov2_A": 0.00020663182769940897,
+        "excess_A": 0.020610581846888652,
+        "var_dphi_real": 0.024311687756902466,
+        "cov2_real": -0.0017082093852797595,
+        "excess_real": 0.022603478371622708,
+        "var_dphi_B": 0.028013961842195994,
+        "cov2_B": -0.00031290711798708816,
+        "excess_B": 0.027701054724208907,
+        "var_ratio_real": 1.1915186880010058,
+        "cancel_real": {
+          "cancel": 0.0019148412129791684,
+          "extra_var": 0.003907737737713222,
+          "share": 0.4900127238579012,
+          "holds": false
+        },
+        "slope_real": 1.0394924157273195,
+        "ratio_real": 1.09669288036305,
+        "ratio_real_se": 0.013320695867464323,
+        "var_ratio_B": 1.372967578133145,
+        "cancel_B": {
+          "cancel": 0.0005195389456864972,
+          "extra_var": 0.007610011823006749,
+          "share": 0.06827045184290201,
+          "holds": false
+        },
+        "slope_B": 1.119236390195024,
+        "ratio_B": 1.34402099513705,
+        "ratio_B_se": 0.016537793844810085,
+        "b_over_real": 1.2255217656670885,
+        "b_over_real_se": 0.01776754576726581,
+        "resolved": true
+      }
+    }
+  },
+  "verdicts": {
+    "A3": true,
+    "P1": true,
+    "P2": true,
+    "P3": false,
+    "a3_cells": {
+      "noise": {
+        "var_ratio_real": 1.2457107857530116,
+        "cancel": 0.0012273549096682205,
+        "extra_var": 0.0016299561378324817,
+        "share": 0.7529987348618835,
+        "holds": true,
+        "resolved": true
+      },
+      "swept_cw": {
+        "var_ratio_real": 1.1709579094777864,
+        "cancel": 0.001559658857220361,
+        "extra_var": 0.001757609799053041,
+        "share": 0.8873749213623345,
+        "holds": true,
+        "resolved": true
+      }
+    },
+    "resolved_levels": {
+      "noise": [
+        60.0,
+        65.0,
+        70.0
+      ],
+      "swept_cw": [
+        55.0,
+        60.0,
+        65.0,
+        70.0
+      ],
+      "chirp": [
+        65.0,
+        70.0
+      ]
+    },
+    "rules": {
+      "gate_families": [
+        "noise",
+        "swept_cw"
+      ],
+      "gate_level_db_hz": 60.0,
+      "var_ratio_min": 1.1,
+      "cancel_share": 0.5,
+      "tol": 0.1,
+      "se_max": 0.02
+    }
+  },
+  "p3_meaning": "P3 fails. With the satellite inside the recording, mode B's jamming-induced error overstates the true front end's by 15.6-30.3 % in this simulation (the mode B model's excess over the true analog's, 1.156-1.303, noise and swept CW at the resolved levels). Its per-sample reconstruction adds within-cell noise that the clean twin (the recording itself) does not share, so it does not cancel: mode B's cancellation share is 0.01-0.14 at those levels, the true analog's 0.19-0.89. For injected ghosts (E2's structure, the exploratory section), both mode B twins requantise reconstruction plus ghost, and mode B's excess understates the truth's by 0.2-7.9 % (0.921-0.998, noise and swept CW at 60 and 70 dB-Hz).",
+  "confound_note": {
+    "beta": 1.0224002618845958,
+    "beta_range": [
+      1.0222939111986906,
+      1.0225247794180545
+    ],
+    "beta_squared": 1.04530229550169,
+    "mode_a_gain_e2_structure": 1.0007195955554764,
+    "paired": [
+      {
+        "family": "noise",
+        "level_db_hz": 60.0,
+        "var_ratio": {
+          "pre_registered": 1.2457107857530116,
+          "e2_structure_truth": 1.186030666697886,
+          "quotient": 1.050319203989291
+        },
+        "excess_ratio_real_over_a": {
+          "pre_registered": 1.0617208667405686,
+          "e2_structure_truth": 1.0136419496801479,
+          "quotient": 1.0474318540936391
+        },
+        "cancel_share": {
+          "pre_registered": 0.7529987348618835,
+          "e2_structure_truth": 0.9283263078064768
+        }
+      },
+      {
+        "family": "swept_cw",
+        "level_db_hz": 60.0,
+        "var_ratio": {
+          "pre_registered": 1.1709579094777864,
+          "e2_structure_truth": 1.1255239661984848,
+          "quotient": 1.040366926554889
+        },
+        "excess_ratio_real_over_a": {
+          "pre_registered": 1.0182340904684917,
+          "e2_structure_truth": 0.9944929914198914,
+          "quotient": 1.0238725654714809
+        },
+        "cancel_share": {
+          "pre_registered": 0.8873749213623345,
+          "e2_structure_truth": 1.0447921573995718
+        }
+      },
+      {
+        "family": "noise",
+        "level_db_hz": 70.0,
+        "var_ratio": {
+          "pre_registered": 1.0715271331296972,
+          "e2_structure_truth": 1.0287842113540249,
+          "quotient": 1.0415470234709536
+        },
+        "excess_ratio_real_over_a": {
+          "pre_registered": 1.0493994731721432,
+          "e2_structure_truth": 1.005182021928957,
+          "quotient": 1.0439894967066088
+        },
+        "cancel_share": {
+          "pre_registered": 0.30383515248139636,
+          "e2_structure_truth": 0.8196189931893288
+        }
+      },
+      {
+        "family": "swept_cw",
+        "level_db_hz": 70.0,
+        "var_ratio": {
+          "pre_registered": 1.0918936615710686,
+          "e2_structure_truth": 1.0463587530222436,
+          "quotient": 1.0435174918901424
+        },
+        "excess_ratio_real_over_a": {
+          "pre_registered": 1.0737953633145016,
+          "e2_structure_truth": 1.034293192904436,
+          "quotient": 1.0381924300392407
+        },
+        "cancel_share": {
+          "pre_registered": 0.1880903527766767,
+          "e2_structure_truth": 0.2609943491733179
+        }
+      }
+    ],
+    "a3_conditions_confound_free": {
+      "cells": {
+        "noise": {
+          "var_ratio": 1.186030666697886,
+          "var_ratio_above_min": true,
+          "cancel_share": 0.9283263078064768,
+          "cancel_holds": true
+        },
+        "swept_cw": {
+          "var_ratio": 1.1255239661984848,
+          "var_ratio_above_min": true,
+          "cancel_share": 1.0447921573995718,
+          "cancel_holds": true
+        }
+      },
+      "hold": true
+    },
+    "truth_excess_ratio_real_over_a_confound_free": [
+      0.9944929914198914,
+      1.034293192904436
+    ],
+    "mode_a_error_bias_satellites_in_recording": -0.043338941946881704,
+    "statement": "Not pre-registered (added after the task review; the pre-registered verdicts stand as computed). The pre-registered mode A pair is r + j: the ghost inside r carries the recording's Bussgang gain beta = 1.0224 (the clean twin's mean Re(z / z_ref)), but the jammer added in mode A passes no quantiser, so normalising mode A by its own gain scales its jammer term by 1 / beta; in the real chain ghost and jammer both pass the quantiser. A3's variance ratio and P1's R(real/A) therefore carry a factor of about beta^2 = 1.045. Pre-registered / confound-free (the exploratory E2 structure, ghost and jammer both injected; mode A's gain 1.0007): variance ratio noise-60 1.246/1.186, swept_cw-60 1.171/1.126, noise-70 1.072/1.029, swept_cw-70 1.092/1.046; R(real/A) noise-60 1.062/1.014, swept_cw-60 1.018/0.994, noise-70 1.049/1.005, swept_cw-70 1.074/1.034; cancellation share noise-60 0.753/0.928, swept_cw-60 0.887/1.045, noise-70 0.304/0.820, swept_cw-70 0.188/0.261. In the confound-free construction A3's conditions still hold: noise variance ratio 1.186 (> 1.1), cancellation share 0.93 (>= 0.5); swept_cw variance ratio 1.126 (> 1.1), cancellation share 1.04 (>= 0.5); the truth's R(real/A) is 0.994-1.034. The same factor means mode A understates the jamming-induced error of satellites inside a 3-bit recording by about 4.3 % (1 / beta^2 - 1 = -0.0433); injected ghosts, added digitally like the jammer, carry no such factor."
+  },
+  "exploratory_e2_structure": {
+    "label": "exploratory: added after the pre-registered results were seen (P3 failed); not pre-registered; does not enter gate A",
+    "construction": "the recording r0 = requantise(x0) holds no ghost; the ghost is injected after the jammer into every twin, and in mode B after the reconstruction (as E2 does), so both mode B twins requantise reconstruction plus ghost. Pairs, each against its own clean twin: mode A r0 + j + g vs r0 + g; truth requantise(G (x0 + j + g)) vs requantise(x0 + g); mode B Q(AGC(x^ + j + g)) vs Q(AGC(x^ + g)). Same analog noise, ghost, jammer seeds, N0, analog SD and statistics as the pre-registered section; fixed length.",
+    "seconds": 20.0,
+    "mode_b_vs_inject": {
+      "samples": 8388608,
+      "family": "noise",
+      "level_db_hz": 70.0,
+      "twins": [
+        "B",
+        "B_clean"
+      ],
+      "bitwise_equal": true
+    },
+    "cells": [
+      {
+        "family": "noise",
+        "level_db_hz": 60.0,
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "gains": {
+          "A_clean": 1.0007195955554764,
+          "A": 1.0002335937553213,
+          "truth_clean": 1.0222939111986906,
+          "truth": 0.9944285094604184,
+          "B_clean": 1.021497341571116,
+          "B": 0.993403628806419
+        },
+        "var_dphi_A": 0.007137070120569645,
+        "cov2_A": -0.00016136939316511976,
+        "excess_A": 0.006975700727404525,
+        "var_dphi_truth": 0.008464784033368778,
+        "cov2_truth": -0.0013939211476572291,
+        "excess_truth": 0.007070862885711548,
+        "var_dphi_B": 0.008374760129337107,
+        "cov2_B": -0.0018611287459018833,
+        "excess_B": 0.0065136313834352234,
+        "var_ratio_truth": 1.186030666697886,
+        "cancel_truth": {
+          "cancel": 0.0012325517544921093,
+          "extra_var": 0.0013277139127991326,
+          "share": 0.9283263078064768,
+          "holds": true
+        },
+        "slope_truth": 1.0059563969215157,
+        "ratio_truth": 1.0136419496801479,
+        "ratio_truth_se": 0.011627149386732927,
+        "var_ratio_B": 1.173417100835304,
+        "cancel_B": {
+          "cancel": 0.0016997593527367635,
+          "extra_var": 0.001237690008767462,
+          "share": 1.373332046551339,
+          "holds": true
+        },
+        "slope_B": 0.999093759231237,
+        "ratio_B": 0.9337601537069917,
+        "ratio_B_se": 0.010174395839014014,
+        "b_over_truth": 0.9211932813175673,
+        "b_over_truth_se": 0.013378730560654669
+      },
+      {
+        "family": "swept_cw",
+        "level_db_hz": 60.0,
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "gains": {
+          "A_clean": 1.0007195955554764,
+          "A": 1.0024868231088826,
+          "truth_clean": 1.0222939111986906,
+          "truth": 0.9969157068691947,
+          "B_clean": 1.021497341571116,
+          "B": 0.9957314677858216
+        },
+        "var_dphi_A": 0.011296987485188857,
+        "cov2_A": 0.00023689516353038199,
+        "excess_A": 0.01153388264871924,
+        "var_dphi_truth": 0.01271503016042441,
+        "cov2_truth": -0.0012446647024136315,
+        "excess_truth": 0.011470365458010778,
+        "var_dphi_B": 0.012753894867909907,
+        "cov2_B": -0.001675516570731289,
+        "excess_B": 0.011078378297178618,
+        "var_ratio_truth": 1.1255239661984848,
+        "cancel_truth": {
+          "cancel": 0.0014815598659440135,
+          "extra_var": 0.0014180426752355528,
+          "share": 1.0447921573995718,
+          "holds": true
+        },
+        "slope_truth": 0.9979388577350391,
+        "ratio_truth": 0.9944929914198914,
+        "ratio_truth_se": 0.007553235686307184,
+        "var_ratio_B": 1.1289642379998346,
+        "cancel_B": {
+          "cancel": 0.001912411734261671,
+          "extra_var": 0.0014569073827210496,
+          "share": 1.312651550086788,
+          "holds": true
+        },
+        "slope_B": 0.9992992690586108,
+        "ratio_B": 0.9605072840244996,
+        "ratio_B_se": 0.007749692324969953,
+        "b_over_truth": 0.965826096625509,
+        "b_over_truth_se": 0.01113083740543991
+      },
+      {
+        "family": "noise",
+        "level_db_hz": 70.0,
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "gains": {
+          "A_clean": 1.0007195955554764,
+          "A": 0.9978914684297688,
+          "truth_clean": 1.0222939111986906,
+          "truth": 0.8175502955889371,
+          "B_clean": 1.021497341571116,
+          "B": 0.8169520814253074
+        },
+        "var_dphi_A": 0.0724632410062893,
+        "cov2_A": 0.00014127748629479654,
+        "excess_A": 0.07260451849258409,
+        "var_dphi_truth": 0.07454903825081197,
+        "cov2_truth": -0.0015682815512579476,
+        "excess_truth": 0.07298075669955402,
+        "var_dphi_B": 0.07453322839282764,
+        "cov2_B": -0.002257003693965531,
+        "excess_B": 0.07227622469886211,
+        "var_ratio_truth": 1.0287842113540249,
+        "cancel_truth": {
+          "cancel": 0.0017095590375527442,
+          "extra_var": 0.0020857972445226663,
+          "share": 0.8196189931893288,
+          "holds": true
+        },
+        "slope_truth": 0.9994827692675479,
+        "ratio_truth": 1.005182021928957,
+        "ratio_truth_se": 0.0025949296263779627,
+        "var_ratio_B": 1.0285660337267923,
+        "cancel_B": {
+          "cancel": 0.0023982811802603274,
+          "extra_var": 0.0020699873865383384,
+          "share": 1.1585970020189342,
+          "holds": true
+        },
+        "slope_B": 0.9989919564341995,
+        "ratio_B": 0.9954783283390893,
+        "ratio_B_se": 0.003105518039643339,
+        "b_over_truth": 0.9903463319297672,
+        "b_over_truth_se": 0.00335914406862365
+      },
+      {
+        "family": "swept_cw",
+        "level_db_hz": 70.0,
+        "n_windows": 20000,
+        "length_s": 20.0,
+        "gains": {
+          "A_clean": 1.0007195955554764,
+          "A": 1.006688739087069,
+          "truth_clean": 1.0222939111986906,
+          "truth": 0.8217940828890657,
+          "B_clean": 1.021497341571116,
+          "B": 0.8210289231980603
+        },
+        "var_dphi_A": 0.16083227935284172,
+        "cov2_A": -0.0001585776611427163,
+        "excess_A": 0.160673701691699,
+        "var_dphi_truth": 0.1682882632693646,
+        "cov2_truth": -0.0021045473308823324,
+        "excess_truth": 0.16618371593848227,
+        "var_dphi_B": 0.16827908989597054,
+        "cov2_B": -0.002450175801952923,
+        "excess_B": 0.16582891409401762,
+        "var_ratio_truth": 1.0463587530222436,
+        "cancel_truth": {
+          "cancel": 0.001945969669739616,
+          "extra_var": 0.007455983916522885,
+          "share": 0.2609943491733179,
+          "holds": false
+        },
+        "slope_truth": 1.0162008439611618,
+        "ratio_truth": 1.034293192904436,
+        "ratio_truth_se": 0.0017971577918416697,
+        "var_ratio_B": 1.0463017161299546,
+        "cancel_B": {
+          "cancel": 0.002291598140810207,
+          "extra_var": 0.007446810543128818,
+          "share": 0.3077288092047229,
+          "holds": false
+        },
+        "slope_B": 1.0162176024631626,
+        "ratio_B": 1.0320849793590394,
+        "ratio_B_se": 0.0010894513384475052,
+        "b_over_truth": 0.997865002341168,
+        "b_over_truth_se": 0.0019001220611010797
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+# E0 (b-d) on segment A, the first 120 s of FGI JT23_4.1.5 (P2b task 10; docs/10 section 2.1). Confirmatory: its gates
+# feed G3 (docs/12 section 1). Decimated by 4 (129-tap FIR) to 7.6725 MS/s, front-end mode A. Real satellites (the
+# strongest 7 at 35 dB-Hz or more in a zero-gain survey) plus a ghost at 45 dB-Hz on an unused PRN; three zero-gain
+# twins (repeat, null), band-limited noise at five J/N0 levels (linearity, V6, tau_int) and 12 phase tones received
+# under every loop cell E3 uses (G-hz per cell; the identified H goes to run_dir/loop/).
+id: E0b
+variant: recording
+recording: {interval: fgi-jt2023-JT23_4.1.5_L1_E1-clean, item_type: ibyte, fs_hz: 30690000.0}
+template: 1C
+decim: 4
+fir_taps: 129
+workers: 6
+frontend_bw_hz: 20000000.0  # the flat part of the LabSat 3W band (+-10 MHz, docs/7 section 2.3)
+seed: 11
+max_channels: 8
+min_cn0_dbhz: 35.0
+warmup_s: 30.0
+onset_s: 55.0
+pre_window_s: 20.0
+ghost: {doppler_hz: 1500.0, cn0_db_hz: 45.0}
+noise: {bw_hz: 2000000.0, levels_db_hz: [50.0, 55.0, 60.0, 65.0, 70.0]}
+tones: {n_tones: 12, f_min_hz: 0.05, f_max_hz: 50.0, a_rad: 0.05, onset_s: 40.0}
+# bn5-t1 (pll_bw 5.84 Hz at T = 1 ms) is left out: on this segment it does not pull in (5 to 7 of 8 channels unlocked
+# or 300-560 Hz off in each of 9 receiver runs, with or without FLL pull-in; P2b task 10), so E3 cannot use it as is
+loop_cells: [default, default-o2, bn15-t1, bn5-t20, bn15-t20]
+# D-34 (P2b task 10): the ghost must lock at the end of the warm-up; a real channel whose start fails in every run
+# (PRN 9 here: acquisition across a data-bit edge, then a Costas lock 500 Hz off) is excluded and counted
+min_locked_real: 4
+timeout_s: 3600
+confirmatory: true
+# D-34: the carrier-lock rule never drops a twin's channel, and the pull-in uses the FLL so a start-up frequency false
+# lock is not kept (documented deviations from the v0.0.22 defaults; docs/6 section 9)
+receiver_overrides: {Tracking_1C.max_carrier_lock_fail: "1000000", Tracking_1C.enable_fll_pull_in: "true"}

@@ -1,0 +1,17 @@
+# E0 (b-d), development run on a synthetic recording (P2a task 10; docs/10 section 2.1). No gate is decided here.
+# A ghost GPS L1 C/A satellite on white noise, three zero-gain twins (repeat and null) and band-limited noise at three
+# J/N0 levels, through the patched GNSS-SDR image (D-08, D-27). Truth is the ghost's (docs/3 section 3).
+id: E0b
+variant: synthetic
+seconds: 120.0
+seed: 1
+fs_hz: 4000000.0
+warmup_s: 30.0
+onset_s: 60.0
+pre_window_s: 20.0
+ghost: {prn: 3, doppler_hz: 1000.0, cn0_db_hz: 45.0}
+noise: {bw_hz: 2000000.0, levels_db_hz: [55.0, 62.5, 70.0]}
+timeout_s: 1800
+# D-34: the carrier-lock rule never drops a twin's channel, and the pull-in uses the FLL so a start-up frequency false
+# lock is not kept (documented deviations from the v0.0.22 defaults; docs/6 section 9)
+receiver_overrides: {Tracking_1C.max_carrier_lock_fail: "1000000", Tracking_1C.enable_fll_pull_in: "true"}

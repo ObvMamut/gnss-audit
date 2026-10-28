@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "study": "s01_loop_facts",
+    "generated": "2026-10-09T20:45:18+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "cells": [
+    {
+      "cell": "C/A default (T=1 ms, pll_bw_hz=35)",
+      "configured_hz": 35.0,
+      "t_s": 0.001,
+      "t_code_s": null,
+      "simplified_docs9": {
+        "bn_eff_hz": 31.787990650769473,
+        "pole_radius_max": 0.995479382926608,
+        "sensitivity_peak_db": 0.48046731320066993,
+        "crossover_hz": 16.91520478929872
+      },
+      "faithful": {
+        "bn_eff_hz": 30.256019976427332,
+        "pole_radius_max": 0.9954875364020536,
+        "sensitivity_peak_db": 0.5086090465368717,
+        "crossover_hz": 16.0501923031676
+      }
+    },
+    {
+      "cell": "C/A narrow value if it were used (5 Hz)",
+      "configured_hz": 5.0,
+      "t_s": 0.001,
+      "t_code_s": null,
+      "simplified_docs9": {
+        "bn_eff_hz": 4.310692384067269,
+        "pole_radius_max": 0.9993662605003868,
+        "sensitivity_peak_db": 0.0667355796878298,
+        "crossover_hz": 2.403244994731285
+      },
+      "faithful": {
+        "bn_eff_hz": 4.278398693869048,
+        "pole_radius_max": 0.9993664257457879,
+        "sensitivity_peak_db": 0.06725229627226435,
+        "crossover_hz": 2.384396597875317
+      }
+    },
+    {
+      "cell": "C/A 15 Hz",
+      "configured_hz": 15.0,
+      "t_s": 0.001,
+      "t_code_s": null,
+      "simplified_docs9": {
+        "bn_eff_hz": 13.154541429023011,
+        "pole_radius_max": 0.9980866362548162,
+        "sensitivity_peak_db": 0.20206461180582352,
+        "crossover_hz": 7.222384002885386
+      },
+      "faithful": {
+        "bn_eff_hz": 12.866768028726437,
+        "pole_radius_max": 0.9980881271279166,
+        "sensitivity_peak_db": 0.20687753963394567,
+        "crossover_hz": 7.058409963698282
+      }
+    },
+    {
+      "cell": "E1 default (T=4 ms, 35 Hz)",
+      "configured_hz": 35.0,
+      "t_s": 0.004,
+      "t_code_s": null,
+      "simplified_docs9": {
+        "bn_eff_hz": 39.11818602039609,
+        "pole_radius_max": 0.9807929563455658,
+        "sensitivity_peak_db": 2.1437071460697554,
+        "crossover_hz": 17.34032229377672
+      },
+      "faithful": {
+        "bn_eff_hz": 34.48948847428297,
+        "pole_radius_max": 0.9809252784261833,
+        "sensitivity_peak_db": 2.8524750346712797,
+        "crossover_hz": 14.405288491114385
+      }
+    },
+    {
+      "cell": "E1 5 Hz",
+      "configured_hz": 5.0,
+      "t_s": 0.004,
+      "t_code_s": null,
+      "simplified_docs9": {
+        "bn_eff_hz": 4.422896546642919,
+        "pole_radius_max": 0.9974407923601711,
+        "sensitivity_peak_db": 0.2706799951559972,
+        "crossover_hz": 2.4097328166122045
+      },
+      "faithful": {
+        "bn_eff_hz": 4.295667823385202,
+        "pole_radius_max": 0.9974434459199129,
+        "sensitivity_peak_db": 0.2793873215531089,
+        "crossover_hz": 2.337309710683605
+      }
+    },
+    {
+      "cell": "C/A extended 20 ms, narrow 5 Hz",
+      "configured_hz": 5.0,
+      "t_s": 0.02,
+      "t_code_s": 0.001,
+      "simplified_docs9": {
+        "bn_eff_hz": 5.136768454099901,
+        "pole_radius_max": 0.9865788447461408,
+        "sensitivity_peak_db": 1.4655652291518368,
+        "crossover_hz": 2.450315638382329
+      },
+      "faithful": {
+        "bn_eff_hz": 5.722980712981814,
+        "pole_radius_max": 0.9865171727879739,
+        "sensitivity_peak_db": 3.04259178222608,
+        "crossover_hz": 2.129646480649067
+      }
+    },
+    {
+      "cell": "C/A extended 20 ms, narrow 15 Hz",
+      "configured_hz": 15.0,
+      "t_s": 0.02,
+      "t_code_s": 0.001,
+      "simplified_docs9": {
+        "bn_eff_hz": 25.88015715334929,
+        "pole_radius_max": 0.9555791614689626,
+        "sensitivity_peak_db": 5.692405360223174,
+        "crossover_hz": 7.912414718424704
+      },
+      "faithful": {
+        "bn_eff_hz": 35.39918108319662,
+        "pole_radius_max": 0.9550245974517226,
+        "sensitivity_peak_db": 9.170828859849856,
+        "crossover_hz": 5.567918799167464
+      }
+    }
+  ],
+  "inverse_map": [
+    {
+      "t_s": 0.001,
+      "target_bn_eff_hz": 5.0,
+      "simplified_docs9": {
+        "configured_hz": 5.791767638395935,
+        "bn_eff_hz": 5.000000000000156,
+        "pole_radius_max": 0.9992655331740024,
+        "sensitivity_peak_db": 0.07735958602550291,
+        "crossover_hz": 2.783746616024742
+      },
+      "faithful": {
+        "configured_hz": 5.842298866220307,
+        "bn_eff_hz": 5.0000000000001545,
+        "pole_radius_max": 0.999259326884703,
+        "sensitivity_peak_db": 0.07874563633132317,
+        "crossover_hz": 2.783746616024742
+      }
+    },
+    {
+      "t_s": 0.001,
+      "target_bn_eff_hz": 15.0,
+      "simplified_docs9": {
+        "configured_hz": 17.044202057468603,
+        "bn_eff_hz": 15.000000000000139,
+        "pole_radius_max": 0.9978230731119472,
+        "sensitivity_peak_db": 0.23003966087915434,
+        "crossover_hz": 8.208207210959966
+      },
+      "faithful": {
+        "configured_hz": 17.473830607413174,
+        "bn_eff_hz": 14.999999999999904,
+        "pole_radius_max": 0.997769619393256,
+        "sensitivity_peak_db": 0.24252073328210116,
+        "crossover_hz": 8.197442629343307
+      }
+    },
+    {
+      "t_s": 0.004,
+      "target_bn_eff_hz": 5.0,
+      "simplified_docs9": {
+        "configured_hz": 5.62776924443756,
+        "bn_eff_hz": 4.999999999999995,
+        "pole_radius_max": 0.9971149318469558,
+        "sensitivity_peak_db": 0.3053837903763249,
+        "crossover_hz": 2.713002895530183
+      },
+      "faithful": {
+        "configured_hz": 5.813129051830493,
+        "bn_eff_hz": 4.999999999999973,
+        "pole_radius_max": 0.9970221131119847,
+        "sensitivity_peak_db": 0.3275680290194426,
+        "crossover_hz": 2.7066420476985646
+      }
+    },
+    {
+      "t_s": 0.004,
+      "target_bn_eff_hz": 15.0,
+      "simplified_docs9": {
+        "configured_hz": 15.697267877864661,
+        "bn_eff_hz": 14.999999999999977,
+        "pole_radius_max": 0.9917526426735956,
+        "sensitivity_peak_db": 0.8856804441310616,
+        "crossover_hz": 7.629753066396376
+      },
+      "faithful": {
+        "configured_hz": 16.96993678310372,
+        "bn_eff_hz": 15.000000000000037,
+        "pole_radius_max": 0.9910879371173762,
+        "sensitivity_peak_db": 1.0824576628327556,
+        "crossover_hz": 7.48781349665432
+      }
+    },
+    {
+      "t_s": 0.02,
+      "target_bn_eff_hz": 5.0,
+      "simplified_docs9": {
+        "configured_hz": 4.888740532058198,
+        "bn_eff_hz": 5.000000000000002,
+        "pole_radius_max": 0.986893992273999,
+        "sensitivity_peak_db": 1.4295870363801308,
+        "crossover_hz": 2.395113904362299
+      },
+      "faithful": {
+        "configured_hz": 4.503158525886218,
+        "bn_eff_hz": 4.999999999999991,
+        "pole_radius_max": 0.9879306709546267,
+        "sensitivity_peak_db": 2.759642425678889,
+        "crossover_hz": 1.9372457719576308
+      }
+    },
+    {
+      "t_s": 0.02,
+      "target_bn_eff_hz": 15.0,
+      "simplified_docs9": {
+        "configured_hz": 11.036992369669463,
+        "bn_eff_hz": 15.000000000000012,
+        "pole_radius_max": 0.9684566719841566,
+        "sensitivity_peak_db": 3.731505449746812,
+        "crossover_hz": 5.6188991456287205
+      },
+      "faithful": {
+        "configured_hz": 9.656379448952226,
+        "bn_eff_hz": 15.000000000000007,
+        "pole_radius_max": 0.9725371318700554,
+        "sensitivity_peak_db": 5.717780661332556,
+        "crossover_hz": 3.7989393156200775
+      }
+    }
+  ],
+  "f1_consequences": {
+    "assumed_5hz": {
+      "bn_eff_hz": 4.278398693869048,
+      "white_model_underestimate_factor_1_over_2BT": 116.86615385249179,
+      "thermal_sigma_rad_45dbhz": 0.011723226751031098,
+      "nu_eff_W2s_asymptotic": 17.11359477547619,
+      "W_over_loop_time_constants_at_2s": 8.556797387738095,
+      "crossover_hz": 2.384396597875317,
+      "cn0_memory_in_loop_time_constants": 2.139199346934524
+    },
+    "actual_35hz": {
+      "bn_eff_hz": 30.256019976427332,
+      "white_model_underestimate_factor_1_over_2BT": 16.52563689439501,
+      "thermal_sigma_rad_45dbhz": 0.03117542895549085,
+      "nu_eff_W2s_asymptotic": 121.02407990570933,
+      "W_over_loop_time_constants_at_2s": 60.512039952854664,
+      "crossover_hz": 16.0501923031676,
+      "cn0_memory_in_loop_time_constants": 15.128009988213666
+    }
+  },
+  "f20": [
+    {
+      "configured_hz": 5.0,
+      "t_s": 0.001,
+      "white_m_error_of_single_H_identity_rel_to_Var_e": 0.020713786870346487
+    },
+    {
+      "configured_hz": 35.0,
+      "t_s": 0.001,
+      "white_m_error_of_single_H_identity_rel_to_Var_e": 0.15338408401521617
+    },
+    {
+      "configured_hz": 35.0,
+      "t_s": 0.004,
+      "white_m_error_of_single_H_identity_rel_to_Var_e": 0.7719275358069744
+    },
+    {
+      "configured_hz": 15.0,
+      "t_s": 0.02,
+      "white_m_error_of_single_H_identity_rel_to_Var_e": -0.2639075531523076
+    }
+  ]
+}

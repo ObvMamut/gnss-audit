@@ -1,0 +1,337 @@
+{
+  "meta": {
+    "study": "s04_structured_interference",
+    "generated": "2026-10-09T20:59:30+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "seconds": 400,
+  "prn": 5,
+  "doppler_hz": 1234.5,
+  "rows": [
+    {
+      "class": "wideband_noise",
+      "var_m_over_var_n": 0.998330807990669,
+      "pseudo_cov_ratio": 0.0009611656955284088,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.008535192249664536,
+          "corr_sq_hm_e": 0.005649240526191973,
+          "iw_bias_var_hm_over_var_e": 0.9985263091192219,
+          "excess_kurtosis_e": -0.02495391110074241,
+          "gauss95_coverage_exact_var": 0.948746835443038,
+          "gauss99_coverage_exact_var": 0.9910101265822785,
+          "gauss999_coverage_exact_var": 0.9991848101265822,
+          "wiener_var_reduction": -0.00030976424129258717,
+          "ks_hm_vs_e": 0.004551898734177273
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.010031046613131013,
+          "corr_sq_hm_e": -0.006730069752865688,
+          "iw_bias_var_hm_over_var_e": 0.9956250370112608,
+          "excess_kurtosis_e": 0.0013756410850915834,
+          "gauss95_coverage_exact_var": 0.9499822784810127,
+          "gauss99_coverage_exact_var": 0.9900227848101266,
+          "gauss999_coverage_exact_var": 0.9990658227848102,
+          "wiener_var_reduction": -0.001208039611620304,
+          "ks_hm_vs_e": 0.002529113924050641
+        }
+      }
+    },
+    {
+      "class": "cw_beat_7hz",
+      "var_m_over_var_n": 0.9999999999994863,
+      "pseudo_cov_ratio": 2.724414311002547e-13,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.9997818548220151,
+          "corr_sq_hm_e": -0.9999999922317235,
+          "iw_bias_var_hm_over_var_e": 0.9999999988857347,
+          "excess_kurtosis_e": -1.4999999934324495,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 0.0009316455696202208
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9999767236663801,
+          "corr_sq_hm_e": -0.9999999999999997,
+          "iw_bias_var_hm_over_var_e": 0.9999999999995692,
+          "excess_kurtosis_e": -1.499999999999984,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 6.329113924041785e-05
+        }
+      }
+    },
+    {
+      "class": "cw_beat_-7hz",
+      "var_m_over_var_n": 0.9999999999999629,
+      "pseudo_cov_ratio": 4.6469528536900915e-14,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.9997818897186808,
+          "corr_sq_hm_e": -0.9999999922317285,
+          "iw_bias_var_hm_over_var_e": 1.0000000011073868,
+          "excess_kurtosis_e": -1.4999999942991367,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 0.0009594936708861024
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9999767273906178,
+          "corr_sq_hm_e": -0.9999999999999997,
+          "iw_bias_var_hm_over_var_e": 1.000000000000029,
+          "excess_kurtosis_e": -1.499999999999989,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 8.101265822790804e-05
+        }
+      }
+    },
+    {
+      "class": "cw_beat_60hz",
+      "var_m_over_var_n": 1.0000000000051825,
+      "pseudo_cov_ratio": 3.1311121015832826e-12,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.9997455425587979,
+          "corr_sq_hm_e": -0.9999999929927909,
+          "iw_bias_var_hm_over_var_e": 1.0000000001606488,
+          "excess_kurtosis_e": -1.4999999973223923,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 0.020000000000000018
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9999945058558833,
+          "corr_sq_hm_e": -1.0,
+          "iw_bias_var_hm_over_var_e": 1.00000000000525,
+          "excess_kurtosis_e": -1.4999999999982792,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 0.020000000000000018
+        }
+      }
+    },
+    {
+      "class": "cw_beat_0hz",
+      "var_m_over_var_n": 0.21662713270951767,
+      "pseudo_cov_ratio": 0.7005891339391049,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.9364152372826849,
+          "corr_sq_hm_e": 0.9514493037448836,
+          "iw_bias_var_hm_over_var_e": 0.029897694739984403,
+          "excess_kurtosis_e": -1.599686023933869,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.9505667814994341,
+          "ks_hm_vs_e": 0.026162025316455728
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9274102265513324,
+          "corr_sq_hm_e": 0.4184935379832615,
+          "iw_bias_var_hm_over_var_e": 0.042068784536953674,
+          "excess_kurtosis_e": -1.5435690714600219,
+          "gauss95_coverage_exact_var": 0.9999924050632911,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.6312156205436983,
+          "ks_hm_vs_e": 0.14780253164556964
+        }
+      }
+    },
+    {
+      "class": "swept_slow",
+      "var_m_over_var_n": 1.000000000000269,
+      "pseudo_cov_ratio": 1.6799416321840922e-12,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.9997725245663895,
+          "corr_sq_hm_e": -0.12623202628893498,
+          "iw_bias_var_hm_over_var_e": 1.000000000828568,
+          "excess_kurtosis_e": -0.5493539639214338,
+          "gauss95_coverage_exact_var": 0.954,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.9999999999999996,
+          "ks_hm_vs_e": 0.00014683544303795149
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9999948612766683,
+          "corr_sq_hm_e": -0.008890833570284645,
+          "iw_bias_var_hm_over_var_e": 0.9999999994525814,
+          "excess_kurtosis_e": -0.051959121796690155,
+          "gauss95_coverage_exact_var": 0.927,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.9999999999999999,
+          "ks_hm_vs_e": 0.00022025316455696192
+        }
+      }
+    },
+    {
+      "class": "swept_fast",
+      "var_m_over_var_n": 1.0000000000057412,
+      "pseudo_cov_ratio": 4.84823606683185e-12,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.999998730586196,
+          "corr_sq_hm_e": -0.9999999930913305,
+          "iw_bias_var_hm_over_var_e": 0.99999999952731,
+          "excess_kurtosis_e": -1.4999999966038817,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.9999999999999846,
+          "ks_hm_vs_e": 5.316455696202649e-05
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9999999761723978,
+          "corr_sq_hm_e": -0.9999999999998999,
+          "iw_bias_var_hm_over_var_e": 1.000000000030747,
+          "excess_kurtosis_e": -1.499999999892376,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.9999999999999999,
+          "ks_hm_vs_e": 4.050632911400953e-05
+        }
+      }
+    },
+    {
+      "class": "chirp_inband",
+      "var_m_over_var_n": 0.9999999999899198,
+      "pseudo_cov_ratio": 5.071790453077777e-12,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.9999986247967535,
+          "corr_sq_hm_e": -0.9999999930908807,
+          "iw_bias_var_hm_over_var_e": 0.9999999983301249,
+          "excess_kurtosis_e": -1.499999994927413,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.9999999999950032,
+          "ks_hm_vs_e": 6.0759493670903275e-05
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9999999741866679,
+          "corr_sq_hm_e": -0.9999999999997335,
+          "iw_bias_var_hm_over_var_e": 0.9999999999748265,
+          "excess_kurtosis_e": -1.5000000000028784,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 0.9999999999999993,
+          "ks_hm_vs_e": 4.303797468353798e-05
+        }
+      }
+    },
+    {
+      "class": "pulsed_noise",
+      "var_m_over_var_n": 1.0018190606201431,
+      "pseudo_cov_ratio": 0.0017583606508393321,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.011444256180812174,
+          "corr_sq_hm_e": 0.010141896396949804,
+          "iw_bias_var_hm_over_var_e": 1.0044248799472308,
+          "excess_kurtosis_e": 0.016589148405778964,
+          "gauss95_coverage_exact_var": 0.9503670886075949,
+          "gauss99_coverage_exact_var": 0.9893974683544304,
+          "gauss999_coverage_exact_var": 0.998913924050633,
+          "wiener_var_reduction": -0.002133963293521113,
+          "ks_hm_vs_e": 0.00669113924050635
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.01074404248561767,
+          "corr_sq_hm_e": 0.0041164488416403616,
+          "iw_bias_var_hm_over_var_e": 1.0003501404997985,
+          "excess_kurtosis_e": 0.01928419361125,
+          "gauss95_coverage_exact_var": 0.949820253164557,
+          "gauss99_coverage_exact_var": 0.9897240506329114,
+          "gauss999_coverage_exact_var": 0.9990050632911393,
+          "wiener_var_reduction": -0.0010814725777248402,
+          "ks_hm_vs_e": 0.00222531645569618
+        }
+      }
+    },
+    {
+      "class": "pulsed_noise_lowprf",
+      "var_m_over_var_n": 1.0068198091666896,
+      "pseudo_cov_ratio": 0.003600549683969769,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.010493768240307328,
+          "corr_sq_hm_e": 0.007475414043676342,
+          "iw_bias_var_hm_over_var_e": 1.0547339359712022,
+          "excess_kurtosis_e": 0.023398906678994358,
+          "gauss95_coverage_exact_var": 0.9486759493670887,
+          "gauss99_coverage_exact_var": 0.9899392405063291,
+          "gauss999_coverage_exact_var": 0.9989594936708861,
+          "wiener_var_reduction": -0.00030446443015486047,
+          "ks_hm_vs_e": 0.003691139240506347
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.010926406601134067,
+          "corr_sq_hm_e": 0.10280825010419363,
+          "iw_bias_var_hm_over_var_e": 1.0074121775510583,
+          "excess_kurtosis_e": 0.9647463761861403,
+          "gauss95_coverage_exact_var": 0.9433341772151899,
+          "gauss99_coverage_exact_var": 0.9816632911392406,
+          "gauss999_coverage_exact_var": 0.9955088607594936,
+          "wiener_var_reduction": -0.00034525147266517564,
+          "ks_hm_vs_e": 0.0031367088607594518
+        }
+      }
+    },
+    {
+      "class": "pulsed_cw",
+      "var_m_over_var_n": 0.999999999999564,
+      "pseudo_cov_ratio": 2.2926773989576294e-13,
+      "loops": {
+        "bn5": {
+          "loop_band_coherence_mn": 0.9997786163129128,
+          "corr_sq_hm_e": -0.9301056822049677,
+          "iw_bias_var_hm_over_var_e": 0.9999999981408678,
+          "excess_kurtosis_e": -1.4723396512477667,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 0.0009645569620253189
+        },
+        "bn35": {
+          "loop_band_coherence_mn": 0.9999770699206868,
+          "corr_sq_hm_e": -0.8348935693551486,
+          "iw_bias_var_hm_over_var_e": 0.999999999999051,
+          "excess_kurtosis_e": -1.4293346051815983,
+          "gauss95_coverage_exact_var": 1.0,
+          "gauss99_coverage_exact_var": 1.0,
+          "gauss999_coverage_exact_var": 1.0,
+          "wiener_var_reduction": 1.0,
+          "ks_hm_vs_e": 8.354430379747813e-05
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "study": "s22_gnsssdr_e1_pilot",
+    "generated": "2026-10-09T22:31:21+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "image": "carlesfernandez/docker-gnsssdr:v0.0.22",
+  "clean": {
+    "records": 14966,
+    "sessions": 1,
+    "cn0_rep_db": 46.927574157714844,
+    "dt_s": 0.004,
+    "var_e_over_thermal": 1.0027823071658735
+  },
+  "bias_db": -0.07242584228515625,
+  "rows": [
+    {
+      "beat_hz": 2.0,
+      "cw_rel_power": 1772.004915445465,
+      "sessions": 1,
+      "meas_r": 1.1204607185489244,
+      "meas_cn0_drop_db": 1.9135017395019531,
+      "pred_r_p6prime_cs25": 0.88695735385074,
+      "pred_cn0_drop_db": 5.29942392138908,
+      "pred_r_if_unmodulated": 9.433898249457096
+    },
+    {
+      "beat_hz": 5.0,
+      "cw_rel_power": 1273.6681585526042,
+      "sessions": 1,
+      "meas_r": 1.1050360058111866,
+      "meas_cn0_drop_db": 1.675384521484375,
+      "pred_r_p6prime_cs25": 0.8915626169773291,
+      "pred_cn0_drop_db": 5.302926736468486,
+      "pred_r_if_unmodulated": 6.295897002530646
+    }
+  ]
+}

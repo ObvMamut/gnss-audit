@@ -1,0 +1,54 @@
+# E2 on segment A, the first 120 s of FGI JT23_4.1.5 (P2b task 11; docs/10 section 2.3). Confirmatory: its gates and
+# decisions feed G3 (docs/12 section 1). Segment B runs under its own spec, so a later admission of B adds units
+# without touching this run. One cell per family (Judgment, from the grids of docs/8 section 3): 2 MHz band-limited
+# noise at the centre; a swept CW of 1 MHz span and 10 ms period, slow enough for the conditional and marginal oracles
+# to differ (F8); a PPD-like chirp of 10 MHz span and 10 us period. Two ghosts at 45 dB-Hz on PRNs not in view.
+#
+# Decision rules, stated before the run:
+# - J_max per family: the largest level up to which every level has |Var_B / Var_A - 1| < 0.10 (median over channels
+#   of the post-onset dPhi variance; docs/8 section 5);
+# - L_K = min(80 dB-Hz, J_max of the family) for the K-study and the thermal block;
+# - K = 51 for oracle-referenced metrics if the median |sigma^2_101 / sigma^2_51 - 1| over epochs is at or below its
+#   standard error sqrt(2 / 50) = 0.2 (docs/5 section 4.4), else 101; 21 for pooled coverage;
+# - truth fidelity: B1's residual ratio r < 0.05 at every level up to J_max (mode A, ghosts).
+id: E2
+segments:
+  A: {interval: fgi-jt2023-JT23_4.1.5_L1_E1-clean, item_type: ibyte, fs_hz: 30690000.0}
+template: 1C
+decim: 4
+fir_taps: 129
+frontend_bw_hz: 20000000.0  # the flat part of the LabSat 3W band (+-10 MHz, docs/7 section 2.3)
+quant: {max_level: 4, zero_level: false}  # FGI's 3-bit alphabet +-1..+-4 (docs/7 section 2.3)
+seed: 23
+max_channels: 9  # the 7 strongest real satellites and 2 ghosts
+min_locked_real: 4  # D-34 (P2b task 10): the ghosts must lock; a real channel that starts badly is excluded
+min_cn0_dbhz: 35.0
+survey_channels: 12
+warmup_s: 30.0
+pre_window_s: 20.0
+onset_s: 55.0
+ghosts: {cn0_db_hz: 45.0, doppler_hz: [1500.0, -2500.0]}
+families:
+  noise: {bw_hz: 2000000.0}
+  swept_cw: {span_hz: 1000000.0, period_s: 0.01}
+  chirp: {span_hz: 10000000.0, period_s: 0.00001}
+levels_db_hz: [60.0, 70.0, 80.0, 90.0]
+mode_b: {tau_s: 0.01, side_tau_s: [0.001, 0.1], side_level_db_hz: 90.0, side_families: [noise, swept_cw]}
+kstudy:
+  segment: A
+  level_cap_db_hz: 80.0
+  offset_s: 0.0037  # the conditional oracle's fixed sweep timing
+  blocks:
+    cond: {family: swept_cw, K: 101, conditional: true}
+    marg: {family: swept_cw, K: 51, conditional: false}
+    noise: {family: noise, K: 51, conditional: false}
+thermal: {segment: A, family: swept_cw, K: 51}
+repeat_fraction: 0.05
+rules: {jmax_tol: 0.10, residual_max: 0.05, k_small: 51}
+pipelines: 3
+workers_a: 6
+timeout_s: 3600
+confirmatory: true
+# D-34: the carrier-lock rule never drops a twin's channel, and the pull-in uses the FLL so a start-up frequency false
+# lock is not kept (documented deviations from the v0.0.22 defaults; docs/6 section 9)
+receiver_overrides: {Tracking_1C.max_carrier_lock_fail: "1000000", Tracking_1C.enable_fll_pull_in: "true"}

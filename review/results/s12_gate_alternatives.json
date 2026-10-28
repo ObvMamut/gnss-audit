@@ -1,0 +1,615 @@
+{
+  "meta": {
+    "study": "s12_gate_alternatives",
+    "generated": "2026-10-09T21:10:29+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "rows": [
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.9846115782762682,
+        "coverage95_t": 0.9487501672240802,
+        "mean_sigma_over_true": 0.9835056336415849
+      },
+      "gate2": {
+        "mean_ratio": 1.013677995080188,
+        "coverage95_t": 0.9499772575250837,
+        "mean_sigma_over_true": 0.9951615351587599
+      },
+      "pospart": {
+        "mean_ratio": 1.3031943642152866,
+        "coverage95_t": 0.9714862876254181,
+        "mean_sigma_over_true": 1.1245818428035037
+      },
+      "ungated": {
+        "mean_ratio": 1.067466433247841,
+        "coverage95_t": 0.9085307692307693,
+        "mean_sigma_over_true": 0.9795338919065313
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 1.6172480099044388,
+        "coverage95_t": 0.9870464882943144,
+        "mean_sigma_over_true": 1.2627894739641579
+      },
+      "gate2": {
+        "mean_ratio": 1.6172480099044388,
+        "coverage95_t": 0.9870464882943144,
+        "mean_sigma_over_true": 1.2627894739641579
+      },
+      "pospart": {
+        "mean_ratio": 1.6239741671707684,
+        "coverage95_t": 0.9874244147157191,
+        "mean_sigma_over_true": 1.2656026636003823
+      },
+      "ungated": {
+        "mean_ratio": 0.46678471869419824,
+        "coverage95_t": 0.8178822742474916,
+        "mean_sigma_over_true": 0.6693439431710796
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "none",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 1.041508689456781,
+        "coverage95_t": 0.9553147157190636,
+        "mean_sigma_over_true": 1.0121195685841011
+      },
+      "gate2": {
+        "mean_ratio": 1.045279892076887,
+        "coverage95_t": 0.9555505016722408,
+        "mean_sigma_over_true": 1.0135773235947296
+      },
+      "pospart": {
+        "mean_ratio": 1.1228071904954882,
+        "coverage95_t": 0.9621849498327759,
+        "mean_sigma_over_true": 1.0489864368769752
+      },
+      "ungated": {
+        "mean_ratio": 0.5870085886920786,
+        "coverage95_t": 0.8076033444816053,
+        "mean_sigma_over_true": 0.7146451556416836
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.504311387466477,
+        "coverage95_t": 0.8430665551839465,
+        "mean_sigma_over_true": 0.7036502800504649
+      },
+      "gate2": {
+        "mean_ratio": 0.7044546905296051,
+        "coverage95_t": 0.8739585284280936,
+        "mean_sigma_over_true": 0.8063080315075127
+      },
+      "pospart": {
+        "mean_ratio": 1.038027465202879,
+        "coverage95_t": 0.9463351170568561,
+        "mean_sigma_over_true": 0.998850094009641
+      },
+      "ungated": {
+        "mean_ratio": 1.0093459117411934,
+        "coverage95_t": 0.9295882943143813,
+        "mean_sigma_over_true": 0.9758641399812626
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 0.7963249746441609,
+        "coverage95_t": 0.9247224080267559,
+        "mean_sigma_over_true": 0.8861248044868911
+      },
+      "gate2": {
+        "mean_ratio": 0.7974936505940646,
+        "coverage95_t": 0.9248799331103679,
+        "mean_sigma_over_true": 0.8866896555373173
+      },
+      "pospart": {
+        "mean_ratio": 0.8391279264280819,
+        "coverage95_t": 0.9324772575250836,
+        "mean_sigma_over_true": 0.9093129453420715
+      },
+      "ungated": {
+        "mean_ratio": 0.3850432549825687,
+        "coverage95_t": 0.7375294314381271,
+        "mean_sigma_over_true": 0.5858982049356722
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 0.5172055309818415,
+        "coverage95_t": 0.849657525083612,
+        "mean_sigma_over_true": 0.7130853853394844
+      },
+      "gate2": {
+        "mean_ratio": 0.5580389388116819,
+        "coverage95_t": 0.8556979933110368,
+        "mean_sigma_over_true": 0.7337517320411793
+      },
+      "pospart": {
+        "mean_ratio": 0.7684393287132053,
+        "coverage95_t": 0.9061983277591973,
+        "mean_sigma_over_true": 0.8575758277202957
+      },
+      "ungated": {
+        "mean_ratio": 0.6521754168694166,
+        "coverage95_t": 0.827623745819398,
+        "mean_sigma_over_true": 0.7589830791051826
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.24989053354138127,
+        "coverage95_t": 0.6859665551839464,
+        "mean_sigma_over_true": 0.4957097121107546
+      },
+      "gate2": {
+        "mean_ratio": 0.8887029942812422,
+        "coverage95_t": 0.9001628762541806,
+        "mean_sigma_over_true": 0.9037057333687233
+      },
+      "pospart": {
+        "mean_ratio": 0.9894971264255898,
+        "coverage95_t": 0.9488478260869565,
+        "mean_sigma_over_true": 0.9798378320931348
+      },
+      "ungated": {
+        "mean_ratio": 0.9886282578090454,
+        "coverage95_t": 0.9478555183946489,
+        "mean_sigma_over_true": 0.9788998638470026
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 0.40262991910871015,
+        "coverage95_t": 0.7982026755852842,
+        "mean_sigma_over_true": 0.6299141395772265
+      },
+      "gate2": {
+        "mean_ratio": 0.4659992220878708,
+        "coverage95_t": 0.8159351170568562,
+        "mean_sigma_over_true": 0.6675373660705424
+      },
+      "pospart": {
+        "mean_ratio": 0.6373656431239907,
+        "coverage95_t": 0.8807642140468227,
+        "mean_sigma_over_true": 0.783171489159557
+      },
+      "ungated": {
+        "mean_ratio": 0.5482776040420352,
+        "coverage95_t": 0.808028093645485,
+        "mean_sigma_over_true": 0.7006761922327323
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 0.26131615494695276,
+        "coverage95_t": 0.6977076923076924,
+        "mean_sigma_over_true": 0.5068116489562421
+      },
+      "gate2": {
+        "mean_ratio": 0.6245485953069272,
+        "coverage95_t": 0.8229227424749164,
+        "mean_sigma_over_true": 0.740112088736421
+      },
+      "pospart": {
+        "mean_ratio": 0.8163682501729097,
+        "coverage95_t": 0.9152989966555184,
+        "mean_sigma_over_true": 0.8828664051516878
+      },
+      "ungated": {
+        "mean_ratio": 0.80953014214002,
+        "coverage95_t": 0.9067505016722408,
+        "mean_sigma_over_true": 0.8750520184068443
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.8204858962230211,
+        "coverage95_t": 0.819676254180602,
+        "mean_sigma_over_true": 0.8280242220603967
+      },
+      "gate2": {
+        "mean_ratio": 0.9826437319508321,
+        "coverage95_t": 0.9587652173913044,
+        "mean_sigma_over_true": 0.9811987962638431
+      },
+      "pospart": {
+        "mean_ratio": 0.9826437319508321,
+        "coverage95_t": 0.9587652173913044,
+        "mean_sigma_over_true": 0.9811987962638431
+      },
+      "ungated": {
+        "mean_ratio": 0.9826437319508321,
+        "coverage95_t": 0.9587652173913044,
+        "mean_sigma_over_true": 0.9811987962638431
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 0.24135710319165088,
+        "coverage95_t": 0.5071769230769231,
+        "mean_sigma_over_true": 0.3920556686396207
+      },
+      "gate2": {
+        "mean_ratio": 0.8920488433082469,
+        "coverage95_t": 0.9444414715719064,
+        "mean_sigma_over_true": 0.9327543854156355
+      },
+      "pospart": {
+        "mean_ratio": 0.8927436068648741,
+        "coverage95_t": 0.9452535117056856,
+        "mean_sigma_over_true": 0.9335108086179019
+      },
+      "ungated": {
+        "mean_ratio": 0.8927436068648741,
+        "coverage95_t": 0.9452535117056856,
+        "mean_sigma_over_true": 0.9335108086179019
+      }
+    },
+    {
+      "bn_cfg_hz": 5.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 0.6106285548143322,
+        "coverage95_t": 0.6769458193979934,
+        "mean_sigma_over_true": 0.6537226267403298
+      },
+      "gate2": {
+        "mean_ratio": 0.9568713105499148,
+        "coverage95_t": 0.955008695652174,
+        "mean_sigma_over_true": 0.9678649703558492
+      },
+      "pospart": {
+        "mean_ratio": 0.9568713105499148,
+        "coverage95_t": 0.955008695652174,
+        "mean_sigma_over_true": 0.9678649703558492
+      },
+      "ungated": {
+        "mean_ratio": 0.9568713105499148,
+        "coverage95_t": 0.955008695652174,
+        "mean_sigma_over_true": 0.9678649703558492
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.9998939206790282,
+        "coverage95_t": 0.9500391304347826,
+        "mean_sigma_over_true": 0.9986493509152062
+      },
+      "gate2": {
+        "mean_ratio": 1.015132102574164,
+        "coverage95_t": 0.9510528428093645,
+        "mean_sigma_over_true": 1.0053320646385429
+      },
+      "pospart": {
+        "mean_ratio": 1.1234858505843361,
+        "coverage95_t": 0.9607324414715719,
+        "mean_sigma_over_true": 1.0564855426359125
+      },
+      "ungated": {
+        "mean_ratio": 0.9970277417147894,
+        "coverage95_t": 0.9375725752508361,
+        "mean_sigma_over_true": 0.9862525917039895
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 1.4699278632892832,
+        "coverage95_t": 0.9813558528428094,
+        "mean_sigma_over_true": 1.2089919000617422
+      },
+      "gate2": {
+        "mean_ratio": 1.480876323790551,
+        "coverage95_t": 0.9816160535117057,
+        "mean_sigma_over_true": 1.2131736752669593
+      },
+      "pospart": {
+        "mean_ratio": 1.5650612838268307,
+        "coverage95_t": 0.9846080267558528,
+        "mean_sigma_over_true": 1.2469699732483197
+      },
+      "ungated": {
+        "mean_ratio": 1.3944791813354016,
+        "coverage95_t": 0.9735869565217391,
+        "mean_sigma_over_true": 1.1712094376969013
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "none",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 1.189831457188805,
+        "coverage95_t": 0.9674996655518394,
+        "mean_sigma_over_true": 1.0895185806369299
+      },
+      "gate2": {
+        "mean_ratio": 1.191959130059037,
+        "coverage95_t": 0.967604347826087,
+        "mean_sigma_over_true": 1.090420647511855
+      },
+      "pospart": {
+        "mean_ratio": 1.2287308901686556,
+        "coverage95_t": 0.9701612040133779,
+        "mean_sigma_over_true": 1.1068439626642903
+      },
+      "ungated": {
+        "mean_ratio": 0.912077536454532,
+        "coverage95_t": 0.9222765886287625,
+        "mean_sigma_over_true": 0.9399883493335776
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.5125773304914256,
+        "coverage95_t": 0.8378595317725752,
+        "mean_sigma_over_true": 0.7131376551022351
+      },
+      "gate2": {
+        "mean_ratio": 0.9419551805936451,
+        "coverage95_t": 0.9317464882943144,
+        "mean_sigma_over_true": 0.959697437819612
+      },
+      "pospart": {
+        "mean_ratio": 0.9959056588377925,
+        "coverage95_t": 0.9468448160535117,
+        "mean_sigma_over_true": 0.9933617048967912
+      },
+      "ungated": {
+        "mean_ratio": 0.9957691872758085,
+        "coverage95_t": 0.9467879598662208,
+        "mean_sigma_over_true": 0.9932637585046067
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 0.7367956635683678,
+        "coverage95_t": 0.9051752508361204,
+        "mean_sigma_over_true": 0.8552441732094933
+      },
+      "gate2": {
+        "mean_ratio": 1.1242392508028023,
+        "coverage95_t": 0.9550702341137124,
+        "mean_sigma_over_true": 1.0515330194001014
+      },
+      "pospart": {
+        "mean_ratio": 1.1918104535319531,
+        "coverage95_t": 0.9657705685618729,
+        "mean_sigma_over_true": 1.087842590021071
+      },
+      "ungated": {
+        "mean_ratio": 1.1914286289666745,
+        "coverage95_t": 0.9657036789297659,
+        "mean_sigma_over_true": 1.0876242171383304
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x1",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 0.5946670277879259,
+        "coverage95_t": 0.8698277591973245,
+        "mean_sigma_over_true": 0.7700446016905579
+      },
+      "gate2": {
+        "mean_ratio": 0.8272540576554037,
+        "coverage95_t": 0.9137254180602007,
+        "mean_sigma_over_true": 0.8985831492509192
+      },
+      "pospart": {
+        "mean_ratio": 0.9451323857516624,
+        "coverage95_t": 0.9402872909698997,
+        "mean_sigma_over_true": 0.9677302074535914
+      },
+      "ungated": {
+        "mean_ratio": 0.9423780069562616,
+        "coverage95_t": 0.9393133779264214,
+        "mean_sigma_over_true": 0.965884572335386
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.9569373400582819,
+        "coverage95_t": 0.9344648829431438,
+        "mean_sigma_over_true": 0.9690758017340202
+      },
+      "gate2": {
+        "mean_ratio": 0.9880426636665823,
+        "coverage95_t": 0.9485324414715719,
+        "mean_sigma_over_true": 0.9917494837743057
+      },
+      "pospart": {
+        "mean_ratio": 0.9880426636665823,
+        "coverage95_t": 0.9485324414715719,
+        "mean_sigma_over_true": 0.9917494837743057
+      },
+      "ungated": {
+        "mean_ratio": 0.9880426636665823,
+        "coverage95_t": 0.9485324414715719,
+        "mean_sigma_over_true": 0.9917494837743057
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 1.0438866457609979,
+        "coverage95_t": 0.9441327759197324,
+        "mean_sigma_over_true": 1.0118167929696797
+      },
+      "gate2": {
+        "mean_ratio": 1.0926090790764496,
+        "coverage95_t": 0.9593394648829432,
+        "mean_sigma_over_true": 1.04323044965521
+      },
+      "pospart": {
+        "mean_ratio": 1.0926090790764496,
+        "coverage95_t": 0.9593394648829432,
+        "mean_sigma_over_true": 1.04323044965521
+      },
+      "ungated": {
+        "mean_ratio": 1.0926090790764496,
+        "coverage95_t": 0.9593394648829432,
+        "mean_sigma_over_true": 1.04323044965521
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x3",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 0.8532502151182633,
+        "coverage95_t": 0.9026963210702341,
+        "mean_sigma_over_true": 0.9030105586263795
+      },
+      "gate2": {
+        "mean_ratio": 0.9653921798080884,
+        "coverage95_t": 0.945605685618729,
+        "mean_sigma_over_true": 0.980163747105912
+      },
+      "pospart": {
+        "mean_ratio": 0.9653921798080884,
+        "coverage95_t": 0.945605685618729,
+        "mean_sigma_over_true": 0.980163747105912
+      },
+      "ungated": {
+        "mean_ratio": 0.9653921798080884,
+        "coverage95_t": 0.945605685618729,
+        "mean_sigma_over_true": 0.980163747105912
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": "none",
+      "gate5": {
+        "mean_ratio": 0.9900983166146339,
+        "coverage95_t": 0.9502444816053511,
+        "mean_sigma_over_true": 0.9935958212256327
+      },
+      "gate2": {
+        "mean_ratio": 0.9900983166146339,
+        "coverage95_t": 0.9502444816053511,
+        "mean_sigma_over_true": 0.9935958212256327
+      },
+      "pospart": {
+        "mean_ratio": 0.9900983166146339,
+        "coverage95_t": 0.9502444816053511,
+        "mean_sigma_over_true": 0.9935958212256327
+      },
+      "ungated": {
+        "mean_ratio": 0.9900983166146339,
+        "coverage95_t": 0.9502444816053511,
+        "mean_sigma_over_true": 0.9935958212256327
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 5.0,
+      "gate5": {
+        "mean_ratio": 1.0105745737326945,
+        "coverage95_t": 0.9528752508361203,
+        "mean_sigma_over_true": 1.0039519217087083
+      },
+      "gate2": {
+        "mean_ratio": 1.0105745737326945,
+        "coverage95_t": 0.9528752508361203,
+        "mean_sigma_over_true": 1.0039519217087083
+      },
+      "pospart": {
+        "mean_ratio": 1.0105745737326945,
+        "coverage95_t": 0.9528752508361203,
+        "mean_sigma_over_true": 1.0039519217087083
+      },
+      "ungated": {
+        "mean_ratio": 1.0105745737326945,
+        "coverage95_t": 0.9528752508361203,
+        "mean_sigma_over_true": 1.0039519217087083
+      }
+    },
+    {
+      "bn_cfg_hz": 35.0,
+      "dynamics": "inband_x20",
+      "amp_band_hz": 20.0,
+      "gate5": {
+        "mean_ratio": 0.9850524552056491,
+        "coverage95_t": 0.9494441471571906,
+        "mean_sigma_over_true": 0.9910820809822236
+      },
+      "gate2": {
+        "mean_ratio": 0.9850524552056491,
+        "coverage95_t": 0.9494441471571906,
+        "mean_sigma_over_true": 0.9910820809822236
+      },
+      "pospart": {
+        "mean_ratio": 0.9850524552056491,
+        "coverage95_t": 0.9494441471571906,
+        "mean_sigma_over_true": 0.9910820809822236
+      },
+      "ungated": {
+        "mean_ratio": 0.9850524552056491,
+        "coverage95_t": 0.9494441471571906,
+        "mean_sigma_over_true": 0.9910820809822236
+      }
+    }
+  ]
+}

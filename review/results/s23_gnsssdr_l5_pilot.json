@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "study": "s23_gnsssdr_l5_pilot",
+    "generated": "2026-10-22T00:48:56+0200",
+    "python": "3.14.8",
+    "platform": "Linux-6.18.57_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "image": "sha256:5bacd9f59966f09cb425897cb7828cec3721d75d592fdc2cec77840fc0c3694c",
+  "patch_id": "p2:0001-acc-phase-float64+0002-log-every-integration+0003-l5-xb-period",
+  "codes": "IS-GPS-705J 3.3.2.2: XB on its 8191-chip period from the Table 3-Ia advance (patch 0003's rule)",
+  "cw_calibration": "CW despread power averaged over 256 code-sampling alignments (despread_power; s23 diagnosis, 22 Oct 2026)",
+  "clean": {
+    "records": 44904,
+    "sessions": 1,
+    "secondary_locked": true,
+    "cn0_rep_db": 47.39588165283203,
+    "dt_s": 0.001,
+    "var_e_over_thermal": 1.0129784996214584
+  },
+  "rows": [
+    {
+      "beat_hz": 2.0,
+      "cw_rel_power": 612.035033539284,
+      "sessions": 1,
+      "secondary_locked": true,
+      "meas_r": 1.5118366934356502,
+      "meas_cn0_drop_db": 4.1679229736328125,
+      "pred_r_sim_nh20": 1.5357411517981747,
+      "pred_r_sim_se": 0.012277397865939125,
+      "pred_cn0_drop_db_sim": 4.304324424435061,
+      "pred_r_p6pp_nh20": 1.0770568615582465,
+      "pred_cn0_drop_db": 4.802635634386103,
+      "pred_r_if_unmodulated": 43.30575521623406
+    },
+    {
+      "beat_hz": 5.0,
+      "cw_rel_power": 613.685859852962,
+      "sessions": 1,
+      "secondary_locked": true,
+      "meas_r": 1.4544045014703506,
+      "meas_cn0_drop_db": 4.2736053466796875,
+      "pred_r_sim_nh20": 1.4251789987398513,
+      "pred_r_sim_se": 0.012179833219762546,
+      "pred_cn0_drop_db_sim": 4.340178969167944,
+      "pred_r_p6pp_nh20": 1.0252277794733455,
+      "pred_cn0_drop_db": 4.80022231534859,
+      "pred_r_if_unmodulated": 37.89357277785492
+    }
+  ]
+}

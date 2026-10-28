@@ -1,0 +1,682 @@
+{
+  "meta": {
+    "study": "s31_e2k_warmup_unlocks",
+    "generated": "2026-10-22T13:16:54+0200",
+    "python": "3.14.8",
+    "platform": "Linux-6.18.57_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "label": "post hoc, read-only, not deciding (not pre-registered)",
+  "e2k": {
+    "run_id": "0443516ca48c",
+    "run_dir": "/home/mamut/all/private/GNSS-results/E2K/0443516ca48c",
+    "describe": "3eaed0b7eeb6",
+    "summary_sha256": "802582093b0c79c0e5df1c9fcda8f7faae70ce2ebdd81c7c27c78b2b34aa51ed",
+    "note": "gate-failed run (G-warmup-lock), so no manifest.json; pinned by started.json's describe and summary.json's SHA-256 (s30's checks); unit.json and parquet files checked against each unit's done.json; receiver logs are not hashed by the run"
+  },
+  "run2": {
+    "run_id": "6214cf52489f",
+    "summary_sha256": "4419fd70188279102a2ab862fda3ef17acdbb81018b8793918d165b11e962c99",
+    "run_dir": "/home/mamut/all/private/GNSS-results/E2/6214cf52489f",
+    "warmup_s": 30.0,
+    "channels": {
+      "0": 4,
+      "1": 6,
+      "2": 7,
+      "3": 9,
+      "4": 11,
+      "5": 16,
+      "6": 26,
+      "7": 32,
+      "8": 31
+    },
+    "line_excess_db": 2.0820684927575592
+  },
+  "q1_unlocks": {
+    "ghosts": {
+      "7": {
+        "prn": 32,
+        "set_doppler_hz": 1510.0
+      },
+      "8": {
+        "prn": 31,
+        "set_doppler_hz": -2440.0
+      }
+    },
+    "warmup_s": 30.0,
+    "check": {
+      "bars": {
+        "lock_min": 0.2,
+        "doppler_tol_hz": 150.0,
+        "window_s": [
+          25.0,
+          30.0
+        ],
+        "receiver_runs_max": 3
+      },
+      "bit_sync_proxy_on_final_runs": {
+        "unlocked_without_bit_sync": 8,
+        "locked_with_bit_sync": 526
+      }
+    },
+    "groups": {
+      "K-study blocks": {
+        "blocks": [
+          "A-k-cond",
+          "A-k-noise"
+        ],
+        "units": 152,
+        "lock_failed": [],
+        "ghost_unlocked_final": {},
+        "attempts": {
+          "1": 148,
+          "2": 4
+        },
+        "by_run": [
+          {
+            "run": 1,
+            "reached": 152,
+            "missed": 4
+          },
+          {
+            "run": 2,
+            "reached": 4,
+            "missed": 0
+          },
+          {
+            "run": 3,
+            "reached": 0,
+            "missed": 0
+          }
+        ],
+        "missed_first_run": 4,
+        "missed_first_run_then_passed": 4,
+        "ghost_runs": 312,
+        "ghost_false_locks": 4,
+        "ghost_false_locks_by_prn": {
+          "32": {
+            "ghost_runs": 156,
+            "false_locks": 2
+          },
+          "31": {
+            "ghost_runs": 156,
+            "false_locks": 2
+          }
+        },
+        "ghost_tracking_first_start_s": {
+          "1.0": 312
+        },
+        "unlocked_channel_counts": {
+          "1": 8,
+          "2": 10,
+          "3": 152,
+          "6": 2
+        }
+      },
+      "thermal block": {
+        "blocks": [
+          "A-thermal",
+          "A-thermal-clean"
+        ],
+        "units": 102,
+        "lock_failed": [
+          "A-thermal-clean-r17",
+          "A-thermal-clean-r19",
+          "A-thermal-clean-r47",
+          "A-thermal-clean-r48",
+          "A-thermal-r19",
+          "A-thermal-r40",
+          "A-thermal-r7"
+        ],
+        "ghost_unlocked_final": {
+          "A-thermal-clean-r17": [
+            7
+          ],
+          "A-thermal-clean-r19": [
+            7
+          ],
+          "A-thermal-clean-r47": [
+            7,
+            8
+          ],
+          "A-thermal-clean-r48": [
+            7
+          ],
+          "A-thermal-r19": [
+            8
+          ],
+          "A-thermal-r40": [
+            8
+          ],
+          "A-thermal-r7": [
+            8
+          ]
+        },
+        "attempts": {
+          "1": 80,
+          "3": 11,
+          "2": 11
+        },
+        "by_run": [
+          {
+            "run": 1,
+            "reached": 102,
+            "missed": 22
+          },
+          {
+            "run": 2,
+            "reached": 22,
+            "missed": 11
+          },
+          {
+            "run": 3,
+            "reached": 11,
+            "missed": 7
+          }
+        ],
+        "missed_first_run": 22,
+        "missed_first_run_then_passed": 15,
+        "ghost_runs": 270,
+        "ghost_false_locks": 44,
+        "ghost_false_locks_by_prn": {
+          "32": {
+            "ghost_runs": 135,
+            "false_locks": 33
+          },
+          "31": {
+            "ghost_runs": 135,
+            "false_locks": 11
+          }
+        },
+        "ghost_tracking_first_start_s": {
+          "1.0": 207,
+          "2.0": 52,
+          "3.0": 10,
+          "4.0": 1
+        },
+        "unlocked_channel_counts": {
+          "0": 1,
+          "1": 16,
+          "2": 19,
+          "3": 102,
+          "5": 10,
+          "6": 8,
+          "7": 4,
+          "8": 4
+        }
+      }
+    },
+    "ghost_false_lock_rate": {
+      "K-study blocks": 0.01282051282051282,
+      "thermal block": 0.16296296296296298,
+      "ratio": 12.711111111111112
+    },
+    "fisher_first_vs_second_run": {
+      "table": [
+        [
+          22,
+          80
+        ],
+        [
+          11,
+          11
+        ]
+      ],
+      "p_two_sided": 0.014321989474297782
+    },
+    "fisher_pairs_first_run": {
+      "table_TT_TF_FT_FF": [
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          35
+        ]
+      ],
+      "expected_both": 2.3529411764705883,
+      "p_two_sided": 0.006543695291510748
+    },
+    "repeats": {
+      "repeat-A-k-cond-r15": {
+        "original": "A-k-cond-r15",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-k-cond-r33": {
+        "original": "A-k-cond-r33",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-k-cond-r35": {
+        "original": "A-k-cond-r35",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-k-cond-r36": {
+        "original": "A-k-cond-r36",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-k-cond-r66": {
+        "original": "A-k-cond-r66",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-k-noise-r10": {
+        "original": "A-k-noise-r10",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-k-noise-r17": {
+        "original": "A-k-noise-r17",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-k-noise-r8": {
+        "original": "A-k-noise-r8",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-thermal-clean-r13": {
+        "original": "A-thermal-clean-r13",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-thermal-clean-r19": {
+        "original": "A-thermal-clean-r19",
+        "same_bytes": true,
+        "attempts": 2,
+        "lock_ok": true,
+        "original_attempts": 3,
+        "original_lock_ok": false
+      },
+      "repeat-A-thermal-clean-r21": {
+        "original": "A-thermal-clean-r21",
+        "same_bytes": true,
+        "attempts": 2,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-thermal-clean-r23": {
+        "original": "A-thermal-clean-r23",
+        "same_bytes": true,
+        "attempts": 2,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      },
+      "repeat-A-thermal-r2": {
+        "original": "A-thermal-r2",
+        "same_bytes": true,
+        "attempts": 1,
+        "lock_ok": true,
+        "original_attempts": 1,
+        "original_lock_ok": true
+      }
+    },
+    "ch3_excluded_in_every_unit": true,
+    "window": {
+      "run 2 A-clean-A (no floor; every K-study twin equals it before the onset)": {
+        "0": {
+          "prn": 4,
+          "twins": 1,
+          "cn0_dbhz_median": 43.86664581298828,
+          "cn0_dbhz_min": 43.86664581298828,
+          "cn0_dbhz_max": 43.86664581298828,
+          "lock_median": 0.971226304769516,
+          "lock_min": 0.971226304769516,
+          "doppler_offset_hz_max_abs": null
+        },
+        "1": {
+          "prn": 6,
+          "twins": 1,
+          "cn0_dbhz_median": 40.37569046020508,
+          "cn0_dbhz_min": 40.37569046020508,
+          "cn0_dbhz_max": 40.37569046020508,
+          "lock_median": 0.9047856628894806,
+          "lock_min": 0.9047856628894806,
+          "doppler_offset_hz_max_abs": null
+        },
+        "2": {
+          "prn": 7,
+          "twins": 1,
+          "cn0_dbhz_median": 39.78377342224121,
+          "cn0_dbhz_min": 39.78377342224121,
+          "cn0_dbhz_max": 39.78377342224121,
+          "lock_median": 0.893458902835846,
+          "lock_min": 0.893458902835846,
+          "doppler_offset_hz_max_abs": null
+        },
+        "4": {
+          "prn": 11,
+          "twins": 1,
+          "cn0_dbhz_median": 44.21136283874512,
+          "cn0_dbhz_min": 44.21136283874512,
+          "cn0_dbhz_max": 44.21136283874512,
+          "lock_median": 0.9731558859348297,
+          "lock_min": 0.9731558859348297,
+          "doppler_offset_hz_max_abs": null
+        },
+        "5": {
+          "prn": 16,
+          "twins": 1,
+          "cn0_dbhz_median": 40.93132019042969,
+          "cn0_dbhz_min": 40.93132019042969,
+          "cn0_dbhz_max": 40.93132019042969,
+          "lock_median": 0.9222406446933746,
+          "lock_min": 0.9222406446933746,
+          "doppler_offset_hz_max_abs": null
+        },
+        "6": {
+          "prn": 26,
+          "twins": 1,
+          "cn0_dbhz_median": 41.72094917297363,
+          "cn0_dbhz_min": 41.72094917297363,
+          "cn0_dbhz_max": 41.72094917297363,
+          "lock_median": 0.9378171861171722,
+          "lock_min": 0.9378171861171722,
+          "doppler_offset_hz_max_abs": null
+        },
+        "7": {
+          "prn": 32,
+          "twins": 1,
+          "cn0_dbhz_median": 43.09869956970215,
+          "cn0_dbhz_min": 43.09869956970215,
+          "cn0_dbhz_max": 43.09869956970215,
+          "lock_median": 0.9420337677001953,
+          "lock_min": 0.9420337677001953,
+          "doppler_offset_hz_max_abs": 0.00933837890625
+        },
+        "8": {
+          "prn": 31,
+          "twins": 1,
+          "cn0_dbhz_median": 43.38464546203613,
+          "cn0_dbhz_min": 43.38464546203613,
+          "cn0_dbhz_max": 43.38464546203613,
+          "lock_median": 0.9433269500732422,
+          "lock_min": 0.9433269500732422,
+          "doppler_offset_hz_max_abs": 0.0635986328125
+        }
+      },
+      "E2K thermal-clean, final runs (floor at N0)": {
+        "0": {
+          "prn": 4,
+          "twins": 50,
+          "cn0_dbhz_median": 42.50387001037598,
+          "cn0_dbhz_min": 42.28794479370117,
+          "cn0_dbhz_max": 42.615095138549805,
+          "lock_median": 0.9520400315523148,
+          "lock_min": 0.9503194391727448,
+          "doppler_offset_hz_max_abs": null
+        },
+        "1": {
+          "prn": 6,
+          "twins": 46,
+          "cn0_dbhz_median": 38.56717109680176,
+          "cn0_dbhz_min": 38.43203544616699,
+          "cn0_dbhz_max": 38.85839080810547,
+          "lock_median": 0.8480976521968842,
+          "lock_min": 0.8422910869121552,
+          "doppler_offset_hz_max_abs": null
+        },
+        "2": {
+          "prn": 7,
+          "twins": 43,
+          "cn0_dbhz_median": 37.96273612976074,
+          "cn0_dbhz_min": 37.76682662963867,
+          "cn0_dbhz_max": 38.09772300720215,
+          "lock_median": 0.826135903596878,
+          "lock_min": 0.5866052806377411,
+          "doppler_offset_hz_max_abs": null
+        },
+        "4": {
+          "prn": 11,
+          "twins": 51,
+          "cn0_dbhz_median": 42.808780670166016,
+          "cn0_dbhz_min": 42.675004959106445,
+          "cn0_dbhz_max": 42.935773849487305,
+          "lock_median": 0.9558298885822296,
+          "lock_min": 0.9542064070701599,
+          "doppler_offset_hz_max_abs": null
+        },
+        "5": {
+          "prn": 16,
+          "twins": 44,
+          "cn0_dbhz_median": 39.13810062408447,
+          "cn0_dbhz_min": 38.990966796875,
+          "cn0_dbhz_max": 39.354413986206055,
+          "lock_median": 0.8710121363401413,
+          "lock_min": 0.8628497421741486,
+          "doppler_offset_hz_max_abs": null
+        },
+        "6": {
+          "prn": 26,
+          "twins": 47,
+          "cn0_dbhz_median": 40.21119689941406,
+          "cn0_dbhz_min": 40.046539306640625,
+          "cn0_dbhz_max": 40.35738182067871,
+          "lock_median": 0.9023597836494446,
+          "lock_min": 0.8993579149246216,
+          "doppler_offset_hz_max_abs": null
+        },
+        "7": {
+          "prn": 32,
+          "twins": 47,
+          "cn0_dbhz_median": 41.037946701049805,
+          "cn0_dbhz_min": 40.90762519836426,
+          "cn0_dbhz_max": 41.17694664001465,
+          "lock_median": 0.9063821732997894,
+          "lock_min": 0.9019408822059631,
+          "doppler_offset_hz_max_abs": 0.1021728515625
+        },
+        "8": {
+          "prn": 31,
+          "twins": 50,
+          "cn0_dbhz_median": 41.20083808898926,
+          "cn0_dbhz_min": 40.9963321685791,
+          "cn0_dbhz_max": 41.423675537109375,
+          "lock_median": 0.9074470102787018,
+          "lock_min": 0.9048790037631989,
+          "doppler_offset_hz_max_abs": 0.1048583984375
+        }
+      }
+    },
+    "cn0_drop_db_by_prn": {
+      "4": 1.3627758026123047,
+      "6": 1.8085193634033203,
+      "7": 1.8210372924804688,
+      "11": 1.4025821685791016,
+      "16": 1.7932195663452148,
+      "26": 1.5097522735595703,
+      "32": 2.0607528686523438,
+      "31": 2.183807373046875
+    },
+    "cn0_drop_predicted_db": 2.092860415759345,
+    "line_excess_db": 2.0820684927575592
+  },
+  "q2_thermal": {
+    "onset_label": 131817.84,
+    "cases": {
+      "as E2K (51 pairs)": {
+        "dropped": [],
+        "median_rel_change": 0.33986140811560783,
+        "se": 0.2,
+        "converged": false,
+        "epochs": 26898.0,
+        "split": {
+          "all": 0.33986140811560783,
+          "n_all": 26898,
+          "pre_onset": 17.373587397915955,
+          "n_pre": 7500,
+          "post_onset": 0.22237185408804272,
+          "n_post": 18798
+        }
+      },
+      "(a) without pairs with a lock-failed twin": {
+        "dropped": [
+          7,
+          17,
+          19,
+          40,
+          47,
+          48
+        ],
+        "pairs": 45,
+        "base_51": {
+          "median_rel_change": 0.34835605833538347,
+          "se": 0.2,
+          "converged": false,
+          "epochs": 26898.0,
+          "split": {
+            "all": 0.34835605833538347,
+            "n_all": 26898,
+            "pre_onset": 16.734471525298133,
+            "n_pre": 7500,
+            "post_onset": 0.23077206214638585,
+            "n_post": 18798
+          }
+        },
+        "base_same_k": {
+          "k": 45,
+          "median_rel_change": 0.35683986482370345,
+          "se": 0.21320071635561044,
+          "converged": false,
+          "epochs": 26898.0,
+          "split": {
+            "all": 0.35683986482370345,
+            "n_all": 26898,
+            "pre_onset": 17.002647757031937,
+            "n_pre": 7500,
+            "post_onset": 0.23712178047531768,
+            "n_post": 18798
+          }
+        }
+      },
+      "(b) without pairs with a ghost false lock in any receiver run": {
+        "dropped": [
+          7,
+          17,
+          19,
+          20,
+          25,
+          28,
+          30,
+          32,
+          35,
+          38,
+          39,
+          40,
+          46,
+          47,
+          48,
+          50
+        ],
+        "pairs": 35,
+        "base_51": {
+          "median_rel_change": 0.37127876758937184,
+          "se": 0.2,
+          "converged": false,
+          "epochs": 26898.0,
+          "split": {
+            "all": 0.37127876758937184,
+            "n_all": 26898,
+            "pre_onset": 16.290244334782713,
+            "n_pre": 7500,
+            "post_onset": 0.24985003860745503,
+            "n_post": 18798
+          }
+        },
+        "base_same_k": {
+          "k": 35,
+          "median_rel_change": 0.3995203974679886,
+          "se": 0.24253562503633297,
+          "converged": false,
+          "epochs": 26898.0,
+          "split": {
+            "all": 0.3995203974679886,
+            "n_all": 26898,
+            "pre_onset": 16.6104045480873,
+            "n_pre": 7500,
+            "post_onset": 0.268768153689025,
+            "n_post": 18798
+          }
+        }
+      }
+    },
+    "variance_ratio_post_onset_by_prn": {
+      "thermal 51 / k-cond first 51": {
+        "4": 1.0211982369116215,
+        "6": 1.1522835057191876,
+        "7": 1.167732333714973,
+        "11": 1.0371158320262088,
+        "16": 1.1031692614395516,
+        "26": 1.0803555662746376
+      },
+      "k-noise 51 / k-cond first 51 (reference)": {
+        "4": 1.0016978342887282,
+        "6": 0.9932558590819898,
+        "7": 1.0140748625829272,
+        "11": 0.9956151340736188,
+        "16": 1.0105082994752124,
+        "26": 1.000428620339286
+      }
+    },
+    "median_var_cyc2_pre_and_post_onset": {
+      "k-cond first 51": {
+        "pre_onset": 5.268717013839149e-11,
+        "post_onset": 7.226669465830047e-06
+      },
+      "k-noise 51": {
+        "pre_onset": 4.6392928715767247e-11,
+        "post_onset": 7.286185507899011e-06
+      },
+      "thermal 51": {
+        "pre_onset": 2.2718201393868006e-09,
+        "post_onset": 7.7260211387131e-06
+      }
+    },
+    "thermal_realizations_by_prn": {
+      "4": 50,
+      "6": 35,
+      "7": 34,
+      "11": 51,
+      "16": 41,
+      "26": 45
+    }
+  },
+  "run_time_s": 43.8
+}

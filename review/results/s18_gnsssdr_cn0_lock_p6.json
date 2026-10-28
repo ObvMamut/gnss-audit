@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "study": "s18_gnsssdr_cn0_lock_p6",
+    "generated": "2026-10-09T22:03:20+0200",
+    "python": "3.14.7",
+    "platform": "Linux-6.18.55_1-x86_64-with-glibc2.41",
+    "numpy": "2.5.3",
+    "packages": [
+      "numpy==2.5.3",
+      "scipy==1.18.1"
+    ]
+  },
+  "image": "carlesfernandez/docker-gnsssdr:v0.0.22",
+  "part_a": [
+    {
+      "cn0_true_dbhz": 30.0,
+      "records": 0,
+      "last_record_s": null,
+      "loss_of_lock_in_log": false,
+      "reported_minus_true_db": null,
+      "predicted_m2m4_bias_db": 1.4681320077751003,
+      "dumped_lock_stat_median": null
+    },
+    {
+      "cn0_true_dbhz": 33.0,
+      "records": 9566,
+      "last_record_s": 59.90944625,
+      "loss_of_lock_in_log": false,
+      "reported_minus_true_db": -4.197084426879883,
+      "predicted_m2m4_bias_db": 0.6467614127659687,
+      "dumped_lock_stat_median": -0.004567269701510668,
+      "phase_var_over_thermal_true_cn0": 894426231.6413822
+    },
+    {
+      "cn0_true_dbhz": 36.0,
+      "records": 21921,
+      "last_record_s": 57.95861275,
+      "loss_of_lock_in_log": true,
+      "reported_minus_true_db": -4.292291641235352,
+      "predicted_m2m4_bias_db": 0.540393588354604,
+      "dumped_lock_stat_median": -0.014776542782783508,
+      "phase_var_over_thermal_true_cn0": 175115538727.83688
+    },
+    {
+      "cn0_true_dbhz": 40.0,
+      "records": 8837,
+      "last_record_s": 59.89986775,
+      "loss_of_lock_in_log": false,
+      "reported_minus_true_db": 0.41353607177734375,
+      "predicted_m2m4_bias_db": 0.48768561928580567,
+      "dumped_lock_stat_median": 0.8923112750053406,
+      "phase_var_over_thermal_true_cn0": 1.0536397470173628
+    },
+    {
+      "cn0_true_dbhz": 45.0,
+      "records": 8971,
+      "last_record_s": 59.93986775,
+      "loss_of_lock_in_log": false,
+      "reported_minus_true_db": 0.41094207763671875,
+      "predicted_m2m4_bias_db": 0.46550707592189156,
+      "dumped_lock_stat_median": 0.9660933017730713,
+      "phase_var_over_thermal_true_cn0": 1.0495530099888801
+    }
+  ],
+  "part_b": [
+    {
+      "clean_cn0_rep_dbhz": 55.41542434692383,
+      "bias_db": 0.4154243469238281
+    },
+    {
+      "beat_hz": 0.5,
+      "config": "bn35",
+      "error": "no steady tracking"
+    },
+    {
+      "beat_hz": 0.5,
+      "config": "bn15",
+      "error": "no steady tracking"
+    },
+    {
+      "beat_hz": 2.0,
+      "config": "bn35",
+      "cw_power_over_c": 10.279220950277628,
+      "meas": {
+        "r": 22.276467605149712,
+        "cn0_rep_dbhz": 53.826141357421875,
+        "var_e_rad2": 0.0027986129875020986
+      },
+      "pred": {
+        "r": 48.06127617799761,
+        "cn0_rep_dbhz": 55.39221114875104
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 2.0,
+      "config": "bn15",
+      "cw_power_over_c": 10.279220950277628,
+      "meas": {
+        "r": 27.10834474517105,
+        "cn0_rep_dbhz": 53.8261833190918,
+        "var_e_rad2": 0.0014482815157868872
+      },
+      "pred": {
+        "r": 103.04015331433136,
+        "cn0_rep_dbhz": 55.38982922200117
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 5.0,
+      "config": "bn35",
+      "cw_power_over_c": 10.25509462660283,
+      "meas": {
+        "r": 21.665092496508276,
+        "cn0_rep_dbhz": 53.72591781616211,
+        "var_e_rad2": 0.0027854821742133097
+      },
+      "pred": {
+        "r": 42.06592461417437,
+        "cn0_rep_dbhz": 55.258535600552754
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 5.0,
+      "config": "bn15",
+      "cw_power_over_c": 10.25509462660283,
+      "meas": {
+        "r": 25.998846664367267,
+        "cn0_rep_dbhz": 53.72611618041992,
+        "var_e_rad2": 0.0014214504104845015
+      },
+      "pred": {
+        "r": 64.32585425884187,
+        "cn0_rep_dbhz": 55.22517521313514
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 12.0,
+      "config": "bn35",
+      "cw_power_over_c": 10.199674109320473,
+      "meas": {
+        "r": 16.4637263707065,
+        "cn0_rep_dbhz": 53.17244338989258,
+        "var_e_rad2": 0.0024051395999609804
+      },
+      "pred": {
+        "r": 23.023424747061206,
+        "cn0_rep_dbhz": 54.46666088046679
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 12.0,
+      "config": "bn15",
+      "cw_power_over_c": 10.199674109320473,
+      "meas": {
+        "r": 19.55609294575432,
+        "cn0_rep_dbhz": 53.17228698730469,
+        "var_e_rad2": 0.0012149757029781866
+      },
+      "pred": {
+        "r": 19.327928672250653,
+        "cn0_rep_dbhz": 54.241645527954404
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 30.0,
+      "config": "bn35",
+      "cw_power_over_c": 10.062502562169978,
+      "meas": {
+        "r": 5.465882338800716,
+        "cn0_rep_dbhz": 51.890953063964844,
+        "var_e_rad2": 0.001073444133448182
+      },
+      "pred": {
+        "r": 4.4461500383138555,
+        "cn0_rep_dbhz": 51.73763672454119
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 30.0,
+      "config": "bn15",
+      "cw_power_over_c": 10.062502562169978,
+      "meas": {
+        "r": 5.342772515547955,
+        "cn0_rep_dbhz": 51.89103698730469,
+        "var_e_rad2": 0.0004462056909712494
+      },
+      "pred": {
+        "r": 2.419895543801687,
+        "cn0_rep_dbhz": 51.51548222283779
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 80.0,
+      "config": "bn35",
+      "cw_power_over_c": 9.716479219879842,
+      "meas": {
+        "r": 1.108084853851177,
+        "cn0_rep_dbhz": 50.89694595336914,
+        "var_e_rad2": 0.0002738122791354533
+      },
+      "pred": {
+        "r": 0.9446878558157936,
+        "cn0_rep_dbhz": 50.79678665765222
+      },
+      "loss_of_lock_in_log": false
+    },
+    {
+      "beat_hz": 80.0,
+      "config": "bn15",
+      "cw_power_over_c": 9.716479219879842,
+      "meas": {
+        "r": 0.9913258586597584,
+        "cn0_rep_dbhz": 50.89701461791992,
+        "var_e_rad2": 0.00010417106762627478
+      },
+      "pred": {
+        "r": 0.6229833445978366,
+        "cn0_rep_dbhz": 50.75525866221391
+      },
+      "loss_of_lock_in_log": false
+    }
+  ]
+}

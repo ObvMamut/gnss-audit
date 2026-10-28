@@ -1,0 +1,41 @@
+# Admit (P2b part 2, task 8; docs/7 section 4.2, decision D-38): the first 130 s of SpoofRepo TGS_L1_E1, the L1 file of
+# the scenario whose L5 file shows two power dips, near 60 s and 101 s. Do the dips belong to the attack (D1), to the
+# whole recorder (D2) or to the L5 chain (D3)? The decision is pre-registered (commit 15ef977) and applied by the controller.
+# The L1 file is real 2-bit samples at the stated IF of 6.39 MHz (centre 1569.03 MHz + 6.39 MHz = 1575.42 MHz): the
+# prefix is converted to complex baseband in /dev/shm (x exp(-j 2 pi f_IF n / fs), 129-tap FIR, /4 to 6.5 MS/s, int16
+# IQ), screened from there and deleted. The screen is the stock survey with PVT against the record's position, the C/A
+# scan for second peaks, the spectrum against its first seconds, and the 1 ms in-band power in the two dip windows.
+id: Admit
+dataset: fgi-spoofrepo
+local_path: raw/fgi-spoofrepo/TGS_L1_E1.dat
+item_type: byte  # real samples, 1 byte each (not 'ibyte', interleaved complex), before the conversion
+fs_hz: 26000000.0
+frontend_bw_hz: 4200000.0  # the record's 4.2 MHz L1/E1 bandwidth
+source:
+  real_if: {if_hz: 6390000.0, decim: 4, taps: 129}  # the survey runs at 6.5 MS/s
+template: 1C
+max_channels: 12
+acquisition: true
+known_position: [60.182, 24.828, 47.248]  # the record's geodetic-grade receiver: latitude, longitude, height (m)
+# the C/A second-peak scan covers -6 to +7.5 kHz instead of the default +-6 kHz: the smoke test on 0 to 40 s, before
+# either window, measured a common +1.4 kHz receiver offset (PRN 13 and 14 near +5.4 and +5.9 kHz), so a satellite
+# above +6 kHz would be missed. The range was fixed before the confirmatory run; widening it can only add second
+# peaks, which biases D1 toward refusing L5, and the pre-registered ratios are unchanged.
+acquisition_doppler_hz: [-6000.0, 7500.0]
+# D1's windows (D-38): every psd_change, cn0_step and second_peak time inside them is listed, and the PVT sign is the
+# window's median timed fix against the median of the timed fixes in [30, 58.5) s (more than 50 m) - the record's
+# 0.001 degree position cannot separate an attack from its rounding; the offset from the known position is reported too
+onset_windows: [[58.5, 61.5], [99.5, 102.0]]
+# D2's number (D-38): the 1 ms in-band power's minimum in each window against its median over [30, 58) s; a dip if -1 dB
+power_baseline_s: [30.0, 58.0]
+power_windows:  # around the L5 dips at about 60 s and 101 s
+  - {name: dip_60s, t_start_s: 58.0, t_end_s: 62.0}
+  - {name: dip_101s, t_start_s: 99.0, t_end_s: 103.0}
+band: L1 (GPS L1 C/A, Galileo E1)
+receivers: [NSL stereo dual-band front end]
+coordinates_source: record (geodetic-grade receiver)
+timeout_s: 7200
+# the survey is no twin: it runs the stock receiver, whose lock rule drops noise tracks and bad starts so the free
+# channels keep searching (under D-34's raised limit they are kept for good and hide satellites; P2b task 6)
+stock_receiver: true
+confirmatory: true
