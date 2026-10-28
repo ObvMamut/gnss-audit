@@ -346,7 +346,10 @@ def b1_source(source: Path, monkeypatch: pytest.MonkeyPatch) -> tuple[Path, list
             residual = {}
             for i, ch in enumerate((2, 3)):
                 stamps = clean_stamps(source, ch)
-                n_iota = ghost_projection(iter([(0, y)]), ghost(i), stamps, CLOCK, gain(45.0, SURVEY["n0"]))
+                # the stream in B1's blocks, as e2post's `interference` yields it: a projection's sums are bitwise
+                # the same only on the same chunking (one chunk differs by ~1e-15 cycle on some SIMD paths)
+                blocks = ((m0, y[m0 : m0 + B1["block"]]) for m0 in range(0, y.size, B1["block"]))
+                n_iota = ghost_projection(blocks, ghost(i), stamps, CLOCK, gain(45.0, SURVEY["n0"]))
                 pred = loop.filter(np.nan_to_num(n_iota)) / (2 * np.pi)
                 tab = pq.read_table(udir / f"ghost_ch{ch}.parquet")
                 t = tab.column("t_rx_s").to_numpy()
