@@ -17,17 +17,18 @@ Carrier-phase positioning and integrity monitoring weight each measurement by a 
 
 ```mermaid
 flowchart LR
-    rec["Real recordings<br/>FGI Jammer Test 2023 (L1)<br/>FGI SpoofRepo (L5)"] --> inj
-    subgraph inj["Injector (gnssaudit.inject)"]
-        fam["interference families<br/>noise, swept CW, chirp, …<br/>at set J/N₀"]
-        ghost["ghost satellites<br/>with known phase"]
-    end
+    rec["Real recordings<br/>FGI Jammer Test 2023 (L1)<br/>FGI SpoofRepo (L5)"]
+    inj["Injector<br/>interference: noise, swept CW, chirp<br/>ghost satellites with known phase"]
+    rx["GNSS-SDR v0.0.22, patched to log<br/>float64 phase every integration"]
+    truth["Truth<br/>twin difference: interference error<br/>ghost error: total error"]
+    models["Uncertainty models<br/>C/N0-based, receiver-reported,<br/>in-phase witness"]
+    ev["Evaluation<br/>calibration and coverage<br/>under pre-registered rules"]
+    rec --> inj
     inj -->|jammed twin| rx
     rec -->|clean twin| rx
-    rx["GNSS-SDR v0.0.22, patched to log<br/>float64 phase every integration<br/>(containers/)"] --> truth
-    truth["Truth<br/>twin difference ΔΦ (interference error)<br/>ghost error (total error)"] --> eval
-    models["Uncertainty models<br/>C/N₀-based, receiver-reported,<br/>in-phase witness"] --> eval
-    eval["Evaluation<br/>calibration and coverage under<br/>pre-registered rules"]
+    rx --> truth
+    truth --> ev
+    models --> ev
 ```
 
 Every run is a YAML manifest in `experiments/`. Its run ID is the SHA-256 of the specification, so `experiments/E2-v3.yaml` always writes to `E2/9650dc00e766`. Results are write-once, and each run records its code version, receiver image and input checksums.
